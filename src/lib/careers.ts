@@ -1,3 +1,5 @@
+import { IMAGES } from '../assets/images';
+
 const CAREERS_API = import.meta.env.VITE_CAREERS_API_URL;
 
 export type TEmploymentType = 'Full-time' | 'Part-time' | 'Contract' | 'Internship';
@@ -55,7 +57,7 @@ export const STATIC_JOB_LISTINGS: IJobListing[] = [
       'Experience working with distributors, retailers, or salon partners is a plus.',
       'Comfortable balancing creative direction with commercial outcomes.',
     ],
-    image: '/images/category-skincare.png',
+    image: IMAGES.categorySkincare,
     url: 'mailto:careers@kgoldbeauty.com?subject=Application%3A%20Brand%20Marketing%20Manager',
   },
   {
@@ -81,7 +83,7 @@ export const STATIC_JOB_LISTINGS: IJobListing[] = [
       'Relationship-driven communicator with strong follow-through.',
       'Familiarity with salon, pharmacy, or modern trade channels preferred.',
     ],
-    image: '/images/category-haircare.png',
+    image: IMAGES.categoryHaircare,
     url: 'mailto:careers@kgoldbeauty.com?subject=Application%3A%20Regional%20Sales%20Executive',
   },
   {
@@ -107,7 +109,7 @@ export const STATIC_JOB_LISTINGS: IJobListing[] = [
       'Detail-oriented with strong documentation habits.',
       'Comfortable collaborating with external manufacturing partners.',
     ],
-    image: '/images/product-serum.png',
+    image: IMAGES.productSerum,
     url: 'mailto:careers@kgoldbeauty.com?subject=Application%3A%20Quality%20Assurance%20Specialist',
   },
   {
@@ -133,7 +135,7 @@ export const STATIC_JOB_LISTINGS: IJobListing[] = [
       'Interest in beauty and consumer brands.',
       'Experience with Shopee, Lazada, or Shopify is an advantage.',
     ],
-    image: '/images/category-bodycare.png',
+    image: IMAGES.categoryBodycare,
     url: 'mailto:careers@kgoldbeauty.com?subject=Application%3A%20E-Commerce%20Coordinator',
   },
 ];
@@ -161,7 +163,7 @@ export const STATIC_INTERNSHIPS: IInternshipListing[] = [
       'Available at least 3 days per week',
       'Passion for beauty and Filipino consumer brands',
     ],
-    image: '/images/category-skincare.png',
+    image: IMAGES.categorySkincare,
     url: 'mailto:careers@kgoldbeauty.com?subject=Application%3A%20Marketing%20Intern',
   },
   {
@@ -186,7 +188,7 @@ export const STATIC_INTERNSHIPS: IInternshipListing[] = [
       'Available for on-site work in Laguna',
       'Interest in product integrity and responsible formulation',
     ],
-    image: '/images/product-shampoo.png',
+    image: IMAGES.productShampoo,
     url: 'mailto:careers@kgoldbeauty.com?subject=Application%3A%20Product%20Development%20Intern',
   },
   {
@@ -211,7 +213,7 @@ export const STATIC_INTERNSHIPS: IInternshipListing[] = [
       'Willing to travel within Metro Manila',
       'Interest in sales and the Philippine beauty trade',
     ],
-    image: '/images/category-haircare.png',
+    image: IMAGES.categoryHaircare,
     url: 'mailto:careers@kgoldbeauty.com?subject=Application%3A%20Sales%20%26%20Distribution%20Intern',
   },
   {
@@ -236,7 +238,7 @@ export const STATIC_INTERNSHIPS: IInternshipListing[] = [
       'Detail-oriented with a process-minded mindset',
       'Available for hybrid work in Laguna and remote days',
     ],
-    image: '/images/product-bodycream.png',
+    image: IMAGES.productBodycream,
     url: 'mailto:careers@kgoldbeauty.com?subject=Application%3A%20Operations%20Intern',
   },
   {
@@ -261,7 +263,7 @@ export const STATIC_INTERNSHIPS: IInternshipListing[] = [
       'Interest in e-commerce and digital merchandising',
       'Reliable internet and available at least 3 days per week',
     ],
-    image: '/images/product-spf.png',
+    image: IMAGES.productSpf,
     url: 'mailto:careers@kgoldbeauty.com?subject=Application%3A%20E-Commerce%20Intern',
   },
   {
@@ -286,7 +288,7 @@ export const STATIC_INTERNSHIPS: IInternshipListing[] = [
       'Available for on-site work in Laguna',
       'Strong interest in product safety and quality systems',
     ],
-    image: '/images/product-serum.png',
+    image: IMAGES.productSerum,
     url: 'mailto:careers@kgoldbeauty.com?subject=Application%3A%20Quality%20Assurance%20Intern',
   },
 ];

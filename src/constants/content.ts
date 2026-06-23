@@ -1,3 +1,5 @@
+import { IMAGES } from '../assets/images';
+
 export const SITE = {
   name: 'KGOLD Beauty Essentials',
   tagline: 'Beauty essentials, crafted with purpose.',
@@ -22,7 +24,7 @@ export const HERO = {
   body: 'Formulated in partnership with Filipino experts. Proven in salons and stores nationwide. Made for people who expect more from everyday care.',
   ctaLabel: 'Explore collections',
   ctaHref: '#categories',
-  backgroundImage: '/hero-bg.png',
+  backgroundImage: IMAGES.heroBg,
 } as const;
 
 export const FEATURED_CATEGORIES = {
@@ -35,7 +37,7 @@ export const FEATURED_CATEGORIES = {
       name: 'Skincare',
       tagline: 'Glow that lasts beyond the mirror',
       description: 'Serums, moisturizers, and treatments formulated for real tropical climates.',
-      image: '/images/category-skincare.png',
+      image: IMAGES.categorySkincare,
       href: '/#bestsellers',
       span: 'large' as const,
     },
@@ -44,7 +46,7 @@ export const FEATURED_CATEGORIES = {
       name: 'Haircare',
       tagline: 'Salon results, every wash',
       description: 'Repair, nourish, and protect — from daily care to professional treatment.',
-      image: '/images/category-haircare.png',
+      image: IMAGES.categoryHaircare,
       href: '/#bestsellers',
       span: 'default' as const,
     },
@@ -53,7 +55,7 @@ export const FEATURED_CATEGORIES = {
       name: 'Body Care',
       tagline: 'Skin-first from neck to toe',
       description: 'Rich textures and clean formulas for all-day comfort.',
-      image: '/images/category-bodycare.png',
+      image: IMAGES.categoryBodycare,
       href: '/#bestsellers',
       span: 'default' as const,
     },
@@ -62,7 +64,7 @@ export const FEATURED_CATEGORIES = {
       name: "Men's Grooming",
       tagline: 'No fuss. No compromise.',
       description: 'Straightforward essentials built for modern grooming routines.',
-      image: '/images/category-men.png',
+      image: IMAGES.categoryMen,
       href: '/#bestsellers',
       span: 'wide' as const,
     },
@@ -81,7 +83,7 @@ export const BEST_SELLERS = {
       name: 'KGOLD Radiance Serum',
       line: 'Skincare',
       description: 'Vitamin-infused daily serum for visible luminosity and even tone.',
-      image: '/images/product-serum.png',
+      image: IMAGES.productSerum,
       badge: 'No. 1 bestseller',
     },
     {
@@ -89,7 +91,7 @@ export const BEST_SELLERS = {
       name: 'Silk Repair Shampoo',
       line: 'Haircare',
       description: 'Keratin-rich formula that restores softness after just one wash.',
-      image: '/images/product-shampoo.png',
+      image: IMAGES.productShampoo,
       badge: 'Salon pick',
     },
     {
@@ -97,7 +99,7 @@ export const BEST_SELLERS = {
       name: 'Velvet Body Cream',
       line: 'Body Care',
       description: 'Deep hydration with a lightweight finish — never greasy, always smooth.',
-      image: '/images/product-bodycream.png',
+      image: IMAGES.productBodycream,
       badge: 'Top rated',
     },
     {
@@ -105,7 +107,7 @@ export const BEST_SELLERS = {
       name: 'Daily Defense SPF 50',
       line: 'Skincare',
       description: 'Broad-spectrum protection that layers seamlessly under makeup.',
-      image: '/images/product-spf.png',
+      image: IMAGES.productSpf,
       badge: 'New arrival',
     },
   ],
@@ -117,7 +119,7 @@ export const ABOUT = {
     'For over 15 years, KGOLD has partnered with formulators and retailers who believe the same thing we do: everyday beauty should never feel like a compromise.',
   mission:
     'We make thoughtfully formulated beauty essentials accessible through reliable partnerships — held to the same standard, every batch, every shelf.',
-  backgroundImage: '/hero-bg.png',
+  backgroundImage: IMAGES.heroBg,
   ctaLabel: 'Who we are',
   ctaHref: '/about',
 } as const;
@@ -137,7 +139,7 @@ export const ABOUT_PAGE = {
       'A homegrown Filipino brand — from Isabela to Marikina — creating wellness that works at a price that respects every kababayan.',
     ctaLabel: 'Meet the company',
     ctaHref: '#company',
-    backgroundImage: '/hero-bg.png',
+    backgroundImage: IMAGES.heroBg,
   },
   company: {
     displayTitle: 'About us',
@@ -175,41 +177,41 @@ export const ABOUT_PAGE = {
         subtitle: 'How we treat each other',
         description:
           'We treat every kababayan — employee, reseller, customer — like family. Their wins are our wins.',
-        image: '/images/category-skincare.png',
+        image: IMAGES.categorySkincare,
       },
       {
         title: 'We rise together',
         subtitle: 'How we move as one team',
         description:
           'No one climbs alone at K Gold. When one of us wins, we lift the next. When one of us falls, we reach back.',
-        image: '/images/category-haircare.png',
+        image: IMAGES.categoryHaircare,
       },
       {
         title: 'Ownership',
         subtitle: 'How we work',
         description:
           "We own the outcome, not just the task. No one at K Gold says 'that's not my job.'",
-        image: '/images/category-bodycare.png',
+        image: IMAGES.categoryBodycare,
       },
       {
         title: 'Excellence with humility',
         subtitle: 'How we build',
         description:
           'We build products and services worthy of our name — and we stay grateful for the chance to do this work.',
-        image: '/images/category-men.png',
+        image: IMAGES.categoryMen,
       },
       {
         title: 'Grit ng Pinoy',
         subtitle: 'How we endure',
         description:
           'We started in a barrio in Isabela. We built this through hard work, faith, and refusing to quit. That is the standard.',
-        image: '/hero-bg.png',
+        image: IMAGES.heroBg,
       },
     ],
   },
   leadership: {
     title: 'Leadership',
-    image: '/images/category-men.png',
+    image: IMAGES.categoryMen,
     quote:
       'We are ruthless about our standards because we care deeply about our people and our customers. Excellence is not optional here — it is our competitive advantage.',
     name: 'The KGold Leadership Team',
@@ -219,7 +221,7 @@ export const ABOUT_PAGE = {
     title: 'Build beauty with purpose.',
     description:
       'We grow when our people grow. Explore full-time roles and internship programs across marketing, sales, operations, and product.',
-    backgroundImage: '/hero-bg.png',
+    backgroundImage: IMAGES.heroBg,
     ctaLabel: 'View careers',
     ctaHref: '/careers',
   },
@@ -311,7 +313,7 @@ export const FOOTER = {
 export const CONTACT_PAGE = {
   hero: {
     headline: ['Get in touch', 'with us'],
-    backgroundImage: '/hero-bg.png',
+    backgroundImage: IMAGES.heroBg,
   },
   inquiries: {
     title: 'Contact us',
@@ -350,7 +352,7 @@ export const CONTACT_PAGE = {
   },
   addresses: {
     title: 'Our address',
-    image: '/images/category-skincare.png',
+    image: IMAGES.categorySkincare,
     locations: [
       {
         name: 'Marikina City',
@@ -394,7 +396,7 @@ export const CAREERS_PAGE = {
     body: 'We are growing across marketing, sales, operations, and product. Explore open roles and internship opportunities below.',
     ctaLabel: 'View open roles',
     ctaHref: '#open-roles',
-    backgroundImage: '/hero-bg.png',
+    backgroundImage: IMAGES.heroBg,
   },
   culture: {
     title: 'Why KGOLD',
@@ -433,7 +435,7 @@ export const CAREERS_PAGE = {
     applyLabel: 'Apply',
     emptyMessage: 'No roles match your search. Try a different keyword or team filter.',
     banner: {
-      image: '/images/category-men.png',
+      image: IMAGES.categoryMen,
       headline: 'Grow with a brand built on consistency',
       subline:
         'Full-time roles across marketing, sales, operations, and digital — where quality standards guide every team.',
@@ -456,7 +458,7 @@ export const CAREERS_PAGE = {
     generalCta: 'Questions about internships?',
     generalHref: 'mailto:careers@kgoldbeauty.com?subject=Internship%20inquiry',
     banner: {
-      image: '/images/category-skincare.png',
+      image: IMAGES.categorySkincare,
       headline: 'Learn the industry from the inside',
       subline:
         'Structured internships across marketing, product, sales, and operations — real projects, real mentorship.',

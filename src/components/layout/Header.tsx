@@ -4,6 +4,7 @@ import { AppBrand } from '../brand/AppBrand';
 import { ThemeToggle } from './ThemeToggle';
 import { NAV_LINKS } from '../../constants/content';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
+import { IS_SINGLE_FILE } from '../../lib/isSingleFile';
 import { cn } from '../../lib/utils';
 
 function isLinkActive(href: string, pathname: string): boolean {
@@ -27,7 +28,7 @@ function NavLink({
   const { pathname } = useLocation();
   const isActive = useMemo(() => isLinkActive(href, pathname), [href, pathname]);
 
-  const isHashLink = href.startsWith('#');
+  const isHashLink = href.startsWith('#') || (IS_SINGLE_FILE && href.startsWith('/#'));
 
   if (isHashLink) {
     return (

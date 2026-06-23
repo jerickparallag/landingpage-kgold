@@ -1,5 +1,7 @@
-/** KGOLD brand mark served from /public — portable to parcel-proof / questionnaire. */
-export const BRAND_LOGO_SRC = '/kgold_logo.png' as const;
+import { IMAGES } from '../assets/images';
+
+/** KGOLD brand mark — bundled for single-file builds, served from /public otherwise. */
+export const BRAND_LOGO_SRC = IMAGES.kgoldLogo;
 
 export const BRAND_NAME = 'KGOLD Beauty Essentials' as const;
 
