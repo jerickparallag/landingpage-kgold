@@ -9,6 +9,8 @@ import productSerum from '../../public/images/product-serum.png';
 import productShampoo from '../../public/images/product-shampoo.png';
 import productBodycream from '../../public/images/product-bodycream.png';
 import productSpf from '../../public/images/product-spf.png';
+import jobTelesales from './images/jobs/telesales.png';
+import jobTiktokLiveSellers from './images/jobs/tiktok-live-sellers.png';
 
 export const IMAGES = {
   heroBg,
@@ -21,4 +23,6 @@ export const IMAGES = {
   productShampoo,
   productBodycream,
   productSpf,
+  jobTelesales,
+  jobTiktokLiveSellers,
 } as const;

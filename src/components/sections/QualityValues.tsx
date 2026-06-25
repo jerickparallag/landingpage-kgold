@@ -20,7 +20,7 @@ export function QualityValues() {
           )}
         >
           {VALUES.map((value) => (
-            <div key={value.title} className="flex flex-col">
+            <div key={value.title} className="flex h-full flex-col">
               <h3 className="text-xl font-semibold tracking-tight text-foreground sm:text-[1.35rem]">
                 {value.title}
               </h3>
@@ -29,7 +29,7 @@ export function QualityValues() {
               </p>
               <a
                 href={value.ctaHref}
-                className="mt-6 text-sm font-medium text-primary transition hover:text-primary-hover"
+                className="mt-auto pt-6 text-sm font-medium text-primary transition hover:text-primary-hover"
               >
                 {value.ctaLabel}
               </a>
