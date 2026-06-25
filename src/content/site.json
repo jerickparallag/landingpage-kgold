@@ -1,0 +1,31 @@
+{
+  "site": {
+    "name": "KGOLD Beauty Essentials",
+    "tagline": "Beauty essentials, crafted with purpose.",
+    "description": "Filipino-crafted beauty essentials built on quality formulations, trusted partnerships, and care that respects people and planet.",
+    "url": "https://kgoldbeauty.com",
+    "contactEmail": "hello@kgoldbeauty.com"
+  },
+  "navLinks": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" },
+    { "label": "Careers", "href": "/careers" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "footer": {
+    "copyrightName": "KGOLD Beauty Essentials. All rights reserved.",
+    "legal": [
+      { "label": "Privacy Policy", "href": "#" },
+      { "label": "Terms of Use", "href": "#" }
+    ],
+    "social": [
+      { "label": "Facebook", "href": "#" },
+      { "label": "Instagram", "href": "#" },
+      { "label": "LinkedIn", "href": "#" },
+      { "label": "TikTok", "href": "#" },
+      { "label": "Messenger", "href": "#" }
+    ],
+    "careers": { "label": "Careers", "href": "/careers" },
+    "contact": { "label": "Contact", "href": "/contact" }
+  }
+}

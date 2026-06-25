@@ -1,7 +1,7 @@
 import { CAREERS_PAGE } from '../../../constants/content';
 import { Button } from '../../ui/Button';
 import { useInView } from '../../../hooks/useInView';
-import { cn } from '../../../lib/utils';
+import { cn, sectionDescriptionClass, sectionHeadingClass } from '../../../lib/utils';
 
 export function CareersCta() {
   const { ref, isVisible } = useInView<HTMLDivElement>();
@@ -14,13 +14,9 @@ export function CareersCta() {
           ref={ref}
           className={cn('reveal w-full text-center', isVisible && 'reveal-visible')}
         >
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            {cta.title}
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {cta.description}
-          </p>
-          <div className="mt-8">
+          <h2 className={sectionHeadingClass}>{cta.title}</h2>
+          <p className={cn('mx-auto max-w-2xl', sectionDescriptionClass)}>{cta.description}</p>
+          <div className="cta-actions">
             <Button as="a" href={cta.primaryHref}>
               {cta.primaryLabel}
             </Button>

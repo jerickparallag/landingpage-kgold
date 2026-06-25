@@ -8,6 +8,7 @@ import {
 } from '../../../lib/careers';
 import { useCareerListFilters } from '../../../hooks/useCareerListFilters';
 import { useInView } from '../../../hooks/useInView';
+import { SectionHeader } from '../../ui/SectionHeader';
 import { cn } from '../../../lib/utils';
 import { CareerSectionBanner } from './CareerSectionBanner';
 import { CareerListToolbar } from './CareerListToolbar';
@@ -36,23 +37,16 @@ export function InternshipProgram() {
   } = useCareerListFilters(internships, filterInternshipListings, getInternshipDepartments);
 
   return (
-    <section id="internships" className="scroll-mt-28 bg-background section-padding">
+    <section id="internships" className="scroll-section bg-background section-padding">
       <div className="page-container">
-        <div className="max-w-2xl">
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
-            {copy.title}
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {copy.description}
-          </p>
-        </div>
+        <SectionHeader title={copy.title} description={copy.description} />
 
         <CareerSectionBanner {...copy.banner} />
 
         <div
           id="internship-programs"
           ref={ref}
-          className={cn('reveal mt-12 lg:mt-16', isVisible && 'reveal-visible')}
+          className={cn('reveal section-stack', isVisible && 'reveal-visible')}
         >
           <CareerListToolbar
             searchQuery={searchQuery}
@@ -70,13 +64,13 @@ export function InternshipProgram() {
             }}
           />
 
-          <div className="mt-8">
+          <div className="section-inner-stack">
             {filteredInternships.length === 0 ? (
               <p className="rounded-brand border border-dashed border-border bg-card px-6 py-10 text-center text-base text-muted-foreground">
                 {copy.emptyMessage}
               </p>
             ) : viewMode === 'grid' ? (
-              <div className="grid auto-rows-[28rem] gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+              <div className="grid auto-rows-[28rem] section-career-grid sm:grid-cols-2 lg:grid-cols-3">
                 {filteredInternships.map((role) => (
                   <InternshipCard
                     key={role.id}
@@ -87,7 +81,7 @@ export function InternshipProgram() {
                 ))}
               </div>
             ) : (
-              <ul className="flex flex-col gap-4">
+              <ul className="section-list-row">
                 {filteredInternships.map((role) => (
                   <InternshipListRow
                     key={role.id}
@@ -101,11 +95,11 @@ export function InternshipProgram() {
           </div>
         </div>
 
-        <p className="mt-12 text-sm text-muted-foreground">
+        <p className="section-stack text-sm text-muted-foreground">
           {copy.generalCta}{' '}
           <a
             href={copy.generalHref}
-            className="font-medium text-primary transition hover:text-primary-hover"
+            className="font-normal text-foreground underline-offset-4 transition hover:underline"
           >
             {CAREERS_PAGE.careersEmail}
           </a>

@@ -1,6 +1,6 @@
 import { ABOUT } from '../../constants/content';
 import { useInView } from '../../hooks/useInView';
-import { cn } from '../../lib/utils';
+import { cn, sectionCtaButtonClass, sectionDescriptionClass, sectionHeadingClass, sectionLedeClass } from '../../lib/utils';
 
 export function About({
   sectionId = 'about',
@@ -12,7 +12,7 @@ export function About({
   const { ref, isVisible } = useInView<HTMLDivElement>();
 
   return (
-    <section id={sectionId} className="relative min-h-[min(72vh,680px)] overflow-hidden">
+    <section id={sectionId} className="scroll-section relative hero-min-h-editorial overflow-hidden">
       <div
         className="parallax-bg absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${ABOUT.backgroundImage})` }}
@@ -23,22 +23,17 @@ export function About({
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex min-h-[min(72vh,680px)] items-center section-padding">
+      <div className="relative z-10 flex hero-min-h-editorial items-center section-padding">
         <div className="page-container w-full">
           <div
             ref={ref}
             className={cn('reveal max-w-xl', isVisible && 'reveal-visible')}
           >
-            <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
-              {ABOUT.title}
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{ABOUT.teaser}</p>
-            <p className="mt-4 text-base leading-relaxed text-foreground/85">{ABOUT.mission}</p>
+            <h2 className={sectionHeadingClass}>{ABOUT.title}</h2>
+            <p className={sectionLedeClass}>{ABOUT.teaser}</p>
+            <p className={sectionDescriptionClass}>{ABOUT.mission}</p>
             {showCta ? (
-              <a
-                href={ABOUT.ctaHref}
-                className="mt-8 inline-flex items-center rounded-brand bg-foreground px-7 py-3 text-sm font-medium text-background transition hover:bg-foreground/90"
-              >
+              <a href={ABOUT.ctaHref} className={sectionCtaButtonClass}>
                 {ABOUT.ctaLabel}
               </a>
             ) : null}

@@ -1,5 +1,5 @@
 import { useInView } from '../../../hooks/useInView';
-import { cn } from '../../../lib/utils';
+import { cn, heroActionClass, sectionDescriptionClass } from '../../../lib/utils';
 
 interface ICareerSectionBannerProps {
   image: string;
@@ -21,10 +21,10 @@ export function CareerSectionBanner({
   return (
     <div
       ref={ref}
-      className={cn('reveal mt-10 lg:mt-12', isVisible && 'reveal-visible')}
+      className={cn('reveal section-stack', isVisible && 'reveal-visible')}
     >
       <div className="relative overflow-hidden rounded-brand">
-        <div className="relative min-h-[220px] sm:min-h-[260px] lg:min-h-[300px]">
+        <div className="relative min-h-[200px] sm:min-h-[240px] lg:min-h-[280px]">
           <img
             src={image}
             alt=""
@@ -32,20 +32,20 @@ export function CareerSectionBanner({
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div
-            className="absolute inset-0 bg-gradient-to-r from-[#1c1c1c]/90 via-[#1c1c1c]/65 to-[#1c1c1c]/25"
+            className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a]/90 via-[#1a1a1a]/65 to-[#1a1a1a]/25"
             aria-hidden="true"
           />
           <div className="relative flex h-full min-h-[inherit] flex-col justify-center px-6 py-10 sm:px-10 sm:py-12 lg:px-14">
-            <h3 className="max-w-xl text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-4xl lg:leading-tight">
+            <h3 className="max-w-xl text-xl font-light tracking-wide text-white sm:text-2xl lg:text-3xl lg:leading-snug">
               {headline}
             </h3>
-            <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/75 sm:text-base">
+            <p className={cn(sectionDescriptionClass, 'mt-3 max-w-lg text-white/70')}>
               {subline}
             </p>
             {ctaLabel && ctaHref ? (
               <a
                 href={ctaHref}
-                className="mt-6 inline-flex w-fit items-center rounded-brand bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground transition hover:bg-primary-hover"
+                className={cn(heroActionClass, 'luxury-cta-outline inline-flex w-fit text-white')}
               >
                 {ctaLabel}
               </a>

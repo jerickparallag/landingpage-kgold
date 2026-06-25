@@ -25,7 +25,7 @@ export function InternshipCard({ role, isFlipped, onToggle }: IInternshipCardPro
               <span className="mx-1.5 font-normal normal-case">·</span>
               {role.duration}
             </p>
-            <h3 className="mt-2 text-xl font-semibold tracking-tight text-foreground">{role.title}</h3>
+            <h3 className="mt-2 text-xl font-normal tracking-tight text-foreground">{role.title}</h3>
             <p className="mt-1 text-sm text-muted-foreground">
               {role.department}
               <span aria-hidden="true"> · </span>
@@ -50,26 +50,26 @@ export function InternshipCard({ role, isFlipped, onToggle }: IInternshipCardPro
           <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
             Internship · {role.duration}
           </p>
-          <h3 className="mt-2 text-lg font-semibold tracking-tight text-foreground">{role.title}</h3>
+          <h3 className="mt-2 text-lg font-normal tracking-tight text-foreground">{role.title}</h3>
           <div className="scrollbar-thin mt-4 flex-1 space-y-4 overflow-y-auto pr-1">
             <p className="text-sm leading-relaxed text-foreground/90">{role.description}</p>
             <div>
-              <h4 className="text-sm font-semibold text-foreground">{copy.highlightsLabel}</h4>
+              <h4 className="text-sm font-normal text-foreground">{copy.highlightsLabel}</h4>
               <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-muted-foreground">
                 {role.highlights.map((item) => (
                   <li key={item} className="flex gap-2">
-                    <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span className="mt-2 size-1 shrink-0 rounded-full bg-foreground" aria-hidden="true" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-foreground">{copy.requirementsLabel}</h4>
+              <h4 className="text-sm font-normal text-foreground">{copy.requirementsLabel}</h4>
               <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-muted-foreground">
                 {role.requirements.map((item) => (
                   <li key={item} className="flex gap-2">
-                    <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span className="mt-2 size-1 shrink-0 rounded-full bg-foreground" aria-hidden="true" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -116,14 +116,14 @@ export function InternshipListRow({ role, isExpanded, onToggle }: IInternshipLis
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="min-w-0">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-brand bg-primary-muted px-2.5 py-1 text-[10px] font-semibold tracking-[0.12em] text-accent-foreground uppercase">
+                <span className="rounded-brand bg-muted px-2.5 py-1 text-[10px] font-normal tracking-[0.12em] text-foreground uppercase">
                   Internship
                 </span>
                 <span className="rounded-brand border border-border px-2.5 py-1 text-xs font-medium text-foreground">
                   {role.duration}
                 </span>
               </div>
-              <h3 className="mt-3 text-xl font-semibold tracking-tight text-foreground">{role.title}</h3>
+              <h3 className="mt-3 text-xl font-normal tracking-tight text-foreground">{role.title}</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 {role.department}
                 <span aria-hidden="true"> · </span>
@@ -136,7 +136,7 @@ export function InternshipListRow({ role, isExpanded, onToggle }: IInternshipLis
               <button
                 type="button"
                 onClick={onToggle}
-                className="text-sm font-medium text-primary transition hover:text-primary-hover"
+                className="luxury-nav-link opacity-70 hover:opacity-100"
               >
                 {isExpanded ? copy.hideDetailsLabel : copy.learnMoreLabel}
               </button>
@@ -154,22 +154,22 @@ export function InternshipListRow({ role, isExpanded, onToggle }: IInternshipLis
               <p className="text-sm leading-relaxed text-foreground/90">{role.description}</p>
               <div className="grid gap-5 lg:grid-cols-2">
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground">{copy.highlightsLabel}</h4>
+                  <h4 className="text-sm font-normal text-foreground">{copy.highlightsLabel}</h4>
                   <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-muted-foreground">
                     {role.highlights.map((item) => (
                       <li key={item} className="flex gap-2">
-                        <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                        <span className="mt-2 size-1 shrink-0 rounded-full bg-foreground" aria-hidden="true" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground">{copy.requirementsLabel}</h4>
+                  <h4 className="text-sm font-normal text-foreground">{copy.requirementsLabel}</h4>
                   <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-muted-foreground">
                     {role.requirements.map((item) => (
                       <li key={item} className="flex gap-2">
-                        <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                        <span className="mt-2 size-1 shrink-0 rounded-full bg-foreground" aria-hidden="true" />
                         <span>{item}</span>
                       </li>
                     ))}

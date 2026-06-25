@@ -1,0 +1,155 @@
+{
+  "hero": {
+    "headline": ["Beauty essentials,", "crafted with", "purpose."],
+    "subheadline": "The standard your skin deserves",
+    "body": "Formulated in partnership with Filipino experts. Proven in salons and stores nationwide. Made for people who expect more from everyday care.",
+    "ctaLabel": "Explore collections",
+    "ctaHref": "#categories",
+    "backgroundImageKey": "homeHero"
+  },
+  "featuredCategories": {
+    "title": "Shop by collection",
+    "description": "Four curated lines. One uncompromising standard. Find the routine that fits how you live.",
+    "viewCollectionLabel": "View collection",
+    "items": [
+      {
+        "id": "skincare",
+        "name": "Skincare",
+        "tagline": "Glow that lasts beyond the mirror",
+        "description": "Serums, moisturizers, and treatments formulated for real tropical climates.",
+        "imageKey": "categorySkincare",
+        "href": "/shop/skincare",
+        "span": "large"
+      },
+      {
+        "id": "haircare",
+        "name": "Haircare",
+        "tagline": "Salon results, every wash",
+        "description": "Repair, nourish, and protect — from daily care to professional treatment.",
+        "imageKey": "categoryHaircare",
+        "href": "/shop/haircare",
+        "span": "default"
+      },
+      {
+        "id": "bodycare",
+        "name": "Body Care",
+        "tagline": "Skin-first from neck to toe",
+        "description": "Rich textures and clean formulas for all-day comfort.",
+        "imageKey": "categoryBodycare",
+        "href": "/shop/bodycare",
+        "span": "default"
+      },
+      {
+        "id": "men",
+        "name": "Men's Grooming",
+        "tagline": "No fuss. No compromise.",
+        "description": "Straightforward essentials built for modern grooming routines.",
+        "imageKey": "categoryMen",
+        "href": "/shop/men",
+        "span": "wide"
+      }
+    ]
+  },
+  "bestSellers": {
+    "title": "Customer favorites",
+    "description": "The products partners reorder first — and customers come back for.",
+    "viewAllHref": "/shop/skincare",
+    "viewAllLabel": "Request catalog",
+    "items": [
+      {
+        "id": "radiance-serum",
+        "name": "KGOLD Radiance Serum",
+        "line": "Skincare",
+        "description": "Vitamin-infused daily serum for visible luminosity and even tone.",
+        "imageKey": "productSerum",
+        "badge": "No. 1 bestseller"
+      },
+      {
+        "id": "silk-repair",
+        "name": "Silk Repair Shampoo",
+        "line": "Haircare",
+        "description": "Keratin-rich formula that restores softness after just one wash.",
+        "imageKey": "productShampoo",
+        "badge": "Salon pick"
+      },
+      {
+        "id": "velvet-cream",
+        "name": "Velvet Body Cream",
+        "line": "Body Care",
+        "description": "Deep hydration with a lightweight finish — never greasy, always smooth.",
+        "imageKey": "productBodycream",
+        "badge": "Top rated"
+      },
+      {
+        "id": "daily-defense",
+        "name": "Daily Defense SPF 50",
+        "line": "Skincare",
+        "description": "Broad-spectrum protection that layers seamlessly under makeup.",
+        "imageKey": "productSpf",
+        "badge": "New arrival"
+      }
+    ]
+  },
+  "aboutTeaser": {
+    "title": "A brand built on consistency, not hype.",
+    "teaser": "For over 15 years, KGOLD has partnered with formulators and retailers who believe the same thing we do: everyday beauty should never feel like a compromise.",
+    "mission": "We make thoughtfully formulated beauty essentials accessible through reliable partnerships — held to the same standard, every batch, every shelf.",
+    "backgroundImageKey": "aboutHero",
+    "ctaLabel": "Who we are",
+    "ctaHref": "/about"
+  },
+  "qualitySection": {
+    "title": "Held to a higher standard"
+  },
+  "values": [
+    {
+      "title": "Manufacturing standards",
+      "description": "Every batch is traceable. Every facility is vetted. Every release meets our internal benchmark before it ships.",
+      "ctaLabel": "Our process",
+      "ctaHref": "#about"
+    },
+    {
+      "title": "Ingredient integrity",
+      "description": "Transparent labels. Responsible sourcing. No hidden fillers dressed up as innovation.",
+      "ctaLabel": "See our standards",
+      "ctaHref": "#about"
+    },
+    {
+      "title": "Partner accountability",
+      "description": "We grow when our retailers grow — with fair terms, reliable supply, and products that sell themselves.",
+      "ctaLabel": "Partner with us",
+      "ctaHref": "/contact"
+    }
+  ],
+  "faqSection": {
+    "title": "General questions asked by customers.",
+    "description": "Our friendly team is always here to help you with quick, clear, and reliable answers whenever needed.",
+    "ctaLabel": "Contact us",
+    "ctaHref": "/contact"
+  },
+  "faq": [
+    {
+      "question": "Where can I buy KGOLD products?",
+      "answer": "KGOLD is available through 500+ partner locations nationwide — including salons, beauty stores, and select retailers. Contact us to find a store near you."
+    },
+    {
+      "question": "Do you offer wholesale or distribution partnerships?",
+      "answer": "Yes. We work with distributors and retailers who share our quality standards. Email us at hello@kgoldbeauty.com and our team will respond within 2 business days."
+    },
+    {
+      "question": "Are KGOLD products cruelty-free?",
+      "answer": "We do not test finished products on animals and work exclusively with partners who align with our cruelty-free commitments."
+    },
+    {
+      "question": "What makes KGOLD different from other local brands?",
+      "answer": "Consistency. Our formulations are developed with Filipino experts, produced in GMP-aligned facilities, and proven in real retail environments — not just focus groups."
+    }
+  ],
+  "finalCta": {
+    "title": "Ready to bring KGOLD to your shelves?",
+    "description": "Partner with a brand your customers already trust. Reach out to explore wholesale, distribution, or collaboration opportunities.",
+    "primaryLabel": "Get in touch",
+    "secondaryLabel": "Browse collections",
+    "secondaryHref": "/#categories"
+  }
+}

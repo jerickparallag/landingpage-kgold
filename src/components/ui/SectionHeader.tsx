@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { cn } from '../../lib/utils';
+import { cn, sectionDescriptionClass, sectionHeadingClass } from '../../lib/utils';
 
 interface ISectionHeaderProps {
   title: string;
@@ -10,15 +10,17 @@ interface ISectionHeaderProps {
 
 export function SectionHeader({ title, description, action, className }: ISectionHeaderProps) {
   return (
-    <div className={cn('flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between', className)}>
-      <div className="max-w-2xl">
-        <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
-          {title}
-        </h2>
+    <div
+      className={cn(
+        'flex flex-col items-center text-center',
+        action ? 'gap-8 sm:flex-row sm:items-end sm:justify-between sm:text-left' : '',
+        className,
+      )}
+    >
+      <div className={cn('max-w-lg', action ? 'sm:text-left' : 'mx-auto')}>
+        <h2 className={sectionHeadingClass}>{title}</h2>
         {description ? (
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {description}
-          </p>
+          <p className={cn(sectionDescriptionClass, action ? '' : 'mx-auto')}>{description}</p>
         ) : null}
       </div>
       {action ? <div className="shrink-0">{action}</div> : null}

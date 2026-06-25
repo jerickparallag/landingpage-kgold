@@ -1,0 +1,90 @@
+{
+  "subNavParent": { "label": "Careers", "href": "/careers" },
+  "subNav": [
+    { "label": "Culture", "href": "/careers#culture" },
+    { "label": "Open roles", "href": "/careers#open-roles" },
+    { "label": "Internships", "href": "/careers#internships" }
+  ],
+  "hero": {
+    "headline": ["BUILD", "BEAUTY", "WITH", "PURPOSE."],
+    "subheadline": "Join a team that puts quality first — in every formula, partnership, and shelf.",
+    "body": "We are growing across marketing, sales, operations, and product. Explore open roles and internship opportunities below.",
+    "ctaLabel": "View open roles",
+    "ctaHref": "#open-roles",
+    "backgroundImageKey": "careerHero"
+  },
+  "culture": {
+    "title": "Why KGOLD",
+    "items": [
+      {
+        "title": "Meaningful work",
+        "description": "Help shape a Filipino beauty brand trusted in salons and stores nationwide — work that shows up in real products and real partnerships."
+      },
+      {
+        "title": "Room to grow",
+        "description": "Clear paths across functions, mentorship from experienced leaders, and exposure to every stage of the product lifecycle."
+      },
+      {
+        "title": "Standards that matter",
+        "description": "We invest in people the same way we invest in formulations — with consistency, care, and respect for craft."
+      }
+    ]
+  },
+  "jobs": {
+    "title": "Open positions",
+    "description": "Current full-time opportunities across our teams. Search by role, filter by team, and switch between grid or list view.",
+    "searchPlaceholder": "Search roles, teams, or locations",
+    "filterAll": "All teams",
+    "resultsSingular": "role found",
+    "resultsPlural": "roles found",
+    "viewGrid": "Grid view",
+    "viewList": "List view",
+    "responsibilitiesLabel": "What you'll do",
+    "requirementsLabel": "What we're looking for",
+    "viewDetailsLabel": "Learn more",
+    "hideDetailsLabel": "Back",
+    "applyLabel": "Apply",
+    "emptyMessage": "No roles match your search. Try a different keyword or team filter.",
+    "banner": {
+      "imageKey": "categoryMen",
+      "headline": "Grow with a brand built on consistency",
+      "subline": "Full-time roles across marketing, sales, operations, and digital — where quality standards guide every team.",
+      "ctaLabel": "View open roles",
+      "ctaHref": "#open-roles-list"
+    }
+  },
+  "internships": {
+    "title": "Internship program",
+    "description": "Hands-on experience for students and early-career talent. Search by program, filter by team, and switch between grid or list view.",
+    "applyLabel": "Apply for internship",
+    "learnMoreLabel": "Learn more",
+    "hideDetailsLabel": "Back",
+    "highlightsLabel": "What you'll experience",
+    "requirementsLabel": "Who should apply",
+    "resultsSingular": "program found",
+    "resultsPlural": "programs found",
+    "emptyMessage": "No programs match your search. Try a different keyword or team filter.",
+    "generalCta": "Questions about internships?",
+    "generalHref": "mailto:careers@kgoldbeauty.com?subject=Internship%20inquiry",
+    "banner": {
+      "imageKey": "categorySkincare",
+      "headline": "Learn the industry from the inside",
+      "subline": "Structured internships across marketing, product, sales, and operations — real projects, real mentorship.",
+      "ctaLabel": "Explore programs",
+      "ctaHref": "#internship-programs"
+    }
+  },
+  "cta": {
+    "title": "Don't see the right role?",
+    "description": "We welcome general applications from people who share our standards. Tell us how you'd like to contribute.",
+    "primaryLabel": "Send your CV",
+    "primaryHref": "mailto:careers@kgoldbeauty.com?subject=General%20application"
+  },
+  "careersEmail": "careers@kgoldbeauty.com",
+  "listFilters": {
+    "searchPlaceholder": "Search by title, team, or location",
+    "filterAll": "All teams",
+    "viewGrid": "Grid view",
+    "viewList": "List view"
+  }
+}

@@ -23,6 +23,26 @@ interface ICareerListToolbarProps {
   labels: ICareerListToolbarLabels;
 }
 
+function FilterButton({
+  isSelected,
+  onClick,
+  children,
+}: {
+  isSelected: boolean;
+  onClick: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={cn('luxury-nav-link', isSelected ? 'opacity-100' : 'opacity-70')}
+    >
+      {children}
+    </button>
+  );
+}
+
 function ViewToggleButton({
   isActive,
   label,
@@ -87,7 +107,7 @@ export function CareerListToolbar({
             value={searchQuery}
             onChange={(event) => onSearchChange(event.target.value)}
             placeholder={labels.searchPlaceholder}
-            className="h-12 w-full rounded-brand border border-border bg-card py-3 pr-4 pl-11 text-sm text-foreground shadow-[var(--shadow-xs)] outline-none transition placeholder:text-muted-foreground focus:border-primary/50 focus:ring-2 focus:ring-primary/15"
+            className="h-12 w-full rounded-brand border border-border bg-background py-3 pr-4 pl-11 text-sm font-light text-foreground outline-none transition placeholder:text-muted-foreground focus:border-foreground/40"
           />
         </label>
 
@@ -119,33 +139,18 @@ export function CareerListToolbar({
       </div>
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex flex-wrap gap-2">
-          <button
-            type="button"
-            onClick={() => onDepartmentChange(null)}
-            className={cn(
-              'rounded-brand px-4 py-2 text-sm font-medium transition',
-              selectedDepartment === null
-                ? 'bg-foreground text-background'
-                : 'border border-border bg-card text-muted-foreground hover:text-foreground',
-            )}
-          >
+        <div className="flex flex-wrap gap-6">
+          <FilterButton isSelected={selectedDepartment === null} onClick={() => onDepartmentChange(null)}>
             {labels.filterAll}
-          </button>
+          </FilterButton>
           {departments.map((department) => (
-            <button
+            <FilterButton
               key={department}
-              type="button"
+              isSelected={selectedDepartment === department}
               onClick={() => onDepartmentChange(department)}
-              className={cn(
-                'rounded-brand px-4 py-2 text-sm font-medium transition',
-                selectedDepartment === department
-                  ? 'bg-foreground text-background'
-                  : 'border border-border bg-card text-muted-foreground hover:text-foreground',
-              )}
             >
               {department}
-            </button>
+            </FilterButton>
           ))}
         </div>
 

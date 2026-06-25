@@ -4,9 +4,6 @@ import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
 import { cn } from '../../lib/utils';
 import type { IPageSubNavLink, IPageSubNavProps } from './PageSubNav.types';
 
-const SUB_NAV_LINK_CLASS =
-  'inline-flex h-14 shrink-0 items-center text-sm font-normal transition-colors';
-
 function splitHref(href: string) {
   const hashIndex = href.indexOf('#');
   if (hashIndex === -1) {
@@ -22,6 +19,13 @@ function isRouteLink(href: string) {
   return href.startsWith('/');
 }
 
+function subNavLinkClass(isActive: boolean) {
+  return cn(
+    'luxury-nav-link inline-flex shrink-0 items-center',
+    isActive ? 'opacity-100' : 'opacity-70',
+  );
+}
+
 function NavItem({
   link,
   isActive,
@@ -29,12 +33,7 @@ function NavItem({
   link: IPageSubNavLink;
   isActive: boolean;
 }) {
-  const className = cn(
-    SUB_NAV_LINK_CLASS,
-    isActive
-      ? 'border-b-2 border-white text-white'
-      : 'text-white/90 hover:text-white',
-  );
+  const className = subNavLinkClass(isActive);
 
   if (isRouteLink(link.href)) {
     return (
@@ -73,11 +72,13 @@ export function PageSubNav({ parentLink, links }: IPageSubNavProps) {
     return pathname === linkPath;
   };
 
+  const isParentActive = pathname === parentLink.href && !hash && !scrollActiveHash;
+
   return (
     <>
       <nav
         className={cn(
-          'fixed top-14 right-0 left-0 z-40 border-b border-white/10 bg-[#1c1c1c]/75 text-white backdrop-blur-md transition-transform duration-300 ease-out',
+          'fixed top-14 right-0 left-0 z-40 border-b border-border bg-background transition-transform duration-300 ease-out',
           headerVisible ? 'translate-y-0' : '-translate-y-[calc(100%+3.5rem)]',
         )}
         aria-label="Page sections"
@@ -85,18 +86,12 @@ export function PageSubNav({ parentLink, links }: IPageSubNavProps) {
         <div className="page-container">
           <ul className="scrollbar-none -mx-4 flex h-14 items-center gap-8 overflow-x-auto px-4 sm:mx-0 sm:px-0">
             <li className="shrink-0">
-              <Link
-                to={parentLink.href}
-                className={cn(SUB_NAV_LINK_CLASS, 'text-white/90 hover:text-white')}
-              >
+              <Link to={parentLink.href} className={subNavLinkClass(isParentActive)}>
                 {parentLink.label}
               </Link>
             </li>
 
-            <li
-              className="h-4 w-px shrink-0 bg-white/25"
-              aria-hidden="true"
-            />
+            <li className="h-4 w-px shrink-0 bg-border" aria-hidden="true" />
 
             {links.map((link) => (
               <li key={link.href} className="shrink-0">
@@ -106,7 +101,7 @@ export function PageSubNav({ parentLink, links }: IPageSubNavProps) {
           </ul>
         </div>
       </nav>
-      <div className="h-28" aria-hidden="true" />
+      <div className="subnav-offset" aria-hidden="true" />
     </>
   );
 }

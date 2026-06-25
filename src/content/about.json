@@ -1,0 +1,87 @@
+{
+  "subNavParent": { "label": "About", "href": "/about" },
+  "subNav": [
+    { "label": "Company", "href": "/about#company" },
+    { "label": "Mission", "href": "/about#mission" },
+    { "label": "Leadership", "href": "/about#leadership" }
+  ],
+  "hero": {
+    "headline": ["FILIPINO BEAUTY", "BUILT WITH", "PURPOSE"],
+    "subheadline": "Beauty essentials, built with purpose.",
+    "body": "A homegrown Filipino brand — from Isabela to Marikina — creating wellness that works at a price that respects every kababayan.",
+    "ctaLabel": "Meet the company",
+    "ctaHref": "#company",
+    "backgroundImageKey": "aboutHero"
+  },
+  "company": {
+    "displayTitle": "About us",
+    "whoTitle": "Who we are",
+    "whoBody": "We are headquartered in Marikina City and Isabela, selling directly to Filipino consumers through TikTok Shop, Shopee, Lazada, and our own direct channels — a homegrown beauty brand that competes with the best.",
+    "purposeTitle": "Our purpose",
+    "purposeBody": "We unlock innovative potential in Filipino beauty — empowering our workforce, resellers, and communities through products made with purpose, at a price that respects every kababayan.",
+    "whyTitle": "Why choose KGOLD?",
+    "whyBody": "Our team across marketing, sales, operations, and product delivers real results for customers, builds livelihoods for our people, and honors every community we serve — with the same consistency behind every batch, every shelf, and every partnership."
+  },
+  "mission": {
+    "storyTitle": "Our story",
+    "storyLead": "We started in a barrio in Isabela — built through hard work, faith, and refusing to quit.",
+    "story": "Today we create Filipino-made beauty and wellness products that work — for customers who deserve more, and for people who believe excellence is not optional. Every formula, every partnership, and every shelf reflects the same standard we held from day one.",
+    "vision": {
+      "title": "Our vision",
+      "body": "To transform 1 million Filipino lives by 2030 — empowering our workforce, resellers, and communities through products made with purpose."
+    },
+    "missionStatement": {
+      "title": "Our mission",
+      "body": "We create Filipino-made beauty and wellness products that work — building livelihoods for our workforce and resellers, delivering real results for our customers, and honoring every community we serve."
+    },
+    "valuesTitle": "Our core values",
+    "valuesTagline": "Five principles that shape how we treat people, build products, and show up every day.",
+    "valuesLearnMore": "Read more",
+    "valuesBack": "Back",
+    "values": [
+      {
+        "title": "Malasakit first",
+        "subtitle": "How we treat each other",
+        "description": "We treat every kababayan — employee, reseller, customer — like family. Their wins are our wins.",
+        "imageKey": "core1"
+      },
+      {
+        "title": "We rise together",
+        "subtitle": "How we move as one team",
+        "description": "No one climbs alone at K Gold. When one of us wins, we lift the next. When one of us falls, we reach back.",
+        "imageKey": "core2"
+      },
+      {
+        "title": "Ownership",
+        "subtitle": "How we work",
+        "description": "We own the outcome, not just the task. No one at K Gold says 'that's not my job.'",
+        "imageKey": "core3"
+      },
+      {
+        "title": "Excellence with humility",
+        "subtitle": "How we build",
+        "description": "We build products and services worthy of our name — and we stay grateful for the chance to do this work.",
+        "imageKey": "core4"
+      },
+      {
+        "title": "Grit ng Pinoy",
+        "subtitle": "How we endure",
+        "description": "We started in a barrio in Isabela. We built this through hard work, faith, and refusing to quit. That is the standard.",
+        "imageKey": "core5"
+      }
+    ]
+  },
+  "leadership": {
+    "title": "Leadership",
+    "imageKey": "aboutOwner",
+    "quote": "We are ruthless about our standards because we care deeply about our people and our customers. Excellence is not optional here — it is our competitive advantage.",
+    "name": "Leanne Domenden"
+  },
+  "careers": {
+    "title": "Build beauty with purpose.",
+    "description": "We grow when our people grow. Explore full-time roles and internship programs across marketing, sales, operations, and product.",
+    "backgroundImageKey": "careerHero",
+    "ctaLabel": "View careers",
+    "ctaHref": "/careers"
+  }
+}

@@ -8,7 +8,7 @@ export function BestSellers() {
   const { ref, isVisible } = useInView<HTMLDivElement>();
 
   return (
-    <section id="bestsellers" className="bg-background section-padding">
+    <section id="bestsellers" className="scroll-section bg-background section-padding">
       <div className="page-container">
         <SectionHeader
           title={BEST_SELLERS.title}
@@ -16,10 +16,9 @@ export function BestSellers() {
           action={
             <a
               href={BEST_SELLERS.viewAllHref}
-              className="inline-flex items-center gap-2 rounded-brand border border-border bg-background px-5 py-2.5 text-sm font-medium text-foreground transition hover:border-primary/40 hover:text-primary"
+              className="luxury-cta-outline border-foreground text-foreground"
             >
               {BEST_SELLERS.viewAllLabel}
-              <span aria-hidden="true">→</span>
             </a>
           }
         />
@@ -27,7 +26,7 @@ export function BestSellers() {
         <div
           ref={ref}
           className={cn(
-            'reveal mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4',
+            'reveal section-stack section-card-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
             isVisible && 'reveal-visible',
           )}
         >

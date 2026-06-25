@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { IS_SINGLE_FILE } from '../../lib/isSingleFile';
-
-const SCROLL_KEY = 'kgold-scroll-to';
+import { HOME_SCROLL_KEY, scrollToHomeSection } from '../../lib/homeNavigation';
 
 export function parseAppLink(href: string): { path: string | null; sectionId: string | null } {
   if (href.startsWith('/#')) {
@@ -25,7 +24,7 @@ export function parseAppLink(href: string): { path: string | null; sectionId: st
 }
 
 function scrollToSection(sectionId: string) {
-  document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  scrollToHomeSection(sectionId);
 }
 
 /** Enables file:// usage: HashRouter paths + scroll targets without URL hash conflicts. */
@@ -36,10 +35,10 @@ export function SingleFileNavigation() {
   useEffect(() => {
     if (!IS_SINGLE_FILE) return;
 
-    const pending = sessionStorage.getItem(SCROLL_KEY);
+    const pending = sessionStorage.getItem(HOME_SCROLL_KEY);
     if (!pending) return;
 
-    sessionStorage.removeItem(SCROLL_KEY);
+    sessionStorage.removeItem(HOME_SCROLL_KEY);
     const timer = window.setTimeout(() => scrollToSection(pending), 80);
     return () => window.clearTimeout(timer);
   }, [pathname]);
@@ -66,7 +65,7 @@ export function SingleFileNavigation() {
       const targetPath = path ?? pathname;
 
       if (targetPath !== pathname) {
-        if (sectionId) sessionStorage.setItem(SCROLL_KEY, sectionId);
+        if (sectionId) sessionStorage.setItem(HOME_SCROLL_KEY, sectionId);
         navigate(targetPath);
         return;
       }

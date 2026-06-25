@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { FEATURED_CATEGORIES } from '../../constants/content';
 import { SectionHeader } from '../ui/SectionHeader';
 import { useInView } from '../../hooks/useInView';
@@ -13,7 +14,7 @@ export function FeaturedCategories() {
   const { ref, isVisible } = useInView<HTMLDivElement>();
 
   return (
-    <section id="categories" className="bg-background section-padding">
+    <section id="categories" className="scroll-section bg-background section-padding">
       <div className="page-container">
         <SectionHeader
           title={FEATURED_CATEGORIES.title}
@@ -23,16 +24,16 @@ export function FeaturedCategories() {
         <div
           ref={ref}
           className={cn(
-            'reveal mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:grid-rows-2 lg:gap-4',
+            'reveal section-stack section-card-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2',
             isVisible && 'reveal-visible',
           )}
         >
           {FEATURED_CATEGORIES.items.map((category) => (
-            <a
+            <Link
               key={category.id}
-              href={category.href}
+              to={category.href}
               className={cn(
-                'group relative min-h-[280px] overflow-hidden rounded-brand bg-surface sm:min-h-[320px]',
+                'group relative min-h-[240px] overflow-hidden rounded-brand bg-muted sm:min-h-[240px]',
                 spanClass[category.span],
               )}
             >
@@ -40,26 +41,21 @@ export function FeaturedCategories() {
                 src={category.image}
                 alt={category.name}
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface/95 via-surface/40 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-r from-surface/30 to-transparent opacity-0 transition group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
 
-              <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-                <p className="text-[11px] font-medium tracking-[0.2em] text-primary uppercase">
-                  {category.tagline}
-                </p>
-                <h3 className="mt-2 text-2xl font-semibold tracking-tight text-surface-foreground sm:text-3xl">
+              <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+                <p className="luxury-eyebrow text-white/70">{category.tagline}</p>
+                <h3 className="mt-2 text-base font-normal tracking-wide text-white sm:text-lg">
                   {category.name}
                 </h3>
-                <p className="mt-2 max-w-sm text-sm leading-relaxed text-surface-foreground/65 transition group-hover:text-surface-foreground/85">
-                  {category.description}
-                </p>
-                <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-surface-foreground opacity-0 transition group-hover:opacity-100">
-                  View collection <span aria-hidden="true">→</span>
+                <span className="mt-3 inline-block relative text-[10px] font-normal tracking-[0.2em] text-white/80 uppercase">
+                  {FEATURED_CATEGORIES.viewCollectionLabel}
+                  <span className='absolute left-0 bottom-[-2px] h-[1px] bg-current w-0 transition-all duration-300 ease-out group-hover:w-full' />
                 </span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

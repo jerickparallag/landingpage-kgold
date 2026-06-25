@@ -12,16 +12,15 @@ type IButtonProps = {
 
 const variants: Record<TButtonVariant, string> = {
   primary:
-    'bg-primary text-primary-foreground hover:bg-primary-hover focus-visible:ring-primary/40 disabled:bg-primary/50',
+    'bg-foreground text-background hover:bg-foreground/85 focus-visible:ring-foreground/30 disabled:bg-foreground/50',
   secondary:
-    'border border-border bg-background text-foreground hover:bg-muted focus-visible:ring-primary/20',
-  ghost:
-    'text-foreground hover:bg-muted focus-visible:ring-primary/20',
-  link: 'text-primary underline-offset-4 hover:underline focus-visible:ring-primary/20',
+    'border border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background focus-visible:ring-foreground/20',
+  ghost: 'text-foreground hover:bg-muted focus-visible:ring-foreground/20',
+  link: 'text-foreground underline-offset-4 hover:underline focus-visible:ring-foreground/20',
 };
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-brand text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-60';
+  'inline-flex items-center justify-center gap-2 rounded-brand text-[10px] font-normal tracking-[0.22em] uppercase transition focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-60';
 
 export function Button({
   variant = 'primary',
@@ -30,7 +29,7 @@ export function Button({
   as: Comp = 'button',
   ...props
 }: IButtonProps) {
-  const classes = cn(base, variants[variant], 'h-10 px-5', className);
+  const classes = cn(base, variants[variant], 'h-10 px-6', className);
 
   return (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Polymorphic component requires this

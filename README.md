@@ -24,13 +24,33 @@ Static output is in `dist/` — deploy to Vercel, Cloudflare Pages, or Netlify.
 
 | Path | Purpose |
 |------|---------|
-| `src/constants/content.ts` | All marketing copy — edit here without touching components |
+| `src/content/*.json` | **Marketing copy** — edit JSON without touching React code |
+| `src/content/careers/` | Job & internship listings (API-ready JSON) |
+| `src/constants/content.ts` | Re-exports resolved content for components |
 | `src/constants/brand.constants.ts` | Logo path & sizing tokens (shared pattern with questionnaire) |
 | `src/index.css` | KGOLD brand design tokens (portable to parcel-proof) |
 | `src/components/ui/` | Reusable primitives: `Button`, `Card`, `SectionHeading` |
 | `src/components/brand/AppBrand.tsx` | Shared logo + wordmark component |
 | `src/hooks/useTheme.tsx` | Light/dark theme with `localStorage` persistence |
-| `src/lib/careers.ts` | Future careers API stub |
+| `src/lib/careers.ts` | Careers fetch, filters, and API normalization |
+
+## Content updates (non-technical editors)
+
+All visible copy lives in **`src/content/`** as JSON files:
+
+| File | What to edit |
+|------|----------------|
+| `site.json` | Site name, nav labels, footer links |
+| `home.json` | Homepage hero, categories, bestsellers, FAQ, CTAs |
+| `about.json` | About page copy |
+| `contact.json` | Contact page copy |
+| `careers-page.json` | Careers page labels & section text |
+| `careers/jobs.json` | Open job listings |
+| `careers/internships.json` | Internship programs |
+
+Use `"imageKey"` for photos — pick from keys defined in `src/assets/images.ts` (e.g. `"heroBg"`, `"categorySkincare"`, `"jobTelesales"`). Do not paste file paths.
+
+For jobs/internships, set `"applyUrl"` to the email or application link.
 
 ## Reusability (parcel-proof / questionnaire)
 
@@ -45,15 +65,17 @@ These files follow the same conventions as `questionnaire/frontend` and can be c
 
 ## Content updates
 
-Replace placeholder copy in `src/constants/content.ts`. Add real photography to `public/` and update section components when assets are ready.
+Edit the JSON files in `src/content/` — see table above. Run `npm run dev` to preview changes.
 
 ## Environment
 
-Copy `.env.example` to `.env` when wiring the future careers endpoint:
+Copy `.env.example` to `.env` when wiring the careers API:
 
 ```
-VITE_CAREERS_API_URL=
+VITE_CAREERS_API_URL=https://your-api.example.com/careers
 ```
+
+The API should return JSON matching `src/content/careers/jobs.json` + `internships.json` shape (`jobs[]`, `internships[]`, optional `updatedAt`). When unset, local JSON files are used.
 
 ## SEO
 

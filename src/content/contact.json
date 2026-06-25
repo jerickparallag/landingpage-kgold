@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "headline": ["GET IN", "TOUCH", "WITH US"],
+    "subheadline": "We'd love to hear from you.",
+    "body": "Reach out for inquiries about sales, partnerships, careers, or anything else.",
+    "ctaLabel": "Email us",
+    "ctaHref": "mailto:hello@kgoldbeauty.com",
+    "backgroundImageKey": "heroBg"
+  },
+  "inquiries": {
+    "title": "Contact us",
+    "items": [
+      {
+        "title": "Sales inquiries",
+        "linkLabel": "Email our sales team",
+        "href": "mailto:hello@kgoldbeauty.com"
+      },
+      {
+        "title": "Customer support",
+        "linkLabel": "Get help with your order",
+        "href": "mailto:hello@kgoldbeauty.com"
+      },
+      {
+        "title": "Partner requests",
+        "linkLabel": "Explore partnership options",
+        "href": "mailto:hello@kgoldbeauty.com"
+      },
+      {
+        "title": "Press and media",
+        "linkLabel": "Media inquiries",
+        "href": "mailto:hello@kgoldbeauty.com"
+      },
+      {
+        "title": "General inquiries",
+        "linkLabel": "hello@kgoldbeauty.com",
+        "href": "mailto:hello@kgoldbeauty.com"
+      },
+      {
+        "title": "Career opportunities",
+        "linkLabel": "See open roles",
+        "href": "/careers"
+      }
+    ]
+  },
+  "social": {
+    "title": "Follow us",
+    "items": [
+      { "title": "Facebook", "linkLabel": "Facebook", "href": "#" },
+      { "title": "Instagram", "linkLabel": "Instagram", "href": "#" },
+      { "title": "LinkedIn", "linkLabel": "LinkedIn", "href": "#" },
+      { "title": "TikTok", "linkLabel": "TikTok", "href": "#" },
+      { "title": "Messenger", "linkLabel": "Messenger", "href": "#" }
+    ]
+  },
+  "addresses": {
+    "title": "Our address",
+    "locations": [
+      {
+        "name": "Marikina City",
+        "lines": [
+          "K Gold Beauty Essentials Corporation",
+          "Marikina City, Metro Manila",
+          "Philippines"
+        ]
+      },
+      {
+        "name": "Isabela",
+        "lines": ["K Gold Beauty Essentials Corporation", "Isabela, Philippines"]
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to bring KGOLD to your shelves?",
+    "description": "Partner with a brand your customers already trust. Reach out to explore wholesale, distribution, or collaboration opportunities.",
+    "primaryLabel": "Get in touch",
+    "primaryHref": "mailto:hello@kgoldbeauty.com",
+    "secondaryLabel": "Browse collections",
+    "secondaryHref": "/#categories"
+  }
+}

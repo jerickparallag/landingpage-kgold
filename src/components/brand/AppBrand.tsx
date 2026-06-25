@@ -9,10 +9,6 @@ interface IAppBrandProps {
   subtitle?: string;
 }
 
-/**
- * Shared KGOLD product mark — copy to parcel-proof / questionnaire as-is.
- * Uses brand.constants for logo path and sizing tokens.
- */
 export function AppBrand({
   className,
   logoClassName,
@@ -26,17 +22,17 @@ export function AppBrand({
         src={BRAND_LOGO_SRC}
         alt="KGOLD Beauty Essentials"
         className={cn(
-          'shrink-0 rounded-full border border-border bg-card object-cover object-[center_28%] shadow-[var(--shadow-xs)]',
+          'shrink-0 rounded-full border border-border bg-card object-cover object-[center_28%]',
           logoClassName ?? 'size-10',
         )}
       />
       {showLabel ? (
         <div className="min-w-0">
-          <span className="block truncate text-sm font-semibold tracking-tight text-foreground">
+          <span className="block truncate text-[11px] font-normal tracking-[0.22em] text-foreground uppercase">
             {label}
           </span>
           {subtitle ? (
-            <span className="block truncate text-xs text-muted-foreground">{subtitle}</span>
+            <span className="block truncate text-xs font-light text-muted-foreground">{subtitle}</span>
           ) : null}
         </div>
       ) : null}

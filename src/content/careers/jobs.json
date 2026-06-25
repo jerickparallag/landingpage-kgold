@@ -1,0 +1,53 @@
+{
+  "updatedAt": "2026-06-23",
+  "jobs": [
+    {
+      "id": "telesales",
+      "title": "Telesales",
+      "department": "Sales",
+      "location": "Metro Manila · On-site",
+      "type": "Full-time",
+      "summary": "Convert leads and nurture customer relationships over the phone — representing KGOLD with clarity, warmth, and confidence on every call.",
+      "description": "You'll be the voice of KGOLD on outbound and inbound calls — introducing our products, answering questions, and guiding customers from interest to purchase. This role suits someone who thrives in conversation and takes pride in hitting targets.",
+      "responsibilities": [
+        "Make outbound calls to leads and follow up on inbound inquiries across assigned campaigns.",
+        "Present KGOLD products clearly, handle objections, and close sales over the phone.",
+        "Update CRM records, call logs, and daily activity reports with accurate notes.",
+        "Coordinate with operations on order details, promotions, and fulfillment follow-ups.",
+        "Share customer feedback and recurring objections to help refine scripts and offers."
+      ],
+      "requirements": [
+        "1+ years in telesales, call center sales, or phone-based customer acquisition.",
+        "Clear Filipino and English communication with a professional, persuasive tone.",
+        "Comfortable working with daily call quotas and performance targets.",
+        "Interest in beauty and personal care products is a plus."
+      ],
+      "imageKey": "jobTelesales",
+      "applyUrl": "mailto:careers@kgoldbeauty.com?subject=Application%3A%20Telesales"
+    },
+    {
+      "id": "tiktok-live-sellers",
+      "title": "TikTok Live Sellers",
+      "department": "Digital",
+      "location": "Metro Manila · Hybrid",
+      "type": "Full-time",
+      "summary": "Host energetic TikTok Live sessions that showcase KGOLD products, engage viewers in real time, and drive sales through live commerce.",
+      "description": "You'll bring KGOLD to life on camera — demonstrating products, answering live questions, and creating the kind of sessions people stay for. This role is for someone who is natural on TikTok, comfortable selling live, and excited to grow with a beauty brand.",
+      "responsibilities": [
+        "Host scheduled TikTok Live selling sessions with clear product demos and strong viewer engagement.",
+        "Follow live scripts and promotional calendars while keeping delivery natural and on-brand.",
+        "Respond to comments and questions in real time to build trust and close in-session sales.",
+        "Coordinate with the digital team on bundles, flash offers, and post-live order follow-ups.",
+        "Track session performance and share insights to improve conversion and repeat viewership."
+      ],
+      "requirements": [
+        "Experience hosting TikTok Live, live selling, or short-form video commerce.",
+        "Confident on camera with an engaging, authentic on-air presence.",
+        "Strong product storytelling skills and comfort discussing beauty routines.",
+        "Reliable internet, basic lighting setup, and availability for evening or peak live slots."
+      ],
+      "imageKey": "jobTiktokLiveSellers",
+      "applyUrl": "mailto:careers@kgoldbeauty.com?subject=Application%3A%20TikTok%20Live%20Sellers"
+    }
+  ]
+}

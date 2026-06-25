@@ -1,0 +1,84 @@
+{
+  "collections": [
+    {
+      "slug": "skincare",
+      "name": "Skincare",
+      "tagline": "Glow that lasts beyond the mirror",
+      "description": "Serums, moisturizers, and treatments formulated for real tropical climates — daily care that holds up in heat, humidity, and long days.",
+      "imageKey": "categorySkincare",
+      "iconKey": "skincare",
+      "products": [
+        {
+          "id": "radiance-serum",
+          "name": "KGOLD Radiance Serum",
+          "line": "Skincare",
+          "description": "Vitamin-infused daily serum for visible luminosity and even tone.",
+          "imageKey": "productSerum",
+          "badge": "No. 1 bestseller"
+        },
+        {
+          "id": "daily-defense",
+          "name": "Daily Defense SPF 50",
+          "line": "Skincare",
+          "description": "Broad-spectrum protection that layers seamlessly under makeup.",
+          "imageKey": "productSpf",
+          "badge": "New arrival"
+        }
+      ]
+    },
+    {
+      "slug": "haircare",
+      "name": "Haircare",
+      "tagline": "Salon results, every wash",
+      "description": "Repair, nourish, and protect — from daily care to professional treatment. Built for stylists who reorder first and customers who come back.",
+      "imageKey": "categoryHaircare",
+      "iconKey": "haircare",
+      "products": [
+        {
+          "id": "silk-repair",
+          "name": "Silk Repair Shampoo",
+          "line": "Haircare",
+          "description": "Keratin-rich formula that restores softness after just one wash.",
+          "imageKey": "productShampoo",
+          "badge": "Salon pick"
+        }
+      ]
+    },
+    {
+      "slug": "bodycare",
+      "name": "Body Care",
+      "tagline": "Skin-first from neck to toe",
+      "description": "Rich textures and clean formulas for all-day comfort — never greasy, always smooth.",
+      "imageKey": "categoryBodycare",
+      "iconKey": "bodycare",
+      "products": [
+        {
+          "id": "velvet-cream",
+          "name": "Velvet Body Cream",
+          "line": "Body Care",
+          "description": "Deep hydration with a lightweight finish — never greasy, always smooth.",
+          "imageKey": "productBodycream",
+          "badge": "Top rated"
+        }
+      ]
+    },
+    {
+      "slug": "men",
+      "name": "Men's Grooming",
+      "tagline": "No fuss. No compromise.",
+      "description": "Straightforward essentials built for modern grooming routines — the same KGOLD standard, without the extra steps.",
+      "imageKey": "categoryMen",
+      "iconKey": "men",
+      "products": [
+        {
+          "id": "daily-defense-men",
+          "name": "Daily Defense SPF 50",
+          "line": "Men's Grooming",
+          "description": "Broad-spectrum protection with a clean finish — one step, every day.",
+          "imageKey": "productSpf",
+          "badge": "Essential"
+        }
+      ]
+    }
+  ]
+}

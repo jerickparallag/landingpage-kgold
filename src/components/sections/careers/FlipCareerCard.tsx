@@ -45,7 +45,7 @@ export function FlipToggle({ isFlipped, onToggle, learnMoreLabel, backLabel }: I
     <button
       type="button"
       onClick={onToggle}
-      className="text-sm font-medium text-primary transition hover:text-primary-hover"
+      className="luxury-nav-link opacity-70 hover:opacity-100"
     >
       {isFlipped ? backLabel : learnMoreLabel}
     </button>

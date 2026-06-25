@@ -1,45 +1,32 @@
 import { CONTACT_PAGE } from '../../../constants/content';
+import { SectionHeader } from '../../ui/SectionHeader';
 import { useInView } from '../../../hooks/useInView';
-import { cn, sectionHeadingClass } from '../../../lib/utils';
+import { cn, sectionDescriptionClass, subsectionHeadingClass } from '../../../lib/utils';
 
 export function ContactAddresses() {
   const { ref, isVisible } = useInView<HTMLDivElement>();
   const { addresses } = CONTACT_PAGE;
 
   return (
-    <section className="bg-muted/30 section-padding dark:bg-muted/15">
+    <section className="contact-section-last">
       <div className="page-container">
         <div ref={ref} className={cn('reveal', isVisible && 'reveal-visible')}>
-          <h2 className={sectionHeadingClass}>{addresses.title}</h2>
+          <SectionHeader title={addresses.title} />
 
-          <div className="mt-12 grid items-start gap-10 lg:mt-16 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-5">
-              <div className="overflow-hidden rounded-brand">
-                <div className="aspect-4/3">
-                  <img
-                    src={addresses.image}
-                    alt=""
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+          <div className="section-stack mx-auto flex w-full max-w-3xl flex-wrap justify-center gap-x-12 gap-y-10">
+            {addresses.locations.map((location) => (
+              <div
+                key={location.name}
+                className="flex w-[min(100%,14rem)] flex-col items-center text-center sm:w-[calc(50%-1.5rem)]"
+              >
+                <h3 className={subsectionHeadingClass}>{location.name}</h3>
+                <address className={cn(sectionDescriptionClass, 'mt-4 not-italic')}>
+                  {location.lines.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </address>
               </div>
-            </div>
-
-            <div className="space-y-10 lg:col-span-7 lg:space-y-12">
-              {addresses.locations.map((location) => (
-                <div key={location.name}>
-                  <h3 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-                    {location.name}
-                  </h3>
-                  <address className="mt-4 space-y-1 text-base leading-relaxed text-muted-foreground not-italic sm:text-lg">
-                    {location.lines.map((line) => (
-                      <p key={line}>{line}</p>
-                    ))}
-                  </address>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>

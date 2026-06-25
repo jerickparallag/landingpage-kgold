@@ -25,7 +25,7 @@ export function JobCard({ job, isFlipped, onToggle }: IJobCardProps) {
               <span className="mx-1.5 font-normal normal-case">·</span>
               {job.type}
             </p>
-            <h3 className="mt-2 text-xl font-semibold tracking-tight text-foreground">{job.title}</h3>
+            <h3 className="mt-2 text-xl font-normal tracking-tight text-foreground">{job.title}</h3>
             <p className="mt-1 text-sm text-muted-foreground">{job.location}</p>
             <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
               {job.summary}
@@ -46,26 +46,26 @@ export function JobCard({ job, isFlipped, onToggle }: IJobCardProps) {
           <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
             {job.department}
           </p>
-          <h3 className="mt-2 text-lg font-semibold tracking-tight text-foreground">{job.title}</h3>
+          <h3 className="mt-2 text-lg font-normal tracking-tight text-foreground">{job.title}</h3>
           <div className="scrollbar-thin mt-4 flex-1 space-y-4 overflow-y-auto pr-1">
             <p className="text-sm leading-relaxed text-foreground/90">{job.description}</p>
             <div>
-              <h4 className="text-sm font-semibold text-foreground">{copy.responsibilitiesLabel}</h4>
+              <h4 className="text-sm font-normal text-foreground">{copy.responsibilitiesLabel}</h4>
               <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-muted-foreground">
                 {job.responsibilities.map((item) => (
                   <li key={item} className="flex gap-2">
-                    <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span className="mt-2 size-1 shrink-0 rounded-full bg-foreground" aria-hidden="true" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-foreground">{copy.requirementsLabel}</h4>
+              <h4 className="text-sm font-normal text-foreground">{copy.requirementsLabel}</h4>
               <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-muted-foreground">
                 {job.requirements.map((item) => (
                   <li key={item} className="flex gap-2">
-                    <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span className="mt-2 size-1 shrink-0 rounded-full bg-foreground" aria-hidden="true" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -116,14 +116,14 @@ export function JobListRow({ job, isExpanded, onToggle }: IJobListRowProps) {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="min-w-0">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-brand bg-primary-muted px-2.5 py-1 text-[10px] font-semibold tracking-[0.12em] text-accent-foreground uppercase">
+                <span className="rounded-brand bg-muted px-2.5 py-1 text-[10px] font-normal tracking-[0.12em] text-foreground uppercase">
                   {job.department}
                 </span>
                 <span className="rounded-brand border border-border px-2.5 py-1 text-xs font-medium text-foreground">
                   {job.type}
                 </span>
               </div>
-              <h3 className="mt-3 text-xl font-semibold tracking-tight text-foreground">{job.title}</h3>
+              <h3 className="mt-3 text-xl font-normal tracking-tight text-foreground">{job.title}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{job.location}</p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{job.summary}</p>
             </div>
@@ -132,7 +132,7 @@ export function JobListRow({ job, isExpanded, onToggle }: IJobListRowProps) {
               <button
                 type="button"
                 onClick={onToggle}
-                className="text-sm font-medium text-primary transition hover:text-primary-hover"
+                className="luxury-nav-link opacity-70 hover:opacity-100"
               >
                 {isExpanded ? copy.hideDetailsLabel : copy.viewDetailsLabel}
               </button>
@@ -147,25 +147,25 @@ export function JobListRow({ job, isExpanded, onToggle }: IJobListRowProps) {
 
           {isExpanded ? (
             <div className="mt-6 space-y-5 border-t border-border pt-6">
-              <p className="text-sm leading-relaxed text-foreground/90">{job.description}</p>
+              <p className="text-[15px] font-light leading-relaxed text-muted-foreground">{job.description}</p>
               <div className="grid gap-5 lg:grid-cols-2">
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground">{copy.responsibilitiesLabel}</h4>
-                  <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-muted-foreground">
+                  <h4 className="text-sm font-medium text-foreground">{copy.responsibilitiesLabel}</h4>
+                  <ul className="mt-2 space-y-1.5 text-[15px] font-light leading-relaxed text-muted-foreground">
                     {job.responsibilities.map((item) => (
                       <li key={item} className="flex gap-2">
-                        <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                        <span className="mt-2 size-1 shrink-0 rounded-full bg-foreground" aria-hidden="true" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground">{copy.requirementsLabel}</h4>
-                  <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-muted-foreground">
+                  <h4 className="text-sm font-medium text-foreground">{copy.requirementsLabel}</h4>
+                  <ul className="mt-2 space-y-1.5 text-[15px] font-light leading-relaxed text-muted-foreground">
                     {job.requirements.map((item) => (
                       <li key={item} className="flex gap-2">
-                        <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                        <span className="mt-2 size-1 shrink-0 rounded-full bg-foreground" aria-hidden="true" />
                         <span>{item}</span>
                       </li>
                     ))}

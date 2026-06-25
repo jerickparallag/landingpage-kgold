@@ -1,0 +1,143 @@
+{
+  "updatedAt": "2026-06-23",
+  "internships": [
+    {
+      "id": "marketing-intern",
+      "title": "Marketing Intern",
+      "department": "Marketing",
+      "location": "Makati City · Hybrid",
+      "duration": "3–6 months",
+      "summary": "Learn how a beauty brand plans campaigns, creates content, and activates retail partners in the real world.",
+      "description": "Work alongside our marketing team on live projects — from social content and campaign support to partner kits and launch materials. You'll leave with portfolio-ready work and a clear view of brand marketing in beauty.",
+      "highlights": [
+        "Support social content planning and asset coordination",
+        "Assist with retail and salon activation materials",
+        "Join campaign briefs and weekly team reviews",
+        "Build a portfolio of real brand work"
+      ],
+      "requirements": [
+        "Currently enrolled in marketing, communications, business, or related program",
+        "Strong writing skills and attention to detail",
+        "Available at least 3 days per week",
+        "Passion for beauty and Filipino consumer brands"
+      ],
+      "imageKey": "categorySkincare",
+      "applyUrl": "mailto:careers@kgoldbeauty.com?subject=Application%3A%20Marketing%20Intern"
+    },
+    {
+      "id": "product-development-intern",
+      "title": "Product Development Intern",
+      "department": "R&D",
+      "location": "Laguna · On-site",
+      "duration": "4–6 months",
+      "summary": "Get hands-on exposure to formulation reviews, packaging checks, and quality documentation in beauty product development.",
+      "description": "You'll support our product team as they bring new SKUs from concept to shelf — observing how quality, compliance, and consumer needs shape every decision along the way.",
+      "highlights": [
+        "Assist with formulation and packaging documentation",
+        "Join product review meetings and supplier coordination",
+        "Learn batch traceability and release checklists",
+        "Exposure to GMP-aligned quality workflows"
+      ],
+      "requirements": [
+        "Studying chemistry, pharmacy, cosmetic science, or related field",
+        "Curious, meticulous, and comfortable in a lab or manufacturing environment",
+        "Available for on-site work in Laguna",
+        "Interest in product integrity and responsible formulation"
+      ],
+      "imageKey": "productShampoo",
+      "applyUrl": "mailto:careers@kgoldbeauty.com?subject=Application%3A%20Product%20Development%20Intern"
+    },
+    {
+      "id": "sales-intern",
+      "title": "Sales & Distribution Intern",
+      "department": "Sales",
+      "location": "Metro Manila · On-site",
+      "duration": "3–5 months",
+      "summary": "Shadow field sales and learn how KGOLD builds partnerships with salons, retailers, and distributors across the country.",
+      "description": "You'll join account visits, assist with partner onboarding materials, and see how a beauty brand grows shelf presence — from pitch to replenishment.",
+      "highlights": [
+        "Join field visits and partner training sessions",
+        "Help prepare sales kits and merchandising guides",
+        "Learn pipeline tracking and territory planning basics",
+        "Exposure to salon, pharmacy, and trade channels"
+      ],
+      "requirements": [
+        "Enrolled in business, marketing, or related program",
+        "Comfortable communicating with external partners",
+        "Willing to travel within Metro Manila",
+        "Interest in sales and the Philippine beauty trade"
+      ],
+      "imageKey": "categoryHaircare",
+      "applyUrl": "mailto:careers@kgoldbeauty.com?subject=Application%3A%20Sales%20%26%20Distribution%20Intern"
+    },
+    {
+      "id": "operations-intern",
+      "title": "Operations Intern",
+      "department": "Operations",
+      "location": "Laguna · Hybrid",
+      "duration": "4–6 months",
+      "summary": "Support supply coordination, inventory planning, and fulfillment workflows that keep KGOLD products moving reliably.",
+      "description": "Work with our operations team on day-to-day logistics — learning how quality standards extend beyond the lab into warehousing, dispatch, and partner delivery.",
+      "highlights": [
+        "Assist with inventory reports and stock movement logs",
+        "Support order fulfillment and dispatch coordination",
+        "Join operations reviews and process improvement discussions",
+        "Learn traceability practices across the supply chain"
+      ],
+      "requirements": [
+        "Studying business, industrial engineering, supply chain, or related field",
+        "Strong organizational skills and Excel proficiency",
+        "Detail-oriented with a process-minded mindset",
+        "Available for hybrid work in Laguna and remote days"
+      ],
+      "imageKey": "productBodycream",
+      "applyUrl": "mailto:careers@kgoldbeauty.com?subject=Application%3A%20Operations%20Intern"
+    },
+    {
+      "id": "ecommerce-intern",
+      "title": "E-Commerce Intern",
+      "department": "Digital",
+      "location": "Remote · Philippines",
+      "duration": "3–5 months",
+      "summary": "Support online storefronts, product listings, and digital campaigns across KGOLD's e-commerce channels.",
+      "description": "You'll work with the digital team to keep product pages accurate, assist with promotional calendars, and learn how a beauty brand manages its online shelf presence day to day.",
+      "highlights": [
+        "Update product content, pricing, and assets on marketplaces",
+        "Assist with campaign banners and promotional scheduling",
+        "Track basic channel performance and listing health",
+        "Exposure to Shopee, Lazada, and owned digital channels"
+      ],
+      "requirements": [
+        "Enrolled in marketing, business, IT, or related program",
+        "Comfortable with spreadsheets and detail-oriented work",
+        "Interest in e-commerce and digital merchandising",
+        "Reliable internet and available at least 3 days per week"
+      ],
+      "imageKey": "productSpf",
+      "applyUrl": "mailto:careers@kgoldbeauty.com?subject=Application%3A%20E-Commerce%20Intern"
+    },
+    {
+      "id": "quality-assurance-intern",
+      "title": "Quality Assurance Intern",
+      "department": "Operations",
+      "location": "Laguna · On-site",
+      "duration": "4–6 months",
+      "summary": "Learn how KGOLD safeguards product integrity through documentation, batch reviews, and facility quality checks.",
+      "description": "Support the QA team with record-keeping, sample coordination, and audit prep — gaining firsthand insight into how quality standards are maintained from production to release.",
+      "highlights": [
+        "Assist with batch records and certificate filing",
+        "Support sample collection and lab coordination",
+        "Join quality review meetings and checklist updates",
+        "Learn GMP-aligned documentation practices"
+      ],
+      "requirements": [
+        "Studying chemistry, pharmacy, cosmetic science, or related field",
+        "Meticulous, organized, and comfortable with documentation",
+        "Available for on-site work in Laguna",
+        "Strong interest in product safety and quality systems"
+      ],
+      "imageKey": "productSerum",
+      "applyUrl": "mailto:careers@kgoldbeauty.com?subject=Application%3A%20Quality%20Assurance%20Intern"
+    }
+  ]
+}
