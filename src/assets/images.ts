@@ -1,41 +1,58 @@
 /** Bundled image URLs — inlined as base64 in the single-file build. */
 import heroBg from '../../public/hero-bg.png';
 import kgoldLogo from '../../public/kgold_logo.png';
-import categorySkincare from '../../public/images/category-skincare.png';
-import categoryHaircare from '../../public/images/category-haircare.png';
-import categoryBodycare from '../../public/images/category-bodycare.png';
-import categoryMen from '../../public/images/category-men.png';
-import productSerum from '../../public/images/product-serum.png';
-import productShampoo from '../../public/images/product-shampoo.png';
-import productBodycream from '../../public/images/product-bodycream.png';
-import productSpf from '../../public/images/product-spf.png';
-import homeHero from '../../public/images/home_hero.jpg';
-import aboutHero from '../../public/images/about-hero.jpg';
-import aboutOwner from '../../public/images/about-owner.jpg';
-import careerHero from '../../public/images/career-hero.jpg';
-import core1 from '../../public/images/core_1.png';
-import core2 from '../../public/images/core_2.png';
-import core3 from '../../public/images/core_3.png';
-import core4 from '../../public/images/core_4.png';
-import core5 from '../../public/images/core_5.png';
+
+import homeHero from '../../public/Home/home_hero.jpg';
+import homeSkincareCover from '../../public/Home/skincare_cover.png';
+import homeSkincareHero from '../../public/Home/skincare_hero.jpg';
+import homeMenCover from '../../public/Home/men_essen_cover.jpg';
+import homeMenHero from '../../public/Home/men_essen_hero.jpg';
+import homeHerbalCover from '../../public/Home/herbal_cover.jpg';
+import homeHerbalHero from '../../public/Home/herbal_hero.jpg';
+import homeWellnessCover from '../../public/Home/wellness_cover.png';
+import productSerum from '../../public/Home/product-serum.png';
+import productShampoo from '../../public/Home/product-shampoo.png';
+import productBodycream from '../../public/Home/product-bodycream.png';
+import productSpf from '../../public/Home/product-spf.png';
+
+import aboutHero from '../../public/About/about-hero.jpg';
+import aboutOwner from '../../public/About/about-owner.jpg';
+import core1 from '../../public/About/coreval_1.jpg';
+import core2 from '../../public/About/coreval_2.jpg';
+import core3 from '../../public/About/coreval_3.jpg';
+import core4 from '../../public/About/coreval_4.jpg';
+import core5 from '../../public/About/coreval_5.jpg';
+
+import careerHero from '../../public/Career/career-hero.jpg';
+import careerJobBanner from '../../public/Career/career_job.jpg';
+import careerInternBanner from '../../public/Career/career_intern.jpg';
+
+import contactHero from '../../public/Contact/contact_hero.jpg';
+
 import jobTelesales from './images/jobs/telesales.png';
 import jobTiktokLiveSellers from './images/jobs/tiktok-live-sellers.png';
 
 export const IMAGES = {
   heroBg,
   kgoldLogo,
-  categorySkincare,
-  categoryHaircare,
-  categoryBodycare,
-  categoryMen,
+  homeHero,
+  homeSkincareCover,
+  homeSkincareHero,
+  homeMenCover,
+  homeMenHero,
+  homeHerbalCover,
+  homeHerbalHero,
+  homeWellnessCover,
   productSerum,
   productShampoo,
   productBodycream,
   productSpf,
-  homeHero,
   aboutHero,
   aboutOwner,
   careerHero,
+  careerJobBanner,
+  careerInternBanner,
+  contactHero,
   core1,
   core2,
   core3,

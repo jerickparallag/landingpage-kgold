@@ -25,16 +25,6 @@ export function Footer() {
     isDark ? 'text-white' : 'text-foreground',
   );
 
-  const copyrightClass = cn(
-    'text-center text-[11px] font-light tracking-wide',
-    isDark ? 'text-white/50' : 'text-muted-foreground',
-  );
-
-  const wordmarkClass = cn(
-    'brand-wordmark-display text-[clamp(4rem,18vw,12rem)] leading-none',
-    isDark ? 'text-white' : 'text-foreground',
-  );
-
   return (
     <footer
       className={cn(
@@ -42,7 +32,7 @@ export function Footer() {
         isDark ? 'bg-[#0a0a0a] text-white' : 'bg-background text-foreground',
       )}
     >
-      <div className="page-container py-14 lg:py-20">
+      <div className="page-container py-14 lg:py-16">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           <div>
             <p className={footerHeadingClass}>Company</p>
@@ -109,15 +99,28 @@ export function Footer() {
 
         <div
           className={cn(
-            'mt-14 border-t pt-8',
+            'mt-14 border-t pt-10 lg:pt-14',
             isDark ? 'border-white/15' : 'border-border',
           )}
         >
-          <p className={copyrightClass}>{FOOTER.copyright}</p>
-        </div>
-
-        <div className="mt-12 flex justify-center overflow-hidden select-none" aria-hidden="true">
-          <p className={wordmarkClass}>KGOLD</p>
+          <div className="w-full select-none text-center">
+            <p
+              className={cn(
+                'brand-wordmark-display text-[clamp(3.5rem,18vw,9.5rem)] leading-[0.85] tracking-[0.04em]',
+                isDark ? 'text-white' : 'text-foreground',
+              )}
+            >
+              KGOLD
+            </p>
+            <p
+              className={cn(
+                'mt-4 text-[clamp(0.75rem,2.8vw,1.15rem)] font-bold tracking-[0.58em] uppercase',
+                isDark ? 'text-white/75' : 'text-foreground/80',
+              )}
+            >
+              Beauty Essentials
+            </p>
+          </div>
         </div>
       </div>
     </footer>

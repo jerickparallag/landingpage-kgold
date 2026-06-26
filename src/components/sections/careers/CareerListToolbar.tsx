@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useRef, useState, type ReactNode } from 'react';
 import type { TJobViewMode } from '../../../lib/careers';
 import { cn } from '../../../lib/utils';
 
@@ -72,6 +72,20 @@ function ViewToggleButton({
   );
 }
 
+function SearchIcon() {
+  return (
+    <svg className="size-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM21 21l-4.3-4.3"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function CareerListToolbar({
   searchQuery,
   onSearchChange,
@@ -83,35 +97,54 @@ export function CareerListToolbar({
   resultCount,
   labels,
 }: ICareerListToolbarProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [searchExpanded, setSearchExpanded] = useState(false);
+  const isSearchOpen = searchExpanded || searchQuery.length > 0;
+
+  const openSearch = () => {
+    setSearchExpanded(true);
+    requestAnimationFrame(() => inputRef.current?.focus());
+  };
+
+  const closeSearchIfEmpty = () => {
+    if (!searchQuery) setSearchExpanded(false);
+  };
+
   return (
     <div className="space-y-5">
       <div className="flex items-center gap-2 sm:gap-3">
-        <label className="relative block min-w-0 flex-1">
-          <span className="sr-only">{labels.searchPlaceholder}</span>
-          <svg
-            className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground"
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
+        {!isSearchOpen ? (
+          <button
+            type="button"
+            onClick={openSearch}
+            aria-label={labels.searchPlaceholder}
+            className="inline-flex size-12 shrink-0 items-center justify-center rounded-brand border border-border bg-background text-muted-foreground transition hover:text-foreground"
           >
-            <path
-              d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM21 21l-4.3-4.3"
-              stroke="currentColor"
-              strokeWidth="1.75"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+            <SearchIcon />
+          </button>
+        ) : (
+          <label
+            className={cn(
+              'relative block w-48 shrink-0 transition-[width] duration-300 ease-out sm:w-60 md:w-72',
+            )}
+          >
+            <span className="sr-only">{labels.searchPlaceholder}</span>
+            <span className="pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-muted-foreground">
+              <SearchIcon />
+            </span>
+            <input
+              ref={inputRef}
+              type="search"
+              value={searchQuery}
+              onChange={(event) => onSearchChange(event.target.value)}
+              onBlur={closeSearchIfEmpty}
+              placeholder={labels.searchPlaceholder}
+              className="h-12 w-full rounded-brand border border-border bg-background py-3 pr-4 pl-11 text-sm font-light text-foreground outline-none transition placeholder:text-muted-foreground focus:border-foreground/40"
             />
-          </svg>
-          <input
-            type="search"
-            value={searchQuery}
-            onChange={(event) => onSearchChange(event.target.value)}
-            placeholder={labels.searchPlaceholder}
-            className="h-12 w-full rounded-brand border border-border bg-background py-3 pr-4 pl-11 text-sm font-light text-foreground outline-none transition placeholder:text-muted-foreground focus:border-foreground/40"
-          />
-        </label>
+          </label>
+        )}
 
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="ml-auto flex shrink-0 items-center gap-2">
           <ViewToggleButton
             isActive={viewMode === 'grid'}
             label={labels.viewGrid}

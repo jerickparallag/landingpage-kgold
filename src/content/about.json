@@ -3,70 +3,72 @@
   "subNav": [
     { "label": "Company", "href": "/about#company" },
     { "label": "Mission", "href": "/about#mission" },
-    { "label": "Leadership", "href": "/about#leadership" }
+    { "label": "Leadership", "href": "/about#leadership" },
+    { "label": "Careers", "href": "/about#careers" },
+    { "label": "Contact", "href": "/contact" }
   ],
   "hero": {
-    "headline": ["FILIPINO BEAUTY", "BUILT WITH", "PURPOSE"],
-    "subheadline": "Beauty essentials, built with purpose.",
-    "body": "A homegrown Filipino brand — from Isabela to Marikina — creating wellness that works at a price that respects every kababayan.",
-    "ctaLabel": "Meet the company",
+    "headline": ["Our", "Story."],
+    "subheadline": "",
+    "body": "From local beginnings to a growing nationwide presence, our journey has always been driven by hard work, consistency, and the people who believed in what we were building.",
+    "ctaLabel": "Explore Our Company",
     "ctaHref": "#company",
     "backgroundImageKey": "aboutHero"
   },
   "company": {
-    "displayTitle": "About us",
-    "whoTitle": "Who we are",
-    "whoBody": "We are headquartered in Marikina City and Isabela, selling directly to Filipino consumers through TikTok Shop, Shopee, Lazada, and our own direct channels — a homegrown beauty brand that competes with the best.",
-    "purposeTitle": "Our purpose",
-    "purposeBody": "We unlock innovative potential in Filipino beauty — empowering our workforce, resellers, and communities through products made with purpose, at a price that respects every kababayan.",
-    "whyTitle": "Why choose KGOLD?",
-    "whyBody": "Our team across marketing, sales, operations, and product delivers real results for customers, builds livelihoods for our people, and honors every community we serve — with the same consistency behind every batch, every shelf, and every partnership."
+    "displayTitle": "Who We Are.",
+    "whoTitle": "Who We Are.",
+    "whoBody": "K Gold Beauty Essentials Corporation is a Philippine-based beauty and wellness ecommerce company headquartered in Marikina City and Isabela. We serve Filipino consumers nationwide through TikTok Shop, Shopee, Lazada, and our direct sales channels. We are a company built on speed, discipline, and continuous learning. We move fast, adapt quickly, and operate with the mindset of maximizing every opportunity and every peso entrusted to us.",
+    "purposeTitle": "Our Purpose.",
+    "purposeBody": "To create products people trust and opportunities people can grow with.",
+    "whyTitle": "Why We Exist.",
+    "whyBody": "We believe business should create value beyond products. Every sale supports livelihoods, strengthens partnerships, and creates opportunities for individuals, families, and communities."
   },
   "mission": {
-    "storyTitle": "Our story",
-    "storyLead": "We started in a barrio in Isabela — built through hard work, faith, and refusing to quit.",
-    "story": "Today we create Filipino-made beauty and wellness products that work — for customers who deserve more, and for people who believe excellence is not optional. Every formula, every partnership, and every shelf reflects the same standard we held from day one.",
+    "storyTitle": "How We Endure.",
+    "storyLead": "Our story started in Isabela with a simple belief: work hard, stay consistent, keep moving forward.",
+    "story": "Through years of learning, adapting, and growing, KGOLD expanded from a local operation into a company serving customers and partners across the Philippines. The products may have evolved, but the standard remains the same: deliver value, earn trust, and never stop improving.",
     "vision": {
-      "title": "Our vision",
-      "body": "To transform 1 million Filipino lives by 2030 — empowering our workforce, resellers, and communities through products made with purpose."
+      "title": "Our Vision.",
+      "body": "To transform 1 million Filipino lives by 2030 by empowering our workforce, resellers, and communities through products made with purpose."
     },
     "missionStatement": {
-      "title": "Our mission",
-      "body": "We create Filipino-made beauty and wellness products that work — building livelihoods for our workforce and resellers, delivering real results for our customers, and honoring every community we serve."
+      "title": "Our Mission.",
+      "body": "To create high-quality Filipino-made beauty and wellness products that deliver real results, create sustainable livelihoods for our workforce and resellers, and positively impact every community we serve."
     },
-    "valuesTitle": "Our core values",
-    "valuesTagline": "Five principles that shape how we treat people, build products, and show up every day.",
+    "valuesTitle": "What We Stand For.",
+    "valuesTagline": "Five principles that guide how we work, build, and grow together.",
     "valuesLearnMore": "Read more",
     "valuesBack": "Back",
     "values": [
       {
-        "title": "Malasakit first",
-        "subtitle": "How we treat each other",
-        "description": "We treat every kababayan — employee, reseller, customer — like family. Their wins are our wins.",
+        "title": "Malasakit First",
+        "subtitle": "How We Treat Each Other",
+        "description": "We treat every kababayan—employees, resellers, and customers—as family. We celebrate each other's successes, support one another through challenges, and believe that when one person wins, we all win.",
         "imageKey": "core1"
       },
       {
-        "title": "We rise together",
-        "subtitle": "How we move as one team",
-        "description": "No one climbs alone at K Gold. When one of us wins, we lift the next. When one of us falls, we reach back.",
+        "title": "We Rise Together",
+        "subtitle": "How We Move as One Team",
+        "description": "Success is never achieved alone. We believe in lifting others as we climb, sharing knowledge, supporting one another, and ensuring that no one is left behind. When one of us succeeds, we help the next succeed. When one struggles, we extend a helping hand.",
         "imageKey": "core2"
       },
       {
         "title": "Ownership",
-        "subtitle": "How we work",
-        "description": "We own the outcome, not just the task. No one at K Gold says 'that's not my job.'",
+        "subtitle": "How We Work",
+        "description": "We take full responsibility for outcomes, not just assigned tasks. We approach every challenge with accountability and initiative, refusing to pass responsibility to others. At K Gold, we own the mission and act as if the business were our own.",
         "imageKey": "core3"
       },
       {
-        "title": "Excellence with humility",
-        "subtitle": "How we build",
-        "description": "We build products and services worthy of our name — and we stay grateful for the chance to do this work.",
+        "title": "Excellence with Humility",
+        "subtitle": "How We Build",
+        "description": "We strive to create products, services, and experiences worthy of our name. We pursue excellence in everything we do while remaining grounded, grateful, and open to continuous improvement.",
         "imageKey": "core4"
       },
       {
         "title": "Grit ng Pinoy",
-        "subtitle": "How we endure",
-        "description": "We started in a barrio in Isabela. We built this through hard work, faith, and refusing to quit. That is the standard.",
+        "subtitle": "How We Endure",
+        "description": "Our journey began in a small barrio in Isabela. Through hard work, faith, resilience, and determination, we built what K Gold is today. We embrace challenges, persevere through adversity, and never quit until the mission is accomplished. That is our standard.",
         "imageKey": "core5"
       }
     ]
@@ -74,14 +76,15 @@
   "leadership": {
     "title": "Leadership",
     "imageKey": "aboutOwner",
-    "quote": "We are ruthless about our standards because we care deeply about our people and our customers. Excellence is not optional here — it is our competitive advantage.",
-    "name": "Leanne Domenden"
+    "quote": "Success is built one decision, one customer, and one day at a time. Consistency will always matter more than shortcuts.",
+    "name": "Leanne Domenden Dela Cruz",
+    "role": "Chief Executive Officer"
   },
   "careers": {
-    "title": "Build beauty with purpose.",
-    "description": "We grow when our people grow. Explore full-time roles and internship programs across marketing, sales, operations, and product.",
+    "title": "Shape Tomorrow.",
+    "description": "Join a team that values ownership, continuous learning, and the drive to build something that lasts.",
     "backgroundImageKey": "careerHero",
-    "ctaLabel": "View careers",
+    "ctaLabel": "View Open Roles",
     "ctaHref": "/careers"
   }
 }

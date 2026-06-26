@@ -16,7 +16,7 @@ export function BestSellers() {
           action={
             <a
               href={BEST_SELLERS.viewAllHref}
-              className="luxury-cta-outline border-foreground text-foreground"
+              className="luxury-nav-link w-fit opacity-70 hover:opacity-100"
             >
               {BEST_SELLERS.viewAllLabel}
             </a>
@@ -26,7 +26,7 @@ export function BestSellers() {
         <div
           ref={ref}
           className={cn(
-            'reveal section-stack section-card-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
+            'reveal section-stack section-card-grid grid grid-cols-2 lg:grid-cols-4',
             isVisible && 'reveal-visible',
           )}
         >

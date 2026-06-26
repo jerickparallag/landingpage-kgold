@@ -2,6 +2,7 @@ import { useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IS_SINGLE_FILE } from '../../../lib/isSingleFile';
 import { prepareHomeSectionScroll } from '../../../lib/homeNavigation';
+import { cn } from '../../../lib/utils';
 
 export function CollectionEscapeBack() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ export function CollectionEscapeBack() {
       return;
     }
 
-    navigate('/#categories');
+    navigate({ pathname: '/', hash: '#categories' });
   }, [navigate]);
 
   useEffect(() => {
@@ -29,19 +30,21 @@ export function CollectionEscapeBack() {
   }, [goToCollections]);
 
   return (
-    <button
-      type="button"
-      onClick={goToCollections}
-      className="fixed top-17 left-4 z-40 inline-flex items-center gap-3 rounded-full border border-white/25 bg-black/30 px-4 py-2.5 text-[10px] font-normal tracking-[0.22em] text-white uppercase backdrop-blur-md transition hover:bg-black/45 sm:left-6"
-      aria-label="Back to collections (Esc)"
-    >
-      <span aria-hidden="true" className="text-xs leading-none text-white/80">
-        ←
-      </span>
-      <span>Collections</span>
-      <kbd className="inline-flex min-w-9 items-center justify-center rounded-full border border-white/20 bg-white/10 px-2 py-1 font-sans text-[10px] font-normal tracking-[0.08em] text-white/85">
-        Esc
-      </kbd>
-    </button>
+    <div className="pointer-events-none fixed inset-x-0 top-14 z-40">
+      <div className="page-container flex h-14 items-center justify-end">
+        <button
+          type="button"
+          onClick={goToCollections}
+          className={cn(
+            'pointer-events-auto inline-flex size-9 items-center justify-center rounded-full border border-foreground/10 bg-background/45 text-foreground/80 shadow-sm backdrop-blur-md transition hover:bg-background/65 hover:text-foreground dark:border-white/15 dark:bg-black/25 dark:hover:bg-black/40',
+          )}
+          aria-label="Back to collections"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
   );
 }

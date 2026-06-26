@@ -15,6 +15,8 @@ export interface ISiteContent {
   description: string;
   url: string;
   contactEmail: string;
+  contactPhone?: string;
+  contactPhoneTel?: string;
 }
 
 export interface IFooterContent {
@@ -73,8 +75,6 @@ export interface ICollection {
 export interface IValueItem {
   title: string;
   description: string;
-  ctaLabel: string;
-  ctaHref: string;
 }
 
 export interface IFaqItem {
@@ -134,10 +134,18 @@ export interface IContactPageContent {
   hero: Pick<IHeroContent, 'headline' | 'subheadline' | 'body' | 'ctaLabel' | 'ctaHref' | 'backgroundImage'>;
   inquiries: {
     title: string;
-    items: { title: string; linkLabel: string; href: string }[];
+    description?: string;
+    items: {
+      title: string;
+      email?: string;
+      phone?: string;
+      href?: string;
+      linkLabel?: string;
+    }[];
   };
   social: {
     title: string;
+    description?: string;
     items: { title: string; linkLabel: string; href: string }[];
   };
   addresses: {
@@ -149,8 +157,8 @@ export interface IContactPageContent {
     description: string;
     primaryLabel: string;
     primaryHref: string;
-    secondaryLabel: string;
-    secondaryHref: string;
+    secondaryLabel?: string;
+    secondaryHref?: string;
   };
 }
 

@@ -1,49 +1,48 @@
 {
   "hero": {
-    "headline": ["GET IN", "TOUCH", "WITH US"],
-    "subheadline": "We'd love to hear from you.",
-    "body": "Reach out for inquiries about sales, partnerships, careers, or anything else.",
-    "ctaLabel": "Email us",
+    "headline": ["Let's", "Talk."],
+    "subheadline": "",
+    "body": "Questions, partnerships, wholesale opportunities, careers, or customer inquiries—we're here to help.",
+    "ctaLabel": "Contact Us",
     "ctaHref": "mailto:hello@kgoldbeauty.com",
-    "backgroundImageKey": "heroBg"
+    "backgroundImageKey": "contactHero"
   },
   "inquiries": {
-    "title": "Contact us",
+    "title": "Reach Us.",
+    "description": "Connect with the right team for sales, customer support, partnerships, careers, or general concerns.",
     "items": [
       {
         "title": "Sales inquiries",
-        "linkLabel": "Email our sales team",
-        "href": "mailto:hello@kgoldbeauty.com"
+        "email": "hello@kgoldbeauty.com",
+        "phone": "0992 427 5941"
       },
       {
         "title": "Customer support",
-        "linkLabel": "Get help with your order",
-        "href": "mailto:hello@kgoldbeauty.com"
+        "email": "hello@kgoldbeauty.com",
+        "phone": "0992 427 5941"
       },
       {
         "title": "Partner requests",
-        "linkLabel": "Explore partnership options",
-        "href": "mailto:hello@kgoldbeauty.com"
-      },
-      {
-        "title": "Press and media",
-        "linkLabel": "Media inquiries",
-        "href": "mailto:hello@kgoldbeauty.com"
+        "email": "hello@kgoldbeauty.com",
+        "phone": "0992 427 5941"
       },
       {
         "title": "General inquiries",
-        "linkLabel": "hello@kgoldbeauty.com",
-        "href": "mailto:hello@kgoldbeauty.com"
+        "email": "hello@kgoldbeauty.com",
+        "phone": "0992 427 5941"
       },
       {
         "title": "Career opportunities",
-        "linkLabel": "See open roles",
-        "href": "/careers"
+        "email": "careers@kgoldbeauty.com",
+        "phone": "0992 427 5941",
+        "href": "/careers",
+        "linkLabel": "See open roles"
       }
     ]
   },
   "social": {
-    "title": "Follow us",
+    "title": "Follow Along.",
+    "description": "Stay connected with product launches, company updates, career opportunities, and community stories.",
     "items": [
       { "title": "Facebook", "linkLabel": "Facebook", "href": "#" },
       { "title": "Instagram", "linkLabel": "Instagram", "href": "#" },
@@ -53,28 +52,29 @@
     ]
   },
   "addresses": {
-    "title": "Our address",
+    "title": "Our Locations.",
     "locations": [
       {
         "name": "Marikina City",
         "lines": [
-          "K Gold Beauty Essentials Corporation",
-          "Marikina City, Metro Manila",
-          "Philippines"
+          "2nd Floor, NGR Building",
+          "28 Dasdasan Street, San Roque",
+          "Marikina City, Metro Manila"
         ]
       },
       {
-        "name": "Isabela",
-        "lines": ["K Gold Beauty Essentials Corporation", "Isabela, Philippines"]
+        "name": "Alicia, Isabela",
+        "lines": [
+          "Mabini",
+          "Located in front of the Mabini Elementary School office"
+        ]
       }
     ]
   },
   "cta": {
-    "title": "Ready to bring KGOLD to your shelves?",
-    "description": "Partner with a brand your customers already trust. Reach out to explore wholesale, distribution, or collaboration opportunities.",
-    "primaryLabel": "Get in touch",
-    "primaryHref": "mailto:hello@kgoldbeauty.com",
-    "secondaryLabel": "Browse collections",
-    "secondaryHref": "/#categories"
+    "title": "Build With Us.",
+    "description": "We're always looking to connect with distributors, retailers, resellers, and partners who share our commitment to growth and consistency.",
+    "primaryLabel": "Become A Partner",
+    "primaryHref": "mailto:hello@kgoldbeauty.com?subject=Partnership%20inquiry"
   }
 }

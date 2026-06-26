@@ -12,7 +12,7 @@ export function ContactInquiries() {
     <section className="contact-section-first">
       <div className="page-container">
         <div ref={ref} className={cn('reveal', isVisible && 'reveal-visible')}>
-          <SectionHeader title={inquiries.title} />
+          <SectionHeader title={inquiries.title} description={inquiries.description} />
           <ContactLinkGrid items={inquiries.items} />
         </div>
       </div>

@@ -4,7 +4,9 @@
     "tagline": "Beauty essentials, crafted with purpose.",
     "description": "Filipino-crafted beauty essentials built on quality formulations, trusted partnerships, and care that respects people and planet.",
     "url": "https://kgoldbeauty.com",
-    "contactEmail": "hello@kgoldbeauty.com"
+    "contactEmail": "hello@kgoldbeauty.com",
+    "contactPhone": "0992 427 5941",
+    "contactPhoneTel": "+639924275941"
   },
   "navLinks": [
     { "label": "Home", "href": "/" },

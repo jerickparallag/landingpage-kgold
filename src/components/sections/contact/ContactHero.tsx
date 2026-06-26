@@ -1,48 +1,74 @@
 import { CONTACT_PAGE } from '../../../constants/content';
-import { useInView } from '../../../hooks/useInView';
-import { cn, heroHomeTitleClass, heroSubheadlineClass, heroBodyClass, heroActionLinkClass } from '../../../lib/utils';
+import { useHeroEnterAnimation } from '../../../hooks/useHeroEnterAnimation';
+import { HeroBackground } from '../../ui/HeroBackground';
+import {
+  cn,
+  getHeroEnterDelay,
+  getHeroEnterDelayAfterLines,
+  heroActionLinkClass,
+  heroBodyClass,
+  heroCtaOnImageClass,
+  heroEnterDelayStyle,
+  heroEnterItemClass,
+  heroHomeTitleClass,
+  heroOverlayHorizontalClass,
+  heroOverlayVerticalClass,
+  heroSectionClass,
+  heroSubheadlineClass,
+} from '../../../lib/utils';
 
 export function ContactHero() {
-  const { ref, isVisible } = useInView<HTMLDivElement>({ threshold: 0.1 });
+  const shouldAnimate = useHeroEnterAnimation();
   const { hero } = CONTACT_PAGE;
+  const lineCount = hero.headline.length;
 
   return (
-    <section className="relative overflow-hidden bg-[#1a1a1a] text-white">
-      <div
-        className="parallax-bg absolute inset-0 bg-cover bg-[center_right]"
-        style={{ backgroundImage: `url(${hero.backgroundImage})` }}
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/80 to-[#1a1a1a]/15"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/50 via-transparent to-[#1a1a1a]/25"
-        aria-hidden="true"
-      />
+    <section className={heroSectionClass}>
+      <HeroBackground image={hero.backgroundImage} animate={shouldAnimate} />
+      <div className={heroOverlayHorizontalClass} aria-hidden="true" />
+      <div className={heroOverlayVerticalClass} aria-hidden="true" />
 
       <div className="relative z-10 page-container">
-        <div
-          ref={ref}
-          className={cn(
-            'reveal hero-min-h-home hero-content grid items-center gap-12 lg:grid-cols-12',
-            isVisible && 'reveal-visible',
-          )}
-        >
+        <div className="hero-min-h-home hero-content grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <h1 className={cn(heroHomeTitleClass, 'text-left')}>
-              {hero.headline.map((line) => (
-                <span key={line} className="block">
+              {hero.headline.map((line, index) => (
+                <span
+                  key={line}
+                  className={heroEnterItemClass(shouldAnimate, 'block')}
+                  style={heroEnterDelayStyle(shouldAnimate, getHeroEnterDelay(index))}
+                >
                   {line}
                 </span>
               ))}
             </h1>
           </div>
           <div className="lg:col-span-5 lg:pl-8">
-            <p className={cn(heroSubheadlineClass, 'text-white/80')}>{hero.subheadline}</p>
-            <p className={cn(heroBodyClass, 'text-white/70')}>{hero.body}</p>
-            <a href={hero.ctaHref} className={cn(heroActionLinkClass, 'text-white border-white hover:bg-white hover:text-[#1a1a1a]')}>
+            {hero.subheadline ? (
+              <p
+                className={heroEnterItemClass(shouldAnimate, heroSubheadlineClass)}
+                style={heroEnterDelayStyle(shouldAnimate, getHeroEnterDelayAfterLines(lineCount, 0.1))}
+              >
+                {hero.subheadline}
+              </p>
+            ) : null}
+            <p
+              className={heroEnterItemClass(shouldAnimate, heroBodyClass, !hero.subheadline && 'mt-0')}
+              style={heroEnterDelayStyle(
+                shouldAnimate,
+                getHeroEnterDelayAfterLines(lineCount, hero.subheadline ? 0.22 : 0.1),
+              )}
+            >
+              {hero.body}
+            </p>
+            <a
+              href={hero.ctaHref}
+              className={heroEnterItemClass(shouldAnimate, heroActionLinkClass, heroCtaOnImageClass)}
+              style={heroEnterDelayStyle(
+                shouldAnimate,
+                getHeroEnterDelayAfterLines(lineCount, hero.subheadline ? 0.38 : 0.26),
+              )}
+            >
               {hero.ctaLabel}
             </a>
           </div>

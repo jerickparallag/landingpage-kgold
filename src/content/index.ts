@@ -9,7 +9,6 @@ import type {
   ICareersPageContent,
   ICategoryItem,
   IContactPageContent,
-  IFaqItem,
   IFooterContent,
   IHeroContent,
   ILink,
@@ -49,7 +48,7 @@ type THomeContent = {
     ctaLabel: string;
     ctaHref: string;
   };
-  faq: IFaqItem[];
+  faq: { question: string; answer: string }[];
   finalCta: {
     title: string;
     description: string;

@@ -20,12 +20,14 @@ export function ContactCta() {
             <Button as="a" href={cta.primaryHref}>
               {cta.primaryLabel}
             </Button>
-            <a
-              href={cta.secondaryHref}
-              className="text-sm font-medium text-muted-foreground transition hover:text-foreground"
-            >
-              {cta.secondaryLabel}
-            </a>
+            {cta.secondaryLabel && cta.secondaryHref ? (
+              <a
+                href={cta.secondaryHref}
+                className="text-sm font-medium text-muted-foreground transition hover:text-foreground"
+              >
+                {cta.secondaryLabel}
+              </a>
+            ) : null}
           </div>
         </div>
       </div>

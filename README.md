@@ -48,7 +48,7 @@ All visible copy lives in **`src/content/`** as JSON files:
 | `careers/jobs.json` | Open job listings |
 | `careers/internships.json` | Internship programs |
 
-Use `"imageKey"` for photos — pick from keys defined in `src/assets/images.ts` (e.g. `"heroBg"`, `"categorySkincare"`, `"jobTelesales"`). Do not paste file paths.
+Use `"imageKey"` for photos — pick from keys defined in `src/assets/images.ts` (e.g. `"heroBg"`, `"homeSkincareCover"`, `"aboutHero"`, `"jobTelesales"`). Assets live under `public/Home`, `public/About`, and `public/Career`. Do not paste file paths.
 
 For jobs/internships, set `"applyUrl"` to the email or application link.
 

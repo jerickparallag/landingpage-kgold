@@ -5,7 +5,7 @@
       "name": "Skincare",
       "tagline": "Glow that lasts beyond the mirror",
       "description": "Serums, moisturizers, and treatments formulated for real tropical climates — daily care that holds up in heat, humidity, and long days.",
-      "imageKey": "categorySkincare",
+      "imageKey": "homeSkincareHero",
       "iconKey": "skincare",
       "products": [
         {
@@ -31,7 +31,7 @@
       "name": "Haircare",
       "tagline": "Salon results, every wash",
       "description": "Repair, nourish, and protect — from daily care to professional treatment. Built for stylists who reorder first and customers who come back.",
-      "imageKey": "categoryHaircare",
+      "imageKey": "homeHerbalHero",
       "iconKey": "haircare",
       "products": [
         {
@@ -49,7 +49,7 @@
       "name": "Body Care",
       "tagline": "Skin-first from neck to toe",
       "description": "Rich textures and clean formulas for all-day comfort — never greasy, always smooth.",
-      "imageKey": "categoryBodycare",
+      "imageKey": "homeWellnessCover",
       "iconKey": "bodycare",
       "products": [
         {
@@ -67,7 +67,7 @@
       "name": "Men's Grooming",
       "tagline": "No fuss. No compromise.",
       "description": "Straightforward essentials built for modern grooming routines — the same KGOLD standard, without the extra steps.",
-      "imageKey": "categoryMen",
+      "imageKey": "homeMenHero",
       "iconKey": "men",
       "products": [
         {

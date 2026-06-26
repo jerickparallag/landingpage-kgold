@@ -12,7 +12,7 @@ export function ContactSocial() {
     <section className="contact-section">
       <div className="page-container">
         <div ref={ref} className={cn('reveal', isVisible && 'reveal-visible')}>
-          <SectionHeader title={social.title} />
+          <SectionHeader title={social.title} description={social.description} />
           <ContactLinkGrid items={social.items} external />
         </div>
       </div>

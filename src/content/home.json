@@ -1,58 +1,58 @@
 {
   "hero": {
-    "headline": ["Beauty essentials,", "crafted with", "purpose."],
-    "subheadline": "The standard your skin deserves",
-    "body": "Formulated in partnership with Filipino experts. Proven in salons and stores nationwide. Made for people who expect more from everyday care.",
-    "ctaLabel": "Explore collections",
+    "headline": ["Beyond", "Beauty."],
+    "subheadline": "",
+    "body": "Beauty and wellness products built on consistency, trust, and the belief that better opportunities should be within reach of every Filipino.",
+    "ctaLabel": "Explore Collections",
     "ctaHref": "#categories",
     "backgroundImageKey": "homeHero"
   },
   "featuredCategories": {
-    "title": "Shop by collection",
-    "description": "Four curated lines. One uncompromising standard. Find the routine that fits how you live.",
+    "title": "Discover.",
+    "description": "A growing portfolio of skincare, personal care, wellness, and men's products designed for everyday use and real customer demand.",
     "viewCollectionLabel": "View collection",
     "items": [
       {
         "id": "skincare",
         "name": "Skincare",
-        "tagline": "Glow that lasts beyond the mirror",
-        "description": "Serums, moisturizers, and treatments formulated for real tropical climates.",
-        "imageKey": "categorySkincare",
+        "tagline": "Daily essentials",
+        "description": "Daily essentials focused on cleansing, hydration, brightening, and skin maintenance.",
+        "imageKey": "homeSkincareCover",
         "href": "/shop/skincare",
         "span": "large"
       },
       {
-        "id": "haircare",
-        "name": "Haircare",
-        "tagline": "Salon results, every wash",
-        "description": "Repair, nourish, and protect — from daily care to professional treatment.",
-        "imageKey": "categoryHaircare",
-        "href": "/shop/haircare",
-        "span": "default"
-      },
-      {
-        "id": "bodycare",
-        "name": "Body Care",
-        "tagline": "Skin-first from neck to toe",
-        "description": "Rich textures and clean formulas for all-day comfort.",
-        "imageKey": "categoryBodycare",
+        "id": "wellness",
+        "name": "Wellness",
+        "tagline": "Everyday wellness",
+        "description": "Products that support everyday wellness through practical and accessible solutions.",
+        "imageKey": "homeWellnessCover",
         "href": "/shop/bodycare",
         "span": "default"
       },
       {
         "id": "men",
-        "name": "Men's Grooming",
-        "tagline": "No fuss. No compromise.",
-        "description": "Straightforward essentials built for modern grooming routines.",
-        "imageKey": "categoryMen",
+        "name": "Men's Essentials",
+        "tagline": "Built for confidence",
+        "description": "Trusted products developed for men's grooming, confidence, and performance.",
+        "imageKey": "homeMenCover",
         "href": "/shop/men",
+        "span": "default"
+      },
+      {
+        "id": "herbal",
+        "name": "Herbal Products",
+        "tagline": "Tradition meets today",
+        "description": "Traditional ingredients and modern formulations combined for everyday use.",
+        "imageKey": "homeHerbalCover",
+        "href": "/shop/haircare",
         "span": "wide"
       }
     ]
   },
   "bestSellers": {
-    "title": "Customer favorites",
-    "description": "The products partners reorder first — and customers come back for.",
+    "title": "Trusted Daily.",
+    "description": "Products that customers continue to purchase, recommend, and reorder across the country.",
     "viewAllHref": "/shop/skincare",
     "viewAllLabel": "Request catalog",
     "items": [
@@ -91,64 +91,58 @@
     ]
   },
   "aboutTeaser": {
-    "title": "A brand built on consistency, not hype.",
-    "teaser": "For over 15 years, KGOLD has partnered with formulators and retailers who believe the same thing we do: everyday beauty should never feel like a compromise.",
-    "mission": "We make thoughtfully formulated beauty essentials accessible through reliable partnerships — held to the same standard, every batch, every shelf.",
+    "title": "Built Through Trust.",
+    "teaser": "Growth takes time.",
+    "mission": "What began as a small operation continues to expand through customer loyalty, strong partnerships, and consistent execution.",
     "backgroundImageKey": "aboutHero",
-    "ctaLabel": "Who we are",
+    "ctaLabel": "Learn More",
     "ctaHref": "/about"
   },
   "qualitySection": {
-    "title": "Held to a higher standard"
+    "title": "Why It Matters."
   },
   "values": [
     {
-      "title": "Manufacturing standards",
-      "description": "Every batch is traceable. Every facility is vetted. Every release meets our internal benchmark before it ships.",
-      "ctaLabel": "Our process",
-      "ctaHref": "#about"
+      "title": "Manufacturing Standards",
+      "description": "Every product goes through a careful process before reaching customers. Consistency remains at the center of everything we release."
     },
     {
-      "title": "Ingredient integrity",
-      "description": "Transparent labels. Responsible sourcing. No hidden fillers dressed up as innovation.",
-      "ctaLabel": "See our standards",
-      "ctaHref": "#about"
+      "title": "Product Integrity",
+      "description": "We work with trusted manufacturers and suppliers who meet our standards for quality and reliability."
     },
     {
-      "title": "Partner accountability",
-      "description": "We grow when our retailers grow — with fair terms, reliable supply, and products that sell themselves.",
-      "ctaLabel": "Partner with us",
-      "ctaHref": "/contact"
+      "title": "Partner Confidence",
+      "description": "Thousands of sales happen because customers trust the products and partners trust the brand behind them."
     }
   ],
   "faqSection": {
-    "title": "General questions asked by customers.",
-    "description": "Our friendly team is always here to help you with quick, clear, and reliable answers whenever needed.",
-    "ctaLabel": "Contact us",
+    "title": "Frequently Asked Questions.",
+    "description": "Common questions about our products, partnerships, and opportunities.",
+    "ctaLabel": "Contact Us",
     "ctaHref": "/contact"
   },
   "faq": [
     {
       "question": "Where can I buy KGOLD products?",
-      "answer": "KGOLD is available through 500+ partner locations nationwide — including salons, beauty stores, and select retailers. Contact us to find a store near you."
+      "answer": "Our products are available through authorized distributors, resellers, online selling channels, and selected retail partners nationwide."
     },
     {
-      "question": "Do you offer wholesale or distribution partnerships?",
-      "answer": "Yes. We work with distributors and retailers who share our quality standards. Email us at hello@kgoldbeauty.com and our team will respond within 2 business days."
+      "question": "Do you offer reseller opportunities?",
+      "answer": "Yes. We welcome individuals and businesses interested in becoming part of our growing distribution network."
     },
     {
-      "question": "Are KGOLD products cruelty-free?",
-      "answer": "We do not test finished products on animals and work exclusively with partners who align with our cruelty-free commitments."
+      "question": "What products does KGOLD offer?",
+      "answer": "Our catalog includes skincare, personal care, wellness products, herbal solutions, and men's essentials."
     },
     {
-      "question": "What makes KGOLD different from other local brands?",
-      "answer": "Consistency. Our formulations are developed with Filipino experts, produced in GMP-aligned facilities, and proven in real retail environments — not just focus groups."
+      "question": "Do you offer wholesale partnerships?",
+      "answer": "Yes. We work with distributors, retailers, and business partners across different regions in the Philippines."
     }
   ],
   "finalCta": {
-    "title": "Ready to bring KGOLD to your shelves?",
-    "description": "Partner with a brand your customers already trust. Reach out to explore wholesale, distribution, or collaboration opportunities.",
-    "primaryLabel": "Get in touch",
+    "title": "Grow Together.",
+    "description": "Whether you're a customer, reseller, distributor, or business partner, there's always room to build something meaningful together.",
+    "primaryLabel": "Contact Us",
     "secondaryLabel": "Browse collections",
     "secondaryHref": "/#categories"
   }

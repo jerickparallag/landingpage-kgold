@@ -35,17 +35,6 @@ export function SingleFileNavigation() {
   useEffect(() => {
     if (!IS_SINGLE_FILE) return;
 
-    const pending = sessionStorage.getItem(HOME_SCROLL_KEY);
-    if (!pending) return;
-
-    sessionStorage.removeItem(HOME_SCROLL_KEY);
-    const timer = window.setTimeout(() => scrollToSection(pending), 80);
-    return () => window.clearTimeout(timer);
-  }, [pathname]);
-
-  useEffect(() => {
-    if (!IS_SINGLE_FILE) return;
-
     const onClick = (event: MouseEvent) => {
       const anchor = (event.target as Element | null)?.closest('a');
       if (!anchor) return;
