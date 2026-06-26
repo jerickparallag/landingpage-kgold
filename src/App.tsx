@@ -8,21 +8,35 @@ import { HeaderVisibilityProvider } from './hooks/useHeaderVisibility';
 import { ThemeProvider } from './hooks/useTheme';
 import { IS_SINGLE_FILE } from './lib/isSingleFile';
 
-const Router = IS_SINGLE_FILE ? HashRouter : BrowserRouter;
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function AppShell() {
+  return (
+    <>
+      <ScrollToTop />
+      <SingleFileNavigation />
+      <Header />
+      <main>
+        <AppRoutes />
+      </main>
+      <Footer />
+    </>
+  );
+}
 
 export function App() {
   return (
     <ThemeProvider>
       <HeaderVisibilityProvider>
-        <Router>
-          <ScrollToTop />
-          <SingleFileNavigation />
-          <Header />
-          <main>
-            <AppRoutes />
-          </main>
-          <Footer />
-        </Router>
+        {IS_SINGLE_FILE ? (
+          <HashRouter>
+            <AppShell />
+          </HashRouter>
+        ) : (
+          <BrowserRouter basename={routerBasename || undefined}>
+            <AppShell />
+          </BrowserRouter>
+        )}
       </HeaderVisibilityProvider>
     </ThemeProvider>
   );
