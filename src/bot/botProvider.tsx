@@ -15,6 +15,7 @@ import {
   detectNavigationTarget,
   isNavigationQuery,
 } from './siteNavigation';
+import { sanitizeChatContent } from '../lib/sanitizeChatContent';
 import type { IBotAction, IBotAdapter, IBotMessage, IBotResponse, IQuickReply } from './types';
 
 interface IBotContextValue {
@@ -44,7 +45,7 @@ function responseToAssistantMessage(response: IBotResponse): IBotMessage {
   return {
     id: createMessageId(),
     role: 'assistant',
-    content: response.content,
+    content: sanitizeChatContent(response.content),
     actions: response.actions,
     timestamp: Date.now(),
   };

@@ -502,7 +502,7 @@
     overflow: hidden;
     border: none;
     border-radius: var(--radius-brand);
-    background: color-mix(in srgb, var(--color-background) 72%, transparent);
+    background: color-mix(in srgb, var(--color-background) 88%, transparent);
     box-shadow:
       0 24px 64px rgb(0 0 0 / 0.18),
       0 8px 24px rgb(0 0 0 / 0.08),

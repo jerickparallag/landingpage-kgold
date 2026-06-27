@@ -59,7 +59,7 @@
     }
   ],
   "fallback": {
-    "message": "I could not find a precise answer in our official content. Our team would be glad to assist you directly.",
+    "message": "I could not find a precise answer in our official content. You can ask about our mission, products, careers, where to buy, or how to contact us — or reach our team directly.",
     "actions": ["contactHandoff", "navigate:/contact"]
   }
 }

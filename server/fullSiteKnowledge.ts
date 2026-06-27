@@ -1,12 +1,10 @@
 import aboutJson from '../src/content/about.json';
 import botJson from '../src/content/bot.json';
-import careersPageJson from '../src/content/careers-page.json';
 import collectionsJson from '../src/content/collections.json';
 import contactJson from '../src/content/contact.json';
-import internshipsJson from '../src/content/careers/internships.json';
-import jobsJson from '../src/content/careers/jobs.json';
 import homeJson from '../src/content/home.json';
 import siteJson from '../src/content/site.json';
+import { buildCareersKnowledgeBlock } from '../src/bot/formatCareersKnowledge';
 
 /** Complete site content for Gemini — structured for direct Q&A (mission, vision, products, etc.). */
 export function buildFullSiteKnowledge(): string {
@@ -22,10 +20,6 @@ export function buildFullSiteKnowledge(): string {
   };
   const about = aboutJson as typeof aboutJson;
   const contact = contactJson as typeof contactJson;
-  const careersPage = careersPageJson as {
-    hero: { body?: string; headline?: string[] };
-    culture?: { title?: string; body?: string };
-  };
   const bot = botJson as {
     welcome: { title: string; body: string };
     salesChannels: { note: string; channels: { label: string; href: string; enabled: boolean }[] };
@@ -45,16 +39,7 @@ export function buildFullSiteKnowledge(): string {
     .map((v) => `${v.title} (${v.subtitle}): ${v.description}`)
     .join('\n');
 
-  const jobBlock = jobsJson.jobs
-    .map(
-      (job) =>
-        `${job.title} (${job.department}, ${job.location}, ${job.type})\nSummary: ${job.summary}\nApply: ${job.applyUrl}`,
-    )
-    .join('\n\n');
-
-  const internBlock = internshipsJson.internships
-    .map((item) => `${item.title}: ${item.summary}`)
-    .join('\n');
+  const careersBlock = buildCareersKnowledgeBlock();
 
   return [
     '=== KGOLD OFFICIAL SITE KNOWLEDGE (answer from this first) ===',
@@ -112,14 +97,7 @@ export function buildFullSiteKnowledge(): string {
     '--- FAQ ---',
     ...home.faq.map((f) => `Q: ${f.question}\nA: ${f.answer}`),
     '',
-    '--- CAREERS ---',
-    careersPage.hero.body ?? '',
-    `Open jobs (${jobsJson.jobs.length}):`,
-    jobBlock,
-    '',
-    `Internship programs (${internshipsJson.internships.length}):`,
-    internBlock,
-    'Careers page: /careers',
+    careersBlock,
     '',
     '--- CONTACT & LOCATIONS ---',
     contact.hero.body,

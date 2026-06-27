@@ -1,4 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { sanitizeChatContent } from '../src/lib/sanitizeChatContent';
 import { buildFullSiteKnowledge } from './fullSiteKnowledge';
 import type { IBotResponse } from '../src/bot/types';
 
@@ -25,6 +26,14 @@ YOUR JOB:
 - When asked "What is the vision of KGOLD?" or similar, answer with the actual vision text — do NOT just say "visit the about page."
 - When asked about mission, values, leadership, products, careers, or locations — explain clearly in 2–5 sentences (more if needed).
 
+CAREERS (important):
+- You have FULL job and internship listings below — description, responsibilities, requirements, location, duration, and apply links.
+- When asked "what jobs are open?", list current roles with brief context (department, location).
+- When asked about a specific role ("tell me about Telesales", "ano requirements sa TikTok Live?"), explain what the role is, day-to-day work, requirements, and how to apply — all in chat.
+- For internships, cover what they'll experience, who should apply, duration, and location.
+- Mention careers@kgoldbeauty.com or the role-specific apply link when relevant.
+- Do NOT just say "visit the careers page" unless they explicitly want to navigate there.
+
 NAVIGATION (only when explicitly requested):
 - If the visitor asks to GO somewhere ("take me to careers", "where is the about page", "open contact") — briefly confirm and mention you can guide them there.
 - Do NOT append navigation links or "click here" for pure information questions.
@@ -33,6 +42,11 @@ NAVIGATION (only when explicitly requested):
 VOICE:
 - Polished English by default. Warm, confident, luxury concierge tone — not robotic.
 - Match Tagalog when the user writes in Tagalog.
+
+FORMAT:
+- Plain text only. Do NOT use markdown — no **, ***, _, #, or backticks.
+- Use short paragraphs. For lists, use "•" or simple numbered lines (1. 2. 3.).
+- Never wrap words in asterisks for emphasis.
 
 RULES:
 - Answer ONLY from the knowledge below for KGOLD facts. Do not invent products, prices, or policies.
@@ -84,7 +98,7 @@ export async function handleChatRequest(body: IChatRequestBody): Promise<IBotRes
     contents: buildContents(message, body.history ?? []),
   });
 
-  const text = result.response.text().trim();
+  const text = sanitizeChatContent(result.response.text().trim());
   if (!text) {
     throw new Error('Empty response from Gemini.');
   }
