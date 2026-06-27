@@ -1,14 +1,23 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTop } from './components/layout/ScrollToTop';
 import { SingleFileNavigation } from './components/layout/SingleFileNavigation';
 import { AppRoutes } from './AppRoutes';
+import { BotProvider } from './bot/botProvider';
+import { CHAT_ENABLED } from './bot/constants';
+import { isBotContentEnabled } from './bot/createBotAdapter';
 import { HeaderVisibilityProvider } from './hooks/useHeaderVisibility';
 import { ThemeProvider } from './hooks/useTheme';
 import { IS_SINGLE_FILE } from './lib/isSingleFile';
 
+const ChatWidget = lazy(() =>
+  import('./components/chat/ChatWidget').then((module) => ({ default: module.ChatWidget })),
+);
+
 const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '');
+const showChatWidget = CHAT_ENABLED && isBotContentEnabled();
 
 function AppShell() {
   return (
@@ -20,6 +29,11 @@ function AppShell() {
         <AppRoutes />
       </main>
       <Footer />
+      {showChatWidget && (
+        <Suspense fallback={null}>
+          <ChatWidget />
+        </Suspense>
+      )}
     </>
   );
 }
@@ -30,11 +44,15 @@ export function App() {
       <HeaderVisibilityProvider>
         {IS_SINGLE_FILE ? (
           <HashRouter>
-            <AppShell />
+            <BotProvider>
+              <AppShell />
+            </BotProvider>
           </HashRouter>
         ) : (
           <BrowserRouter basename={routerBasename || undefined}>
-            <AppShell />
+            <BotProvider>
+              <AppShell />
+            </BotProvider>
           </BrowserRouter>
         )}
       </HeaderVisibilityProvider>

@@ -1,0 +1,65 @@
+{
+  "enabled": true,
+  "assistantName": "KGOLD ShopBot",
+  "welcome": {
+    "title": "Welcome to KGOLD.",
+    "body": "I am here to guide you through our collections, partnerships, and brand story — with the same care we bring to every formulation.\n\nAsk me about our products, where to shop, careers, or how to reach our team. I can also take you directly to any page on this site."
+  },
+  "disclaimer": "AI concierge — responses are based on official KGOLD content. For urgent matters, please contact us directly.",
+  "quickReplies": [
+    { "id": "buy", "label": "Where can I buy KGOLD products?" },
+    { "id": "products", "label": "What products do you offer?" },
+    { "id": "about-vision", "label": "What is the vision of KGOLD?" }
+  ],
+  "salesChannels": {
+    "title": "Shop our official channels",
+    "note": "Links open in a new tab. Store URLs will be updated before public launch.",
+    "channels": [
+      { "id": "tiktok", "label": "TikTok Shop", "href": "#", "enabled": false },
+      { "id": "shopee", "label": "Shopee", "href": "#", "enabled": false },
+      { "id": "lazada", "label": "Lazada", "href": "#", "enabled": false }
+    ]
+  },
+  "intents": [
+    {
+      "id": "about",
+      "keywords": ["about page", "about us page", "go to about", "take me to about"],
+      "answer": "Our About page shares the KGOLD story — who we are, our mission, values, and leadership.",
+      "actions": ["navigate:/about"]
+    },
+    {
+      "id": "buy",
+      "keywords": ["bumili", "buy", "order", "saan", "where to buy", "where to shop", "shopee", "lazada", "tiktok", "store", "shop", "bili"],
+      "answer": "KGOLD is available through authorized distributors, resellers, and official online channels nationwide — including TikTok Shop, Shopee, and Lazada.",
+      "actions": ["showChannels", "navigate:/#categories", "contactHandoff"]
+    },
+    {
+      "id": "reseller",
+      "keywords": ["reseller", "distributor", "wholesale", "partner", "partnership", "magbenta", "dealership", "retailer", "become a partner"],
+      "answer": "We welcome individuals and businesses who share our standards for quality, care, and long-term partnership.",
+      "actions": ["mailto:hello@kgoldbeauty.com?subject=Partnership%20inquiry", "navigate:/contact"]
+    },
+    {
+      "id": "products",
+      "keywords": ["product", "products", "catalog", "skincare", "haircare", "wellness", "herbal", "men", "serum", "shampoo", "collections", "explore"],
+      "answer": "Our curated catalog spans skincare, personal care, wellness, herbal solutions, and men's essentials — each crafted with intention.",
+      "actions": ["showCollections", "navigate:/#categories"]
+    },
+    {
+      "id": "careers",
+      "keywords": ["career", "careers", "job", "jobs", "hiring", "trabaho", "apply", "internship", "intern", "work with us"],
+      "answer": "We regularly welcome talent across sales, operations, and digital channels. Explore current openings on our Careers page.",
+      "actions": ["showCareersSummary", "navigate:/careers"]
+    },
+    {
+      "id": "contact",
+      "keywords": ["contact", "email", "phone", "call", "location", "address", "office", "marikina", "isabela", "tawag", "reach"],
+      "answer": "Our team is available for sales, support, partnerships, and general inquiries.",
+      "actions": ["contactHandoff", "navigate:/contact"]
+    }
+  ],
+  "fallback": {
+    "message": "I could not find a precise answer in our official content. Our team would be glad to assist you directly.",
+    "actions": ["contactHandoff", "navigate:/contact"]
+  }
+}

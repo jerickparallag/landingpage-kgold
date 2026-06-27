@@ -1,63 +1,39 @@
-/** Bundled image URLs — inlined as base64 in the single-file build. */
-import heroBg from '../../public/hero-bg.png';
-import kgoldLogo from '../../public/kgold_logo.png';
-
-import homeHero from '../../public/Home/home_hero.jpg';
-import homeSkincareCover from '../../public/Home/skincare_cover.png';
-import homeSkincareHero from '../../public/Home/skincare_hero.jpg';
-import homeMenCover from '../../public/Home/men_essen_cover.jpg';
-import homeMenHero from '../../public/Home/men_essen_hero.jpg';
-import homeHerbalCover from '../../public/Home/herbal_cover.jpg';
-import homeHerbalHero from '../../public/Home/herbal_hero.jpg';
-import homeWellnessCover from '../../public/Home/wellness_cover.png';
-import productSerum from '../../public/Home/product-serum.png';
-import productShampoo from '../../public/Home/product-shampoo.png';
-import productBodycream from '../../public/Home/product-bodycream.png';
-import productSpf from '../../public/Home/product-spf.png';
-
-import aboutHero from '../../public/About/about-hero.jpg';
-import aboutOwner from '../../public/About/about-owner.jpg';
-import core1 from '../../public/About/coreval_1.jpg';
-import core2 from '../../public/About/coreval_2.jpg';
-import core3 from '../../public/About/coreval_3.jpg';
-import core4 from '../../public/About/coreval_4.jpg';
-import core5 from '../../public/About/coreval_5.jpg';
-
-import careerHero from '../../public/Career/career-hero.jpg';
-import careerJobBanner from '../../public/Career/career_job.jpg';
-import careerInternBanner from '../../public/Career/career_intern.jpg';
-
-import contactHero from '../../public/Contact/contact_hero.jpg';
-
 import jobTelesales from './images/jobs/telesales.png';
 import jobTiktokLiveSellers from './images/jobs/tiktok-live-sellers.png';
 
+const PUBLIC_BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+/** Public-folder assets are served at the site root — do not import them as modules. */
+function publicAsset(path: string): string {
+  return `${PUBLIC_BASE}${path}`;
+}
+
 export const IMAGES = {
-  heroBg,
-  kgoldLogo,
-  homeHero,
-  homeSkincareCover,
-  homeSkincareHero,
-  homeMenCover,
-  homeMenHero,
-  homeHerbalCover,
-  homeHerbalHero,
-  homeWellnessCover,
-  productSerum,
-  productShampoo,
-  productBodycream,
-  productSpf,
-  aboutHero,
-  aboutOwner,
-  careerHero,
-  careerJobBanner,
-  careerInternBanner,
-  contactHero,
-  core1,
-  core2,
-  core3,
-  core4,
-  core5,
+  heroBg: publicAsset('/hero-bg.png'),
+  kgoldLogo: publicAsset('/kgold_logo.png'),
+  homeHero: publicAsset('/Home/home_hero.jpg'),
+  homeSkincareCover: publicAsset('/Home/skincare_cover.png'),
+  homeSkincareHero: publicAsset('/Home/skincare_hero.jpg'),
+  homeMenCover: publicAsset('/Home/men_essen_cover.jpg'),
+  homeMenHero: publicAsset('/Home/men_essen_hero.jpg'),
+  homeHerbalCover: publicAsset('/Home/herbal_cover.jpg'),
+  homeHerbalHero: publicAsset('/Home/herbal_hero.jpg'),
+  homeWellnessCover: publicAsset('/Home/wellness_cover.png'),
+  productSerum: publicAsset('/Home/product-serum.png'),
+  productShampoo: publicAsset('/Home/product-shampoo.png'),
+  productBodycream: publicAsset('/Home/product-bodycream.png'),
+  productSpf: publicAsset('/Home/product-spf.png'),
+  aboutHero: publicAsset('/About/about-hero.jpg'),
+  aboutOwner: publicAsset('/About/about-owner.jpg'),
+  core1: publicAsset('/About/coreval_1.jpg'),
+  core2: publicAsset('/About/coreval_2.jpg'),
+  core3: publicAsset('/About/coreval_3.jpg'),
+  core4: publicAsset('/About/coreval_4.jpg'),
+  core5: publicAsset('/About/coreval_5.jpg'),
+  careerHero: publicAsset('/Career/career-hero.jpg'),
+  careerJobBanner: publicAsset('/Career/career_job.jpg'),
+  careerInternBanner: publicAsset('/Career/career_intern.jpg'),
+  contactHero: publicAsset('/Contact/contact_hero.jpg'),
   jobTelesales,
   jobTiktokLiveSellers,
 } as const;
