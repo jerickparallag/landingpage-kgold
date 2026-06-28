@@ -1,4 +1,5 @@
 import { ABOUT_PAGE } from '../../../constants/content';
+import { EditorialFixedBackground } from '../../ui/EditorialFixedBackground';
 import { useInView } from '../../../hooks/useInView';
 import { cn, sectionCtaButtonClass, sectionDescriptionClass, sectionHeadingClass } from '../../../lib/utils';
 
@@ -7,14 +8,10 @@ export function AboutCareersSection() {
   const { careers } = ABOUT_PAGE;
 
   return (
-    <section id="careers" className="scroll-section relative hero-min-h-editorial overflow-hidden">
+    <section id="careers" className="scroll-section relative hero-min-h-editorial">
+      <EditorialFixedBackground image={careers.backgroundImage} />
       <div
-        className="parallax-bg absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${careers.backgroundImage})` }}
-        aria-hidden="true"
-      />
-      <div
-        className="absolute inset-0 bg-gradient-to-r from-background from-35% via-background/92 to-background/25 dark:from-background dark:via-background/95 dark:to-background/30"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background from-35% via-background/92 to-background/25 dark:from-background dark:via-background/95 dark:to-background/30"
         aria-hidden="true"
       />
 

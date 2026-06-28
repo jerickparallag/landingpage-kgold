@@ -30,8 +30,8 @@ export function CollectionEscapeBack() {
   }, [goToCollections]);
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 top-14 z-40">
-      <div className="page-container flex h-14 items-center justify-end">
+    <div className="pointer-events-none fixed inset-x-0 app-header-offset-top z-40">
+      <div className="page-container flex app-header-bar items-center justify-end">
         <button
           type="button"
           onClick={goToCollections}

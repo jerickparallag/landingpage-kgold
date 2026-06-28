@@ -1,7 +1,7 @@
 import { CAREERS_PAGE } from '../../../constants/content';
 import { SectionHeader } from '../../ui/SectionHeader';
 import { useInView } from '../../../hooks/useInView';
-import { cn, sectionItemBodyClass, subsectionHeadingClass } from '../../../lib/utils';
+import { cn, sectionDescriptionClass, sectionSubheadingClass } from '../../../lib/utils';
 
 export function CareersCulture() {
   const { ref, isVisible } = useInView<HTMLDivElement>();
@@ -15,14 +15,14 @@ export function CareersCulture() {
         <div
           ref={ref}
           className={cn(
-            'reveal section-stack section-grid grid lg:grid-cols-3',
+            'reveal section-stack grid gap-10 sm:gap-12 lg:grid-cols-3 lg:gap-14',
             isVisible && 'reveal-visible',
           )}
         >
           {culture.items.map((item) => (
             <div key={item.title}>
-              <h3 className={subsectionHeadingClass}>{item.title}</h3>
-              <p className={sectionItemBodyClass}>{item.description}</p>
+              <h3 className={sectionSubheadingClass}>{item.title}</h3>
+              <p className={cn(sectionDescriptionClass, 'mt-4')}>{item.description}</p>
             </div>
           ))}
         </div>

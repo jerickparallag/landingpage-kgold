@@ -78,13 +78,13 @@ export function PageSubNav({ parentLink, links }: IPageSubNavProps) {
     <>
       <nav
         className={cn(
-          'fixed top-14 right-0 left-0 z-40 border-b border-border bg-background transition-transform duration-300 ease-out',
-          headerVisible ? 'translate-y-0' : '-translate-y-[calc(100%+3.5rem)]',
+          'fixed app-header-offset-top right-0 left-0 z-40 border-b border-border bg-background transition-transform duration-300 ease-out',
+          headerVisible ? 'translate-y-0' : '-translate-y-[calc(100%+var(--header-height))]',
         )}
         aria-label="Page sections"
       >
         <div className="page-container">
-          <ul className="scrollbar-none -mx-4 flex h-14 items-center gap-8 overflow-x-auto px-4 sm:mx-0 sm:px-0">
+          <ul className="scrollbar-none -mx-4 flex app-header-bar items-center gap-8 overflow-x-auto px-4 sm:mx-0 sm:px-0">
             <li className="shrink-0">
               <Link to={parentLink.href} className={subNavLinkClass(isParentActive)}>
                 {parentLink.label}

@@ -2,8 +2,6 @@
   "subNavParent": { "label": "Careers", "href": "/careers" },
   "subNav": [
     { "label": "Culture", "href": "/careers#culture" },
-    { "label": "Open Roles", "href": "/careers#open-roles" },
-    { "label": "Internships", "href": "/careers#internships" },
     { "label": "Contact", "href": "/contact" }
   ],
   "hero": {
@@ -11,7 +9,7 @@
     "subheadline": "",
     "body": "Join a team that values ownership, continuous learning, and the drive to build something that lasts.",
     "ctaLabel": "View Open Roles",
-    "ctaHref": "#open-roles",
+    "ctaHref": "/careers/jobs",
     "backgroundImageKey": "careerHero"
   },
   "culture": {
@@ -51,7 +49,7 @@
       "headline": "Grow Here.",
       "subline": "As the company grows, new opportunities continue to emerge for people willing to learn, contribute, and lead.",
       "ctaLabel": "View open roles",
-      "ctaHref": "#open-roles-list"
+      "ctaHref": "/careers/jobs"
     }
   },
   "internships": {
@@ -72,7 +70,7 @@
       "headline": "Start Strong.",
       "subline": "Gain practical experience through real projects, mentorship, and exposure to how a growing business operates every day.",
       "ctaLabel": "Explore programs",
-      "ctaHref": "#internship-programs"
+      "ctaHref": "/careers/internships"
     }
   },
   "cta": {

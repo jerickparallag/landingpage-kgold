@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "annual-partner-summit-2026",
+    "category": "Events — Partnerships",
+    "title": "Annual Partner Summit 2026",
+    "date": "03/15",
+    "imageKey": "careerHero",
+    "excerpt": "Our largest gathering of distributors and retail partners nationwide.",
+    "body": [
+      "The Annual Partner Summit brings together KGOLD distributors, retail partners, and field teams for a full day of product updates, strategy sessions, and shared planning for the year ahead.",
+      "This year's program focused on new collection rollouts, digital sales tools, and standards for in-store client experience — with breakout rooms by region so teams could work through practical goals together.",
+      "Summit moments are captured here as a record of the partnerships that keep KGOLD growing across the Philippines."
+    ],
+    "location": "Metro Manila"
+  },
+  {
+    "slug": "skincare-science-seminar",
+    "category": "Seminars — Science",
+    "title": "Skincare Science Seminar",
+    "date": "01/24",
+    "imageKey": "productSerum",
+    "excerpt": "Actives, skin types, and evidence-based recommendations for everyday care.",
+    "body": [
+      "Led by our product education team, this seminar walked attendees through how KGOLD formulations are built — from base textures to active ingredients and how they interact on different skin types.",
+      "Participants reviewed real client scenarios, practiced recommendation frameworks, and received updated material kits for store and field use.",
+      "Sessions like this keep our frontline teams confident when guiding customers toward routines that genuinely work."
+    ],
+    "location": "Quezon City"
+  },
+  {
+    "slug": "retail-excellence-workshop",
+    "category": "Workshops — Retail",
+    "title": "Retail Excellence Workshop",
+    "date": "02/18",
+    "imageKey": "careerJobBanner",
+    "excerpt": "Merchandising, client care, and brand storytelling for partner stores.",
+    "body": [
+      "A hands-on workshop for partner store teams covering visual merchandising, client greeting standards, and how to tell the KGOLD story consistently on the shop floor.",
+      "Teams rotated through display exercises and role-play stations before presenting their updated shelf layouts to the group.",
+      "The workshop reinforced that every touchpoint — from first hello to product recommendation — reflects the quality we stand for."
+    ],
+    "location": "Cebu"
+  },
+  {
+    "slug": "partner-onboarding-workshop",
+    "category": "Workshops — Partnerships",
+    "title": "Partner Onboarding Workshop",
+    "date": "12/06",
+    "imageKey": "homeSkincareCover",
+    "excerpt": "Orientation for new distributors on product knowledge and compliance.",
+    "body": [
+      "New partners joined us for a structured onboarding day covering brand history, core product lines, order processes, and compliance requirements.",
+      "Each cohort received a printed playbook and access to ongoing support channels for their first ninety days in the network.",
+      "Onboarding workshops ensure every new partner starts with the same foundation — clarity, confidence, and connection to the wider KGOLD community."
+    ],
+    "location": "Davao"
+  },
+  {
+    "slug": "sustainability-in-beauty-talk",
+    "category": "Talks — Sustainability",
+    "title": "Sustainability in Beauty Talk",
+    "date": "11/14",
+    "imageKey": "homeHerbalHero",
+    "excerpt": "Responsible sourcing, packaging, and long-term brand stewardship.",
+    "body": [
+      "A panel discussion with our sourcing and operations leads on how KGOLD approaches ingredient traceability, packaging decisions, and supplier partnerships.",
+      "Attendees asked questions about recyclability, local sourcing priorities, and how we balance growth with responsible production choices.",
+      "Transparency in these conversations helps our teams and partners represent the brand with integrity."
+    ],
+    "location": "Metro Manila"
+  },
+  {
+    "slug": "sales-leadership-seminar",
+    "category": "Seminars — Leadership",
+    "title": "Sales Leadership Seminar",
+    "date": "10/22",
+    "imageKey": "careerInternBanner",
+    "excerpt": "Coaching, territory planning, and building high-performing field teams.",
+    "body": [
+      "Designed for team leads and supervisors, this seminar covered coaching conversations, weekly planning rhythms, and how to support new sellers through their first campaigns.",
+      "Participants left with templates for one-on-one check-ins and a shared framework for reviewing territory performance without losing sight of people development.",
+      "Strong field leadership is what turns individual effort into sustained team results."
+    ],
+    "location": "Cebu"
+  },
+  {
+    "slug": "product-launch-masterclass",
+    "category": "Masterclasses — Product",
+    "title": "Product Launch Masterclass",
+    "date": "09/08",
+    "imageKey": "homeWellnessCover",
+    "excerpt": "From concept brief to retail rollout for new product lines.",
+    "body": [
+      "This masterclass traced a recent launch from initial brief through formulation milestones, packaging approvals, and the retail activation plan.",
+      "Marketing and sales teams sat together to align on messaging, sampling strategy, and the timeline stores need before floor display.",
+      "Understanding the full launch arc helps every department move in step when something new hits the shelf."
+    ],
+    "location": "Metro Manila"
+  },
+  {
+    "slug": "community-wellness-day",
+    "category": "Events — Community",
+    "title": "Community Wellness Day",
+    "date": "08/17",
+    "imageKey": "homeHerbalCover",
+    "excerpt": "An open day for clients and partners to experience KGOLD care routines.",
+    "body": [
+      "Community Wellness Day invited clients, partners, and neighbors to try product routines, speak with educators, and learn simple self-care practices built around our herbal and wellness lines.",
+      "Mini stations offered hand care, scalp checks, and SPF guidance — all run by trained team members.",
+      "Events like this keep KGOLD rooted in real relationships, not just transactions."
+    ],
+    "location": "Quezon City"
+  }
+]

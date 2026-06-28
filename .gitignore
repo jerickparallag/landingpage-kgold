@@ -8,7 +8,9 @@ yarn-error.log*
 
 node_modules
 dist
+dist-single
 dist-ssr
+kgold-landing-page.html
 *.local
 .env
 .env.*

@@ -9,6 +9,7 @@ import { cn } from '../../lib/utils';
 function isLinkActive(href: string, pathname: string): boolean {
   if (href === '/') return pathname === '/';
   if (href === '/about') return pathname === '/about';
+  if (href === '/journal') return pathname === '/journal' || pathname.startsWith('/journal/');
   if (href === '/careers') return pathname === '/careers' || pathname.startsWith('/careers/');
   if (href === '/contact') return pathname === '/contact';
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -64,7 +65,7 @@ function MobileNavLink({
   const isHashLink = href.startsWith('#') || (IS_SINGLE_FILE && href.startsWith('/#'));
 
   const linkClass = cn(
-    'block w-full py-4 text-sm font-normal tracking-[0.18em] text-foreground uppercase transition hover:opacity-100',
+    'luxury-nav-link block w-full py-4',
     isActive ? 'opacity-100' : 'opacity-80',
   );
 
@@ -105,7 +106,7 @@ export function Header() {
           headerVisible || menuOpen ? 'translate-y-0' : '-translate-y-full',
         )}
       >
-        <div className="page-container relative flex h-14 items-center justify-between">
+        <div className="page-container relative flex app-header-bar items-center justify-between">
           <div className="flex flex-1 items-center justify-start lg:hidden">
             <button
               type="button"
@@ -154,7 +155,7 @@ export function Header() {
 
       <div
         className={cn(
-          'fixed inset-x-0 top-14 bottom-0 z-40 overflow-y-auto bg-white transition-opacity duration-300 lg:hidden dark:bg-[#1a1a1a]',
+          'fixed inset-x-0 app-header-offset-top bottom-0 z-40 overflow-y-auto bg-white transition-opacity duration-300 lg:hidden dark:bg-[#1a1a1a]',
           menuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0',
         )}
         aria-hidden={!menuOpen}

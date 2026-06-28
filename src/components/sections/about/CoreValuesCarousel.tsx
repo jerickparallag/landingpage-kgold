@@ -1,3 +1,13 @@
+import { useCallback, useEffect, useState } from 'react';
+import {
+  cn,
+  sectionDescriptionClass,
+  sectionSubheadingClass,
+} from '../../../lib/utils';
+import { OptimizedImage } from '../../ui/OptimizedImage';
+
+const AUTOPLAY_INTERVAL_MS = 12000;
+
 interface ICoreValue {
   title: string;
   subtitle: string;
@@ -9,37 +19,140 @@ interface ICoreValuesCarouselProps {
   values: readonly ICoreValue[];
 }
 
-export function CoreValuesCarousel({ values }: ICoreValuesCarouselProps) {
+function CarouselArrow({ direction }: { direction: 'prev' | 'next' }) {
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-      {values.map((value) => (
-        <article
-          key={value.title}
-          className="group relative aspect-[4/5] overflow-hidden rounded-brand bg-muted"
-        >
-          <img
-            src={value.image}
-            alt=""
-            loading="lazy"
-            className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.02]"
-          />
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      {direction === 'prev' ? (
+        <path
+          d="M15 6l-6 6 6 6"
+          stroke="currentColor"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      ) : (
+        <path
+          d="M9 6l6 6-6 6"
+          stroke="currentColor"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      )}
+    </svg>
+  );
+}
+
+function PlayPauseIcon({ playing }: { playing: boolean }) {
+  return (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      {playing ? (
+        <>
+          <path d="M8 5v14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M16 5v14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        </>
+      ) : (
+        <path
+          d="M8 5.5v13l10-6.5-10-6.5z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+      )}
+    </svg>
+  );
+}
+
+function getInitialAutoplayState() {
+  if (typeof window === 'undefined') return true;
+  return !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+export function CoreValuesCarousel({ values }: ICoreValuesCarouselProps) {
+  const [index, setIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(getInitialAutoplayState);
+  const total = values.length;
+
+  const goToPrevious = useCallback(() => {
+    setIndex((current) => (current - 1 + total) % total);
+  }, [total]);
+
+  const goToNext = useCallback(() => {
+    setIndex((current) => (current + 1) % total);
+  }, [total]);
+
+  const toggleAutoplay = useCallback(() => {
+    setIsPlaying((playing) => !playing);
+  }, []);
+
+  useEffect(() => {
+    if (!isPlaying || total <= 1) return undefined;
+
+    const timerId = window.setInterval(goToNext, AUTOPLAY_INTERVAL_MS);
+    return () => window.clearInterval(timerId);
+  }, [goToNext, index, isPlaying, total]);
+
+  if (total === 0) return null;
+
+  const current = values[index];
+
+  return (
+    <div className="grid lg:grid-cols-2">
+      <div className="core-values-text-panel order-2 lg:order-1">
+        <div className="flex flex-1 items-center px-8 py-14 sm:px-12 lg:justify-end lg:py-24 lg:pl-16 lg:pr-12 xl:pl-24">
           <div
-            className="pointer-events-none absolute inset-0 bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-85"
-            aria-hidden="true"
-          />
-          <div className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:p-6">
-            <div className="relative z-10 text-foreground">
-              <p className="text-xs font-medium tracking-wide uppercase opacity-80">
-                {value.subtitle}
-              </p>
-              <h4 className="mt-2 text-base font-normal tracking-wide sm:text-lg">{value.title}</h4>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {value.description}
-              </p>
-            </div>
+            key={current.title}
+            className="core-values-slide-content w-full max-w-md text-left lg:max-w-lg"
+            aria-live="polite"
+          >
+            <h3 className={sectionSubheadingClass}>{current.title}</h3>
+            <p className={cn(sectionDescriptionClass, 'mt-4 lg:mt-5')}>{current.description}</p>
           </div>
-        </article>
-      ))}
+        </div>
+
+        {total > 1 ? (
+          <button
+            type="button"
+            className="core-values-play-btn"
+            aria-label={isPlaying ? 'Pause autoplay' : 'Play autoplay'}
+            aria-pressed={isPlaying}
+            onClick={toggleAutoplay}
+          >
+            <PlayPauseIcon playing={isPlaying} />
+          </button>
+        ) : null}
+      </div>
+
+      <div className="core-values-slide-image order-1 lg:order-2">
+        <div key={current.image} className="core-values-slide-media absolute inset-0">
+          <OptimizedImage
+            src={current.image}
+            alt=""
+            pictureClassName="absolute inset-0 block h-full w-full"
+            className="object-cover"
+          />
+        </div>
+        {total > 1 ? (
+          <>
+            <button
+              type="button"
+              className="core-values-nav-btn core-values-nav-btn-prev"
+              aria-label="Previous core value"
+              onClick={goToPrevious}
+            >
+              <CarouselArrow direction="prev" />
+            </button>
+            <button
+              type="button"
+              className="core-values-nav-btn core-values-nav-btn-next"
+              aria-label="Next core value"
+              onClick={goToNext}
+            >
+              <CarouselArrow direction="next" />
+            </button>
+          </>
+        ) : null}
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FAQ, FAQ_SECTION } from '../../constants/content';
 import { useInView } from '../../hooks/useInView';
-import { cn, sectionDescriptionClass, sectionHeadingClass } from '../../lib/utils';
+import { cn, ctaButtonClass, sectionDescriptionClass, sectionHeadingClass, sectionSubheadingClass, typeBodyMutedClass } from '../../lib/utils';
 
 export function FaqSection() {
   const [openId, setOpenId] = useState<string | null>(FAQ[0]?.question ?? null);
@@ -37,7 +37,7 @@ export function FaqSection() {
                     aria-expanded={isOpen}
                     onClick={() => setOpenId(isOpen ? null : item.question)}
                   >
-                    <span className="text-sm font-normal text-foreground sm:text-[15px]">
+                    <span className={cn(sectionSubheadingClass, 'font-normal')}>
                       {item.question}
                     </span>
                     <span
@@ -53,7 +53,7 @@ export function FaqSection() {
                       isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0',
                     )}
                   >
-                    <div className="pb-6 text-sm leading-relaxed text-muted-foreground sm:pb-7 sm:text-base">
+                    <div className={cn(typeBodyMutedClass, 'pb-6 sm:pb-7')}>
                       {item.answer}
                     </div>
                   </div>
@@ -64,7 +64,7 @@ export function FaqSection() {
 
           <div className="order-3 mt-auto section-stack flex flex-col items-center gap-6 pt-10 text-center lg:order-none lg:col-start-1 lg:row-start-2 lg:mt-0 lg:items-start lg:self-end lg:pt-8 lg:text-left">
             <p className={cn(sectionDescriptionClass, 'mt-0 max-w-sm')}>{FAQ_SECTION.description}</p>
-            <a href={FAQ_SECTION.ctaHref} className="luxury-nav-link mx-auto w-fit lg:mx-0">
+            <a href={FAQ_SECTION.ctaHref} className={cn(ctaButtonClass, 'mx-auto lg:mx-0')}>
               {FAQ_SECTION.ctaLabel}
             </a>
           </div>

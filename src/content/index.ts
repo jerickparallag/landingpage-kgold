@@ -1,7 +1,11 @@
 import aboutJson from './about.json';
 import careersPageJson from './careers-page.json';
+import jobsPageJson from './careers/jobs-page.json';
+import internshipsListingPageJson from './careers/internships-page.json';
 import contactJson from './contact.json';
 import homeJson from './home.json';
+import journalPageJson from './journal-page.json';
+import journalArticlesJson from './journal/articles.json';
 import siteJson from './site.json';
 import { resolveContentImages } from './resolve';
 import type {
@@ -11,6 +15,9 @@ import type {
   IContactPageContent,
   IFooterContent,
   IHeroContent,
+  IJournalArticle,
+  IJournalPageContent,
+  ICareersListingPageContent,
   ILink,
   IProductItem,
   ISiteContent,
@@ -62,6 +69,11 @@ const home = resolveContentImages(homeJson) as unknown as THomeContent;
 const about = resolveContentImages(aboutJson) as unknown as IAboutPageContent;
 const contact = resolveContentImages(contactJson) as unknown as IContactPageContent;
 const careersPage = resolveContentImages(careersPageJson) as unknown as ICareersPageContent;
+const journalArticles = resolveContentImages(journalArticlesJson) as unknown as IJournalArticle[];
+const journalPage = {
+  ...(resolveContentImages(journalPageJson) as unknown as Omit<IJournalPageContent, 'articles'>),
+  articles: journalArticles,
+} satisfies IJournalPageContent;
 
 export const SITE: ISiteContent = siteJson.site;
 export const NAV_LINKS: readonly ILink[] = siteJson.navLinks;
@@ -83,6 +95,9 @@ export const FINAL_CTA = home.finalCta;
 export const ABOUT_PAGE = about;
 export const CONTACT_PAGE = contact;
 export const CAREERS_PAGE = careersPage;
+export const JOBS_PAGE = jobsPageJson as ICareersListingPageContent;
+export const INTERNSHIPS_PAGE = internshipsListingPageJson as ICareersListingPageContent;
+export const JOURNAL_PAGE = journalPage;
 
 export type {
   ICareersApiResponse,
@@ -90,6 +105,7 @@ export type {
   IInternshipListingRaw,
   IJobListing,
   IJobListingRaw,
+  IJournalArticle,
   TEmploymentType,
   TJobViewMode,
 } from './types';

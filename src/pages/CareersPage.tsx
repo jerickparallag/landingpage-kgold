@@ -1,26 +1,17 @@
+import { CAREERS_PAGE } from '../constants/content';
+import { PageSubNav } from '../components/layout/PageSubNav';
 import { CareersHero } from '../components/sections/careers/CareersHero';
 import { CareersCulture } from '../components/sections/careers/CareersCulture';
-import { JobOpenings } from '../components/sections/careers/JobOpenings';
-import { InternshipProgram } from '../components/sections/careers/InternshipProgram';
+import { CareersHubSection } from '../components/sections/careers/CareersHubSection';
 import { CareersCta } from '../components/sections/careers/CareersCta';
-import { PageSubNav } from '../components/layout/PageSubNav';
 
 export function CareersPage() {
   return (
     <>
       <CareersHero />
-      <PageSubNav
-        parentLink={{ label: 'Careers', href: '/careers' }}
-        links={[
-          { label: 'Culture', href: '/careers#culture' },
-          { label: 'Open Roles', href: '/careers#open-roles' },
-          { label: 'Internships', href: '/careers#internships' },
-          { label: 'Contact', href: '/contact' },
-        ]}
-      />
+      <PageSubNav parentLink={CAREERS_PAGE.subNavParent} links={CAREERS_PAGE.subNav} />
       <CareersCulture />
-      <JobOpenings />
-      <InternshipProgram />
+      <CareersHubSection />
       <CareersCta />
     </>
   );

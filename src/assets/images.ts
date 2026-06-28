@@ -9,8 +9,6 @@ function publicAsset(path: string): string {
 }
 
 export const IMAGES = {
-  heroBg: publicAsset('/hero-bg.png'),
-  kgoldLogo: publicAsset('/kgold_logo.png'),
   homeHero: publicAsset('/Home/home_hero.jpg'),
   homeSkincareCover: publicAsset('/Home/skincare_cover.png'),
   homeSkincareHero: publicAsset('/Home/skincare_hero.jpg'),

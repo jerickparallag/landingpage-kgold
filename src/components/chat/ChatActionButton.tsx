@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useBot } from '../../bot/botProvider';
 import type { IBotAction } from '../../bot/types';
-import { cn } from '../../lib/utils';
+import { ctaButtonClass, cn } from '../../lib/utils';
 
 interface IChatActionButtonProps {
   action: IBotAction;
@@ -11,11 +11,7 @@ interface IChatActionButtonProps {
 export function ChatActionButton({ action, className }: IChatActionButtonProps) {
   const { navigateTo } = useBot();
 
-  const baseClass = cn(
-    'inline-flex min-h-8 items-center justify-center rounded-brand border border-border bg-background px-3 py-1.5 text-[10px] font-normal tracking-[0.16em] uppercase transition hover:bg-muted',
-    action.type === 'navigate' && 'border-foreground/20 bg-foreground text-background hover:bg-foreground/90',
-    className,
-  );
+  const baseClass = cn(ctaButtonClass, 'min-h-8 px-3 py-1.5', className);
 
   if (action.type === 'navigate') {
     return (

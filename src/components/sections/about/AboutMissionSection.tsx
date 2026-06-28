@@ -1,7 +1,7 @@
 import { ABOUT_PAGE } from '../../../constants/content';
 import { CoreValuesCarousel } from './CoreValuesCarousel';
 import { useInView } from '../../../hooks/useInView';
-import { cn, sectionDescriptionClass, sectionHeadingClass, sectionLedeClass, subsectionHeadingClass } from '../../../lib/utils';
+import { cn, sectionDescriptionClass, sectionHeadingClass, sectionLedeClass, sectionSubheadingClass } from '../../../lib/utils';
 
 export function AboutMissionSection() {
   const { ref: storyRef, isVisible: storyVisible } = useInView<HTMLDivElement>();
@@ -20,11 +20,11 @@ export function AboutMissionSection() {
 
           <div className="section-stack section-grid grid lg:grid-cols-2 lg:gap-0">
             <div className="lg:pr-12">
-              <h3 className={subsectionHeadingClass}>{mission.vision.title}</h3>
+              <h3 className={sectionSubheadingClass}>{mission.vision.title}</h3>
               <p className={sectionDescriptionClass}>{mission.vision.body}</p>
             </div>
             <div className="section-split">
-              <h3 className={subsectionHeadingClass}>{mission.missionStatement.title}</h3>
+              <h3 className={sectionSubheadingClass}>{mission.missionStatement.title}</h3>
               <p className={sectionDescriptionClass}>{mission.missionStatement.body}</p>
             </div>
           </div>
@@ -34,17 +34,15 @@ export function AboutMissionSection() {
           ref={valuesRef}
           className={cn('reveal section-stack', valuesVisible && 'reveal-visible')}
         >
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div className="max-w-2xl">
-              <h2 className={sectionHeadingClass}>{mission.valuesTitle}</h2>
-              <p className={sectionDescriptionClass}>{mission.valuesTagline}</p>
-            </div>
-          </div>
-
-          <div className="section-inner-stack">
-            <CoreValuesCarousel values={mission.values} />
+          <div className="max-w-2xl">
+            <h2 className={sectionHeadingClass}>{mission.valuesTitle}</h2>
+            <p className={sectionDescriptionClass}>{mission.valuesTagline}</p>
           </div>
         </div>
+      </div>
+
+      <div className={cn('reveal section-stack mt-8 sm:mt-10 lg:mt-14', valuesVisible && 'reveal-visible')}>
+        <CoreValuesCarousel values={mission.values} />
       </div>
     </section>
   );

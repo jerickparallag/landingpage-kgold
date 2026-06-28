@@ -6,47 +6,72 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-/** Luxury section title — prominent, standard casing, bolder than body. */
-export const sectionHeadingClass =
-  'text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem] lg:leading-snug';
+/**
+ * Typography scale (defined in index.css @theme + .type-* utilities)
+ *
+ * | Token            | Size   | Use                          |
+ * |------------------|--------|------------------------------|
+ * | type-nav         | 11px   | Appbar, sub-nav, filters     |
+ * | type-eyebrow     | 12px   | Product line, category tags  |
+ * | type-body        | 14px   | Body copy, descriptions      |
+ * | type-subheading  | 16px   | Card titles, value part heads  |
+ * | type-section-title | 22–26px | Section h2               |
+ * | type-hero-title  | clamp  | Page hero h1                 |
+ * | type-hero-home-title | clamp | Home hero h1             |
+ */
+
+export const typeNavClass = 'type-nav font-normal normal-case tracking-normal text-foreground';
+export const typeEyebrowClass = 'type-eyebrow font-normal normal-case tracking-normal text-muted-foreground';
+export const typeBodyClass = 'type-body font-light leading-relaxed text-foreground';
+export const typeBodyMutedClass = 'type-body font-light leading-relaxed text-muted-foreground';
+export const typeSubheadingClass = 'type-subheading font-semibold tracking-tight text-foreground';
+
+/** Section h2 — primary page section title. */
+export const sectionHeadingClass = 'type-section-title font-semibold tracking-tight text-foreground';
 
 /** Body copy directly under a section title. */
-export const sectionDescriptionClass =
-  'mt-3 text-sm font-light leading-relaxed text-muted-foreground sm:text-[15px]';
+export const sectionDescriptionClass = cn(typeBodyMutedClass, 'mt-3');
 
 /** Intro lede under a section title (editorial blocks). */
-export const sectionLedeClass = 'mt-5 text-base font-light leading-relaxed text-muted-foreground';
+export const sectionLedeClass = cn(typeBodyMutedClass, 'mt-5');
 
 /** Grid item or card body copy. */
-export const sectionItemBodyClass =
-  'mt-2 text-sm font-light leading-relaxed text-muted-foreground';
+export const sectionItemBodyClass = cn(typeBodyMutedClass, 'mt-2');
 
-/** Smaller subsection labels — location names, inquiry types, etc. */
-export const subsectionHeadingClass =
-  'text-xs font-medium tracking-wide text-foreground sm:text-[13px]';
+/** Smaller inline labels — location names, inquiry types, etc. */
+export const subsectionHeadingClass = cn(typeNavClass, 'font-medium');
+
+/** Feature titles under a section heading — culture pillars, value cards, etc. */
+export const sectionSubheadingClass = typeSubheadingClass;
 
 /** Page hero h1 — editorial / inner pages. */
-export const heroTitleClass =
-  'text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.12] font-light tracking-[0.04em]';
+export const heroTitleClass = 'type-hero-title font-light tracking-[0.04em]';
 
 /** Home hero h1. */
 export const heroHomeTitleClass =
-  'text-[clamp(2.35rem,6.5vw,4.5rem)] leading-[0.92] font-extrabold tracking-[0.04em] uppercase text-white';
+  'type-hero-home-title font-extrabold tracking-[0.04em] uppercase text-white';
 
 /** Collection hero h1. */
 export const heroCollectionTitleClass =
-  'text-[clamp(1.95rem,4.5vw,3.25rem)] leading-[0.94] font-extrabold tracking-[0.04em] uppercase text-white';
+  'type-hero-title font-extrabold tracking-[0.04em] uppercase text-white';
 
 /** Hero subheadline — use after h1 (or after rule on home). */
 export const heroSubheadlineClass =
-  'text-base font-semibold tracking-[0.04em] text-white/80 sm:text-lg';
+  'type-subheading font-semibold tracking-[0.04em] text-white/80';
 
 /** Hero body copy over image backgrounds. */
-export const heroBodyClass =
-  'mt-4 max-w-xl text-sm font-medium leading-relaxed text-white/85 sm:text-base';
+export const heroBodyClass = cn(typeBodyClass, 'mt-4 max-w-xl font-medium text-white/85');
 
 /** Shared hero section shell. */
 export const heroSectionClass = 'relative overflow-hidden bg-background text-foreground';
+
+/** Shared hero min-height + content grid — inner pages. */
+export const heroContentGridClass =
+  'hero-min-h-home hero-content grid items-center gap-12 lg:grid-cols-12';
+
+/** Home hero content grid — same height, bottom-aligned on small screens. */
+export const heroHomeContentGridClass =
+  'hero-min-h-home hero-content grid items-end gap-8 sm:gap-10 lg:grid-cols-12 lg:items-center lg:gap-12';
 
 /** Horizontal fade — black gradient for hero text readability. */
 export const heroOverlayHorizontalClass =
@@ -56,22 +81,20 @@ export const heroOverlayHorizontalClass =
 export const heroOverlayVerticalClass =
   'pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10';
 
-/** Hero CTA outline link over image backgrounds. */
-export const heroCtaOnImageClass =
-  'border-2 font-medium text-white border-white hover:bg-white hover:text-black';
+/** Hero CTA filled button over image backgrounds. */
+export const heroCtaOnImageClass = 'luxury-cta-filled-on-image';
 
 /** Hero CTA link row spacing. */
 export const heroActionClass = 'mt-10';
 
-/** Solid CTA button — monochrome. */
-export const sectionCtaButtonClass =
-  'mt-8 inline-flex items-center rounded-brand bg-foreground px-7 py-3 text-[10px] font-normal tracking-[0.22em] text-background uppercase transition hover:bg-foreground/85';
+/** Filled CTA button — 12px, normal case. */
+export const ctaButtonClass = 'luxury-cta-filled normal-case';
 
-/** Hero CTA outline link — luxury ghost button. */
-export const heroActionLinkClass = cn(
-  heroActionClass,
-  'luxury-cta-outline inline-flex w-fit',
-);
+/** Filled CTA with top spacing for section blocks. */
+export const sectionCtaButtonClass = cn(ctaButtonClass, 'mt-8');
+
+/** Hero CTA link — filled white on image. */
+export const heroActionLinkClass = cn(heroActionClass, heroCtaOnImageClass, 'inline-flex w-fit');
 
 /** Split a phrase into two editorial headline rows. */
 export function splitEditorialHeadline(text: string): string[] {

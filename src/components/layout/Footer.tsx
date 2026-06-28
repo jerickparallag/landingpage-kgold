@@ -43,6 +43,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/journal" className={footerLinkClass}>
+                  Journal
+                </a>
+              </li>
+              <li>
                 <a href={FOOTER.careers.href} className={footerLinkClass}>
                   {FOOTER.careers.label}
                 </a>

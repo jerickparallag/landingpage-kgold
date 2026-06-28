@@ -162,6 +162,58 @@ export interface IContactPageContent {
   };
 }
 
+export type TJournalCardSize = 'featured' | 'default';
+
+export interface IJournalArticleRaw {
+  slug: string;
+  category: string;
+  title: string;
+  date: string;
+  imageKey: TImageKey;
+  excerpt: string;
+  body: readonly string[];
+  location?: string;
+}
+
+export interface IJournalArticle extends Omit<IJournalArticleRaw, 'imageKey' | 'body'> {
+  image: string;
+  body: readonly string[];
+}
+
+export interface IJournalPageConfig {
+  subNavParent: ILink;
+  subNav: ILink[];
+  hero: IHeroContent;
+  featuredSlugs: readonly [string, string];
+  featuredSection: { title: string };
+  articlesSection: { title: string };
+  cta: {
+    title: string;
+    description: string;
+    primaryLabel: string;
+    primaryHref: string;
+    secondaryLabel?: string;
+    secondaryHref?: string;
+  };
+}
+
+export interface IJournalPageContent extends IJournalPageConfig {
+  articles: readonly IJournalArticle[];
+}
+
+export interface ICareersListingPageContent {
+  eyebrow: string;
+  title: string;
+  description: string;
+  filterAll: string;
+  learnMoreLabel: string;
+  emptyMessage: string;
+  applyLabel: string;
+  responsibilitiesLabel?: string;
+  requirementsLabel?: string;
+  highlightsLabel?: string;
+}
+
 export interface ICareerBannerContent {
   image: string;
   headline: string;

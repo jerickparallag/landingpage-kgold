@@ -1,4 +1,5 @@
 import { ABOUT_PAGE } from '../../../constants/content';
+import { OptimizedImage } from '../../ui/OptimizedImage';
 import { useInView } from '../../../hooks/useInView';
 import { cn } from '../../../lib/utils';
 
@@ -14,11 +15,10 @@ export function AboutLeadershipSection() {
             <div className="lg:col-span-5">
               <div className="overflow-hidden rounded-brand">
                 <div className="aspect-video">
-                  <img
+                  <OptimizedImage
                     src={leadership.image}
                     alt=""
-                    loading="lazy"
-                    className="h-full w-full object-cover"
+                    className="object-cover"
                   />
                 </div>
               </div>

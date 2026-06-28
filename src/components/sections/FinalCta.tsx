@@ -24,7 +24,7 @@ export function FinalCta() {
             </Button>
             <a
               href={FINAL_CTA.secondaryHref}
-              className="luxury-nav-link text-muted-foreground w-fit"
+              className="luxury-nav-link text-muted-foreground final-cta-secondary-link"
             >
               {FINAL_CTA.secondaryLabel}
             </a>

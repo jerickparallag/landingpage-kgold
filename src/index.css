@@ -35,6 +35,18 @@
 
   --shadow-xs: none;
   --shadow-card: none;
+
+  /* Typography scale — single source of truth (px → rem) */
+  --text-nav: 0.845rem; /* 12px — appbar, sub-nav, filters */
+  --text-eyebrow: 0.75rem; /* 12px — product line, category taglines */
+  --text-body: 0.875rem; /* 14px — body copy, descriptions */
+  --text-subheading: 1rem; /* 16px — card titles, value part headings */
+  --text-section: 1.375rem; /* 22px — section headings */
+  --text-section-lg: 1.625rem; /* 26px — section headings (lg+) */
+  --text-hero: clamp(1.75rem, 4vw, 2.75rem); /* page hero */
+  --text-hero-home: clamp(2.25rem, 6vw, 4rem); /* home hero */
+
+  --header-height: 4rem; /* 64px — main appbar */
 }
 
 .dark {
@@ -82,6 +94,8 @@
   body {
     @apply min-h-screen bg-background font-sans font-light text-foreground antialiased;
     margin: 0;
+    font-size: var(--text-body);
+    line-height: 1.6;
     letter-spacing: 0.01em;
   }
 
@@ -118,12 +132,12 @@
   }
 }
 
-@keyframes hero-bg-zoom-out {
+@keyframes hero-img-zoom-out {
   from {
-    background-size: 114%;
+    transform: scale(1.08);
   }
   to {
-    background-size: cover;
+    transform: scale(1);
   }
 }
 
@@ -138,7 +152,77 @@
   }
 }
 
+@keyframes core-values-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes core-values-image-in {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @layer utilities {
+  /* ── Typography utilities (use via utils.ts exports) ── */
+  .type-nav {
+    font-size: var(--text-nav);
+    line-height: 1.45;
+  }
+
+  .type-eyebrow {
+    font-size: var(--text-eyebrow);
+    line-height: 1.45;
+  }
+
+  .type-body {
+    font-size: var(--text-body);
+    line-height: 1.6;
+  }
+
+  .type-subheading {
+    font-size: var(--text-subheading);
+    line-height: 1.45;
+  }
+
+  .type-section-title {
+    font-size: var(--text-section);
+    line-height: 1.25;
+  }
+
+  @media (min-width: 1024px) {
+    .type-section-title {
+      font-size: var(--text-section-lg);
+      line-height: 1.2;
+    }
+  }
+
+  .type-hero-title {
+    font-size: var(--text-hero);
+    line-height: 1.12;
+  }
+
+  .type-hero-home-title {
+    font-size: var(--text-hero-home);
+    line-height: 0.92;
+  }
+
+  .type-button {
+    font-size: var(--text-body);
+    line-height: 1;
+  }
+
   .reveal {
     opacity: 0;
     transform: translateY(16px);
@@ -160,9 +244,10 @@
     }
   }
 
-  .hero-bg-enter {
-    background-size: 114%;
-    animation: hero-bg-zoom-out 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  .hero-img-enter {
+    transform: scale(1.08);
+    animation: hero-img-zoom-out 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    will-change: transform;
   }
 
   .hero-enter-item {
@@ -172,9 +257,9 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero-bg-enter {
+    .hero-img-enter {
       animation: none;
-      background-size: cover;
+      transform: none;
     }
 
     .hero-enter-item {
@@ -193,7 +278,9 @@
   }
 
   .luxury-nav-link {
-    @apply relative inline-flex w-fit text-[11px] font-normal tracking-[0.22em] text-foreground uppercase transition hover:opacity-100;
+    @apply relative inline-flex w-fit font-normal normal-case tracking-normal text-foreground transition hover:opacity-100;
+    font-size: var(--text-nav);
+    line-height: 1.45;
   }
 
   .luxury-nav-link::after {
@@ -216,7 +303,9 @@
   }
 
   .luxury-footer-link {
-    @apply relative inline-block text-[13px] font-light opacity-70 transition hover:opacity-100;
+    @apply relative inline-block font-light opacity-70 transition hover:opacity-100;
+    font-size: var(--text-body);
+    line-height: 1.6;
   }
 
   .luxury-footer-link::after {
@@ -235,11 +324,21 @@
   }
 
   .luxury-eyebrow {
-    @apply text-[10px] font-normal tracking-[0.28em] text-muted-foreground uppercase;
+    @apply font-normal normal-case tracking-normal text-muted-foreground;
+    font-size: var(--text-eyebrow);
+    line-height: 1.45;
   }
 
-  .luxury-cta-outline {
-    @apply inline-flex items-center justify-center rounded-brand border-2 border-current px-7 py-3 text-[10px] font-medium tracking-[0.24em] uppercase transition hover:bg-foreground hover:text-background;
+  .luxury-cta-filled {
+    @apply inline-flex items-center justify-center rounded-brand bg-foreground px-7 py-3 font-medium normal-case tracking-normal text-background transition hover:bg-foreground/85;
+    font-size: var(--text-body);
+    line-height: 1;
+  }
+
+  .luxury-cta-filled-on-image {
+    @apply inline-flex items-center justify-center rounded-brand bg-white px-7 py-3 font-medium normal-case tracking-normal text-black transition hover:bg-white/90;
+    font-size: var(--text-body);
+    line-height: 1;
   }
 
   .contact-section {
@@ -259,11 +358,19 @@
   }
 
   .scroll-section {
-    @apply scroll-mt-14;
+    scroll-margin-top: var(--header-height);
+  }
+
+  .app-header-bar {
+    height: var(--header-height);
+  }
+
+  .app-header-offset-top {
+    top: var(--header-height);
   }
 
   .subnav-offset {
-    @apply h-14;
+    height: var(--header-height);
   }
 
   .section-stack {
@@ -315,31 +422,253 @@
   }
 
   .hero-min-h-home {
-    min-height: min(78svh, 780px);
+    min-height: calc(100svh - var(--header-height));
   }
 
   .hero-min-h-editorial {
     min-height: min(60vh, 560px);
   }
 
+  .editorial-fixed-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  @media (max-width: 1023px) {
+    .editorial-fixed-bg {
+      background-attachment: scroll;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .editorial-fixed-bg {
+      background-attachment: scroll;
+    }
+  }
+
+  .core-values-nav-btn {
+    @apply absolute top-1/2 z-10 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-border/60 bg-background/95 text-foreground shadow-sm transition hover:bg-background;
+  }
+
+  .core-values-nav-btn-prev {
+    left: 1rem;
+  }
+
+  .core-values-nav-btn-next {
+    right: 1rem;
+  }
+
+  .core-values-text-panel {
+    @apply relative flex flex-col bg-background;
+    min-height: 280px;
+  }
+
+  @media (min-width: 640px) {
+    .core-values-text-panel {
+      min-height: 360px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .core-values-text-panel {
+      min-height: min(70vh, 560px);
+    }
+  }
+
+  .core-values-play-btn {
+    @apply absolute z-10 inline-flex items-center justify-center text-foreground/65;
+    bottom: 0.5rem;
+    left: 2rem;
+    transition:
+      color 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .core-values-play-btn:hover {
+    @apply text-foreground;
+    transform: scale(1.06);
+  }
+
+  @media (min-width: 1024px) {
+    .core-values-play-btn {
+      left: 4rem;
+    }
+  }
+
+  .core-values-slide-content {
+    animation: core-values-content-in 3s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: 0.65s;
+    will-change: opacity, transform;
+  }
+
+  .core-values-slide-media {
+    animation: core-values-image-in 3.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: 0.35s;
+    will-change: opacity, transform;
+  }
+
+  .core-values-slide-image {
+    @apply relative min-h-[280px] sm:min-h-[360px] lg:min-h-[min(70vh,560px)];
+  }
+
+  .journal-card-image {
+    @apply overflow-hidden rounded-brand border border-border bg-muted;
+  }
+
+  .journal-card-image-featured {
+    aspect-ratio: 3 / 2;
+  }
+
+  .journal-card-image-default {
+    aspect-ratio: 4 / 3;
+  }
+
+  .journal-card-body {
+    @apply pt-3 sm:pt-4;
+  }
+
+  .journal-card-category {
+    @apply font-semibold normal-case tracking-normal text-foreground;
+    font-size: var(--text-eyebrow);
+    line-height: 1.45;
+  }
+
+  .journal-card-title {
+    @apply mt-2 font-medium leading-snug tracking-wide text-foreground;
+    font-size: var(--text-subheading);
+    line-height: 1.45;
+  }
+
+  .journal-card-date {
+    @apply mt-3 font-light text-muted-foreground;
+    font-size: var(--text-body);
+    line-height: 1.6;
+  }
+
+  .career-card-image {
+    @apply overflow-hidden bg-muted;
+    aspect-ratio: 16 / 10;
+  }
+
+  .career-card-image :is(picture, img) {
+    @apply block h-full w-full;
+  }
+
+  .career-card-meta {
+    @apply mt-2 font-light text-muted-foreground;
+    font-size: var(--text-body);
+    line-height: 1.6;
+  }
+
+  .career-card-learn-more {
+    @apply mt-3 inline-block font-semibold normal-case tracking-normal text-foreground transition group-hover:opacity-70;
+    font-size: var(--text-body);
+    line-height: 1.6;
+  }
+
+  .careers-listing-header {
+    @apply mx-auto max-w-3xl pt-24 text-center sm:pt-28 lg:pt-32;
+  }
+
+  .careers-listing-eyebrow {
+    @apply font-semibold normal-case tracking-normal text-muted-foreground;
+    font-size: var(--text-body);
+    line-height: 1.6;
+  }
+
+  .careers-filter-nav {
+    @apply scrollbar-none flex flex-wrap items-center justify-center gap-x-6 gap-y-3 sm:gap-x-8;
+  }
+
+  .careers-text-link {
+    @apply relative inline-flex shrink-0 font-semibold normal-case tracking-normal text-foreground opacity-70 transition hover:opacity-100;
+    font-size: var(--text-body);
+    line-height: 1.6;
+  }
+
+  .careers-text-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.35s ease-out;
+  }
+
+  .careers-text-link:hover::after,
+  .careers-text-link-active::after {
+    width: 100%;
+  }
+
+  .careers-text-link-active {
+    @apply opacity-100;
+  }
+
+  .collection-card-link {
+    @apply text-white opacity-100;
+  }
+
+  .collection-card-link:hover {
+    @apply opacity-90;
+  }
+
+  .journal-article-header {
+    @apply mx-auto max-w-3xl pt-24 text-center sm:pt-28 lg:pt-32;
+  }
+
+  .journal-article-title {
+    @apply font-semibold tracking-tight text-foreground;
+    font-size: var(--text-section);
+    line-height: 1.25;
+  }
+
+  @media (min-width: 1024px) {
+    .journal-article-title {
+      font-size: var(--text-section-lg);
+      line-height: 1.2;
+    }
+  }
+
+  .journal-article-date {
+    @apply mt-4 font-light text-muted-foreground;
+    font-size: var(--text-body);
+    line-height: 1.6;
+  }
+
+  .journal-article-figure {
+    @apply mx-auto mt-10 max-w-5xl overflow-hidden rounded-brand border border-border bg-muted sm:mt-12 lg:mt-14;
+  }
+
+  .journal-article-body {
+    @apply mx-auto mt-10 max-w-2xl space-y-6 sm:mt-12 lg:mt-14;
+  }
+
+  .journal-article-paragraph {
+    @apply font-light leading-[1.85] text-foreground;
+    font-size: var(--text-body);
+    line-height: 1.85;
+  }
+
   .cta-actions {
     @apply mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6;
+  }
+
+  .final-cta-secondary-link {
+    font-size: var(--text-body);
+    line-height: 1.45;
   }
 
   .page-container {
     @apply mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-10;
   }
 
-  .parallax-bg {
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
-
-  @media (prefers-reduced-motion: reduce), (max-width: 1023px) {
-    .parallax-bg {
-      background-attachment: scroll;
-    }
+  .cover-bg {
+    @apply h-full w-full object-cover object-center;
   }
 
   .scrollbar-none {
@@ -862,6 +1191,17 @@
     .chat-launcher,
     .chat-typing-indicator span {
       animation: none;
+      transition: none;
+    }
+
+    .core-values-slide-content,
+    .core-values-slide-media {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    .core-values-play-btn {
       transition: none;
     }
   }

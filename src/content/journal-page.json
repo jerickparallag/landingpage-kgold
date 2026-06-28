@@ -1,0 +1,29 @@
+{
+  "subNavParent": { "label": "Journal", "href": "/journal" },
+  "subNav": [
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "hero": {
+    "headline": ["The", "Journal."],
+    "subheadline": "",
+    "body": "Workshops, seminars, and moments from across the KGOLD community.",
+    "ctaLabel": "View Latest",
+    "ctaHref": "#journal-latest",
+    "backgroundImageKey": "homeSkincareHero"
+  },
+  "featuredSlugs": ["annual-partner-summit-2026", "skincare-science-seminar"],
+  "featuredSection": {
+    "title": "Featured Events"
+  },
+  "articlesSection": {
+    "title": "Recent Events"
+  },
+  "cta": {
+    "title": "Stay in the loop.",
+    "description": "Interested in upcoming workshops, seminars, or partnership events? Reach out to our team.",
+    "primaryLabel": "Contact Us",
+    "primaryHref": "/contact",
+    "secondaryLabel": "View Careers",
+    "secondaryHref": "/careers"
+  }
+}

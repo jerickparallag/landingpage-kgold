@@ -158,3 +158,11 @@ export async function fetchInternships(): Promise<IInternshipListing[]> {
   if (!payload) return LOCAL_INTERNSHIPS;
   return normalizeCareersPayload(payload).internships;
 }
+
+export function getJobById(id: string): IJobListing | undefined {
+  return LOCAL_JOBS.find((job) => job.id === id);
+}
+
+export function getInternshipById(id: string): IInternshipListing | undefined {
+  return LOCAL_INTERNSHIPS.find((internship) => internship.id === id);
+}
