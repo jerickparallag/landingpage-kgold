@@ -13,14 +13,6 @@ export function BestSellers() {
         <SectionHeader
           title={BEST_SELLERS.title}
           description={BEST_SELLERS.description}
-          action={
-            <a
-              href={BEST_SELLERS.viewAllHref}
-              className="luxury-nav-link w-fit opacity-70 hover:opacity-100"
-            >
-              {BEST_SELLERS.viewAllLabel}
-            </a>
-          }
         />
 
         <div
@@ -30,14 +22,14 @@ export function BestSellers() {
             isVisible && 'reveal-visible',
           )}
         >
-          {BEST_SELLERS.items.map((product) => (
+          {BEST_SELLERS.items.slice(0, 4).map((product, index) => (
             <ProductCard
               key={product.id}
               name={product.name}
               line={product.line}
               description={product.description}
               image={product.image}
-              badge={product.badge}
+              orderNumber={String(index + 1).padStart(2, '0')}
             />
           ))}
         </div>

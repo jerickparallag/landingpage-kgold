@@ -56,10 +56,17 @@ type THomeContent = {
     ctaHref: string;
   };
   faq: { question: string; answer: string }[];
+  trustSection: {
+    title: string;
+    description: string;
+    items: { value: string; label: string }[];
+    ctas: { label: string; href: string }[];
+  };
   finalCta: {
     title: string;
     description: string;
     primaryLabel: string;
+    primaryHref: string;
     secondaryLabel: string;
     secondaryHref: string;
   };
@@ -85,6 +92,7 @@ export const FOOTER = {
 export const HERO = home.hero;
 export const FEATURED_CATEGORIES = home.featuredCategories;
 export const BEST_SELLERS = home.bestSellers;
+export const TRUST_SECTION = home.trustSection;
 export const ABOUT = home.aboutTeaser;
 export const QUALITY_SECTION = home.qualitySection;
 export const VALUES = home.values;

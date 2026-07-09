@@ -5,6 +5,7 @@ import { QualityValues } from '../components/sections/QualityValues';
 import { FaqSection } from '../components/sections/FaqSection';
 import { About } from '../components/sections/About';
 import { FinalCta } from '../components/sections/FinalCta';
+import { TrustSection } from '../components/sections/TrustSection';
 
 export function HomePage() {
   return (
@@ -12,6 +13,7 @@ export function HomePage() {
       <Hero />
       <FeaturedCategories />
       <BestSellers />
+      <TrustSection />
       <QualityValues />
       <FaqSection />
       <About />

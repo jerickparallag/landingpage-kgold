@@ -1,4 +1,5 @@
 import type { IHeroContent } from '../../content/types';
+import { Link } from 'react-router-dom';
 import { useHeroEnterAnimation } from '../../hooks/useHeroEnterAnimation';
 import {
   cn,
@@ -16,6 +17,7 @@ import {
   heroOverlayVerticalClass,
   heroSectionClass,
   heroSubheadlineClass,
+  heroTitleClass,
 } from '../../lib/utils';
 import { HeroBackground } from './HeroBackground';
 
@@ -40,7 +42,7 @@ export function PageHero({ hero, routeKey, id, variant = 'page' }: IPageHeroProp
       <div className="relative z-10 page-container">
         <div className={isHome ? heroHomeContentGridClass : heroContentGridClass}>
           <div className="lg:col-span-7">
-            <h1 className={cn(heroHomeTitleClass, 'text-left')}>
+            <h1 className={cn(isHome ? heroHomeTitleClass : heroTitleClass, 'text-left text-white', !isHome && 'uppercase')}>
               {hero.headline.map((line, index) => (
                 <span
                   key={line}
@@ -51,8 +53,6 @@ export function PageHero({ hero, routeKey, id, variant = 'page' }: IPageHeroProp
                 </span>
               ))}
             </h1>
-          </div>
-          <div className={cn('lg:col-span-5 lg:pl-8', isHome && 'max-w-lg')}>
             {hero.subheadline ? (
               <p
                 className={heroEnterItemClass(shouldAnimate, heroSubheadlineClass)}
@@ -62,7 +62,11 @@ export function PageHero({ hero, routeKey, id, variant = 'page' }: IPageHeroProp
               </p>
             ) : null}
             <p
-              className={heroEnterItemClass(shouldAnimate, heroBodyClass, !hero.subheadline && 'mt-0')}
+              className={heroEnterItemClass(
+                shouldAnimate,
+                heroBodyClass,
+                !hero.subheadline && (isHome ? 'mt-4' : 'mt-6 sm:mt-7'),
+              )}
               style={heroEnterDelayStyle(
                 shouldAnimate,
                 getHeroEnterDelayAfterLines(lineCount, hero.subheadline ? 0.22 : 0.1),
@@ -70,16 +74,29 @@ export function PageHero({ hero, routeKey, id, variant = 'page' }: IPageHeroProp
             >
               {hero.body}
             </p>
-            <a
-              href={hero.ctaHref}
-              className={heroEnterItemClass(shouldAnimate, heroActionLinkClass, heroCtaOnImageClass)}
-              style={heroEnterDelayStyle(
-                shouldAnimate,
-                getHeroEnterDelayAfterLines(lineCount, hero.subheadline ? 0.38 : 0.26),
-              )}
-            >
-              {hero.ctaLabel}
-            </a>
+            {hero.ctaHref.startsWith('/') ? (
+              <Link
+                to={hero.ctaHref}
+                className={heroEnterItemClass(shouldAnimate, heroActionLinkClass, heroCtaOnImageClass)}
+                style={heroEnterDelayStyle(
+                  shouldAnimate,
+                  getHeroEnterDelayAfterLines(lineCount, hero.subheadline ? 0.38 : 0.26),
+                )}
+              >
+                {hero.ctaLabel}
+              </Link>
+            ) : (
+              <a
+                href={hero.ctaHref}
+                className={heroEnterItemClass(shouldAnimate, heroActionLinkClass, heroCtaOnImageClass)}
+                style={heroEnterDelayStyle(
+                  shouldAnimate,
+                  getHeroEnterDelayAfterLines(lineCount, hero.subheadline ? 0.38 : 0.26),
+                )}
+              >
+                {hero.ctaLabel}
+              </a>
+            )}
           </div>
         </div>
       </div>

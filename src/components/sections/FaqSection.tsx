@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FAQ, FAQ_SECTION } from '../../constants/content';
 import { useInView } from '../../hooks/useInView';
 import { cn, ctaButtonClass, sectionDescriptionClass, sectionHeadingClass, sectionSubheadingClass, typeBodyMutedClass } from '../../lib/utils';
@@ -64,9 +65,15 @@ export function FaqSection() {
 
           <div className="order-3 mt-auto section-stack flex flex-col items-center gap-6 pt-10 text-center lg:order-none lg:col-start-1 lg:row-start-2 lg:mt-0 lg:items-start lg:self-end lg:pt-8 lg:text-left">
             <p className={cn(sectionDescriptionClass, 'mt-0 max-w-sm')}>{FAQ_SECTION.description}</p>
-            <a href={FAQ_SECTION.ctaHref} className={cn(ctaButtonClass, 'mx-auto lg:mx-0')}>
-              {FAQ_SECTION.ctaLabel}
-            </a>
+            {FAQ_SECTION.ctaHref.startsWith('/') ? (
+              <Link to={FAQ_SECTION.ctaHref} className={cn(ctaButtonClass, 'mx-auto lg:mx-0')}>
+                {FAQ_SECTION.ctaLabel}
+              </Link>
+            ) : (
+              <a href={FAQ_SECTION.ctaHref} className={cn(ctaButtonClass, 'mx-auto lg:mx-0')}>
+                {FAQ_SECTION.ctaLabel}
+              </a>
+            )}
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   cn,
   sectionDescriptionClass,
@@ -70,16 +70,28 @@ function getInitialAutoplayState() {
 
 export function CoreValuesCarousel({ values }: ICoreValuesCarouselProps) {
   const [index, setIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [isPlaying, setIsPlaying] = useState(getInitialAutoplayState);
   const total = values.length;
+  const transitionTimeout = useRef<number | null>(null);
 
   const goToPrevious = useCallback(() => {
-    setIndex((current) => (current - 1 + total) % total);
-  }, [total]);
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    transitionTimeout.current = window.setTimeout(() => {
+      setIndex((current) => (current - 1 + total) % total);
+      setIsTransitioning(false);
+    }, 360);
+  }, [isTransitioning, total]);
 
   const goToNext = useCallback(() => {
-    setIndex((current) => (current + 1) % total);
-  }, [total]);
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    transitionTimeout.current = window.setTimeout(() => {
+      setIndex((current) => (current + 1) % total);
+      setIsTransitioning(false);
+    }, 360);
+  }, [isTransitioning, total]);
 
   const toggleAutoplay = useCallback(() => {
     setIsPlaying((playing) => !playing);
@@ -90,7 +102,15 @@ export function CoreValuesCarousel({ values }: ICoreValuesCarouselProps) {
 
     const timerId = window.setInterval(goToNext, AUTOPLAY_INTERVAL_MS);
     return () => window.clearInterval(timerId);
-  }, [goToNext, index, isPlaying, total]);
+  }, [goToNext, isPlaying, total]);
+
+  useEffect(() => {
+    return () => {
+      if (transitionTimeout.current) {
+        window.clearTimeout(transitionTimeout.current);
+      }
+    };
+  }, []);
 
   if (total === 0) return null;
 
@@ -124,7 +144,10 @@ export function CoreValuesCarousel({ values }: ICoreValuesCarouselProps) {
       </div>
 
       <div className="core-values-slide-image order-1 lg:order-2">
-        <div key={current.image} className="core-values-slide-media absolute inset-0">
+        <div
+          key={current.image}
+          className="core-values-slide-media absolute inset-0"
+        >
           <OptimizedImage
             src={current.image}
             alt=""
@@ -139,6 +162,7 @@ export function CoreValuesCarousel({ values }: ICoreValuesCarouselProps) {
               className="core-values-nav-btn core-values-nav-btn-prev"
               aria-label="Previous core value"
               onClick={goToPrevious}
+              disabled={isTransitioning}
             >
               <CarouselArrow direction="prev" />
             </button>
@@ -147,6 +171,7 @@ export function CoreValuesCarousel({ values }: ICoreValuesCarouselProps) {
               className="core-values-nav-btn core-values-nav-btn-next"
               aria-label="Next core value"
               onClick={goToNext}
+              disabled={isTransitioning}
             >
               <CarouselArrow direction="next" />
             </button>

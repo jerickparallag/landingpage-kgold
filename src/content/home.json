@@ -1,10 +1,10 @@
 {
   "hero": {
     "headline": ["Beyond", "Beauty."],
-    "subheadline": "",
-    "body": "Beauty and wellness products built on consistency, trust, and the belief that better opportunities should be within reach of every Filipino.",
-    "ctaLabel": "Explore Collections",
-    "ctaHref": "#categories",
+    "subheadline": "Filipino-made essentials for retail, wellness, and distribution partners.",
+    "body": "KGOLD supplies reliable skincare, haircare, and wellness formulas built for resellers, salons, and online sellers across the Philippines.",
+    "ctaLabel": "Request Wholesale Catalog",
+    "ctaHref": "/contact",
     "backgroundImageKey": "homeHero"
   },
   "featuredCategories": {
@@ -90,6 +90,42 @@
       }
     ]
   },
+  "trustSection": {
+    "title": "Proof That Matters.",
+    "description": "Real metrics, trusted partners, and reliable supply capacity that make KGOLD a stronger choice for retail, wellness, and distribution.",
+    "items": [
+      {
+        "value": "50+",
+        "label": "Active retail and reseller partners"
+      },
+      {
+        "value": "20000+",
+        "label": "Orders fulfilled across the Philippines"
+      },
+      {
+        "value": "GMP",
+        "label": "Manufactured with quality controls"
+      },
+      {
+        "value": "30+",
+        "label": "Best-selling formulas in active circulation"
+      }
+    ],
+    "ctas": [
+      {
+        "label": "Request wholesale catalog",
+        "href": "/contact"
+      },
+      {
+        "label": "Become a distributor",
+        "href": "/contact"
+      },
+      {
+        "label": "Talk to sales",
+        "href": "mailto:hello@kgoldbeauty.com"
+      }
+    ]
+  },
   "aboutTeaser": {
     "title": "Built Through Trust.",
     "teaser": "Growth takes time.",
@@ -127,12 +163,12 @@
       "answer": "Our products are available through authorized distributors, resellers, online selling channels, and selected retail partners nationwide."
     },
     {
-      "question": "Do you offer reseller opportunities?",
-      "answer": "Yes. We welcome individuals and businesses interested in becoming part of our growing distribution network."
+      "question": "How do I become a reseller or distributor?",
+      "answer": "Contact our team to discuss partner terms, catalog access, and stock availability for retail, online, and salon distribution."
     },
     {
-      "question": "What products does KGOLD offer?",
-      "answer": "Our catalog includes skincare, personal care, wellness products, herbal solutions, and men's essentials."
+      "question": "What support do you offer partners?",
+      "answer": "We provide product training, marketing materials, and flexible fulfillment for distributors and retail customers."
     },
     {
       "question": "Do you offer wholesale partnerships?",
@@ -142,8 +178,9 @@
   "finalCta": {
     "title": "Grow Together.",
     "description": "Whether you're a customer, reseller, distributor, or business partner, there's always room to build something meaningful together.",
-    "primaryLabel": "Contact Us",
-    "secondaryLabel": "Browse collections",
-    "secondaryHref": "/#categories"
+    "primaryLabel": "Request Wholesale Catalog",
+    "primaryHref": "/contact",
+    "secondaryLabel": "Become a distributor",
+    "secondaryHref": "/contact"
   }
 }

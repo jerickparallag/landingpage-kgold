@@ -57,7 +57,7 @@ export const heroCollectionTitleClass =
 
 /** Hero subheadline — use after h1 (or after rule on home). */
 export const heroSubheadlineClass =
-  'type-subheading font-semibold tracking-[0.04em] text-white/80';
+  'type-subheading font-semibold tracking-[0.04em] text-white/80 mt-6';
 
 /** Hero body copy over image backgrounds. */
 export const heroBodyClass = cn(typeBodyClass, 'mt-4 max-w-xl font-medium text-white/85');

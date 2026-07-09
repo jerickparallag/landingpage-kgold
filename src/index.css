@@ -152,25 +152,25 @@
   }
 }
 
-@keyframes core-values-content-in {
+@keyframes core-values-slide-next {
   from {
     opacity: 0;
-    transform: translateY(1.75rem);
+    transform: translateX(4rem);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
-@keyframes core-values-image-in {
+@keyframes core-values-slide-prev {
   from {
     opacity: 0;
-    transform: scale(1.05);
+    transform: translateX(-4rem);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateX(0);
   }
 }
 
@@ -498,16 +498,20 @@
     }
   }
 
-  .core-values-slide-content {
-    animation: core-values-content-in 3s cubic-bezier(0.22, 1, 0.36, 1) both;
-    animation-delay: 0.65s;
+  .core-values-slide-content,
+  .core-values-slide-media {
+    animation-duration: 0.9s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity, transform;
   }
 
-  .core-values-slide-media {
-    animation: core-values-image-in 3.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-    animation-delay: 0.35s;
-    will-change: opacity, transform;
+  .core-values-slide-next {
+    animation-name: core-values-slide-next;
+  }
+
+  .core-values-slide-prev {
+    animation-name: core-values-slide-prev;
   }
 
   .core-values-slide-image {
